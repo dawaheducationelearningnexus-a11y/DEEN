@@ -1,1 +1,2857 @@
+/*==================================================
+    DEEN - Dawah Education & E-learning Nexus
+    Master Design System v1.0
+    Module 01 : Global Foundation
 
+    Slogan : Knowledge Changes Lives
+
+    Website Type :
+    Premium International Islamic Education Platform
+
+    Developer Standard :
+    Clean • Responsive • Scalable • Reusable
+
+==================================================*/
+
+
+
+/*==================================================
+    GOOGLE FONTS
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+
+
+
+/*==================================================
+    ROOT VARIABLES
+==================================================*/
+
+:root{
+
+    /* Brand Colors */
+
+    --primary:#0B5D4B;
+    --primary-dark:#052B22;
+    --primary-light:#2BB673;
+
+    --gold:#D4AF37;
+    --gold-dark:#B89225;
+
+    --white:#FFFFFF;
+
+    --light:#F8FAF8;
+
+    --heading:#12372A;
+
+    --text:#4B5563;
+
+    --border:#E5E7EB;
+
+    --danger:#DC3545;
+    --warning:#F59E0B;
+    --success:#22C55E;
+    --info:#0EA5E9;
+
+
+
+    /* Shadow */
+
+    --shadow-sm:0 4px 15px rgba(0,0,0,.05);
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+
+
+
+    /* Radius */
+
+    --radius-sm:8px;
+
+    --radius:16px;
+
+    --radius-lg:24px;
+
+    --radius-xl:40px;
+
+
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+
+
+    /* Width */
+
+    --container:1320px;
+
+}
+
+
+
+/*==================================================
+    RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+/*==================================================
+    HTML
+==================================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+    font-size:16px;
+
+}
+
+
+
+/*==================================================
+    BODY
+==================================================*/
+
+body{
+
+    font-family:'Poppins','Noto Sans Bengali',sans-serif;
+
+    background:var(--light);
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+
+}
+
+
+
+/*==================================================
+    IMAGES
+==================================================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+    height:auto;
+
+}
+
+
+
+/*==================================================
+    LINKS
+==================================================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:var(--transition);
+
+}
+
+
+
+/*==================================================
+    LIST
+==================================================*/
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+/*==================================================
+    BUTTON
+==================================================*/
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+}
+
+
+
+/*==================================================
+    INPUT
+==================================================*/
+
+input,
+textarea,
+select{
+
+    font-family:inherit;
+
+    outline:none;
+
+}
+
+
+
+/*==================================================
+    HEADINGS
+==================================================*/
+
+h1,h2,h3,h4,h5,h6{
+
+    color:var(--heading);
+
+    font-weight:700;
+
+    line-height:1.25;
+
+}
+
+
+
+/*==================================================
+    PARAGRAPH
+==================================================*/
+
+p{
+
+    color:var(--text);
+
+}
+
+
+
+/*==================================================
+    SECTION
+==================================================*/
+
+section{
+
+    padding:100px 0;
+
+}
+
+
+
+/*==================================================
+    CONTAINER
+==================================================*/
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin:auto;
+
+}
+
+
+
+/*==================================================
+    SELECTION
+==================================================*/
+
+::selection{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+}
+
+
+
+/*==================================================
+    SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E9ECEF;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--gold);
+
+}
+
+
+
+/*==================================================
+    COMMON SPACING
+==================================================*/
+
+.mt-1{margin-top:10px;}
+.mt-2{margin-top:20px;}
+.mt-3{margin-top:30px;}
+.mt-4{margin-top:40px;}
+.mt-5{margin-top:50px;}
+
+.mb-1{margin-bottom:10px;}
+.mb-2{margin-bottom:20px;}
+.mb-3{margin-bottom:30px;}
+.mb-4{margin-bottom:40px;}
+.mb-5{margin-bottom:50px;}
+
+
+
+/*==================================================
+    TEXT ALIGN
+==================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+
+
+/*==================================================
+    DISPLAY
+==================================================*/
+
+.d-flex{
+
+    display:flex;
+
+}
+
+.d-grid{
+
+    display:grid;
+
+}
+
+.d-none{
+
+    display:none;
+
+}
+
+
+
+/*==================================================
+    WIDTH
+==================================================*/
+
+.w-100{
+
+    width:100%;
+
+}
+
+
+
+/*==================================================
+    BORDER RADIUS
+==================================================*/
+
+.rounded{
+
+    border-radius:var(--radius);
+
+}
+
+
+
+/*==================================================
+    SHADOW
+==================================================*/
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+/*==================================================
+    BACKGROUND
+==================================================*/
+
+.bg-primary{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+.bg-light{
+
+    background:var(--light);
+
+}
+
+.bg-dark{
+
+    background:var(--primary-dark);
+
+    color:var(--white);
+
+}
+
+
+
+/*==================================================
+    TRANSITION
+==================================================*/
+
+.transition{
+
+    transition:var(--transition);
+}
+
+
+
+/*==================================================
+    END OF MODULE 01
+==================================================*/
+
+
+/*==================================================
+    MODULE 02 : TYPOGRAPHY SYSTEM
+==================================================*/
+
+
+
+/*==================================================
+    DISPLAY TITLES
+==================================================*/
+
+.display-title{
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    font-weight:800;
+
+    color:var(--white);
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+}
+
+.display-dark{
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    HERO TITLE
+==================================================*/
+
+.hero-title{
+
+    font-size:clamp(2.5rem,4vw,4.2rem);
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    color:var(--white);
+
+}
+
+.hero-subtitle{
+
+    font-size:1.15rem;
+
+    color:rgba(255,255,255,.92);
+
+    max-width:760px;
+
+    margin:25px auto;
+
+}
+
+
+
+/*==================================================
+    SECTION TITLE
+==================================================*/
+
+.section-title{
+
+    font-size:clamp(2rem,3vw,3rem);
+
+    font-weight:700;
+
+    color:var(--heading);
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    font-size:1.05rem;
+
+    color:var(--text);
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+
+
+/*==================================================
+    SMALL SECTION TITLE
+==================================================*/
+
+.small-title{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    HEADINGS
+==================================================*/
+
+h1{
+
+    font-size:3rem;
+
+}
+
+h2{
+
+    font-size:2.5rem;
+
+}
+
+h3{
+
+    font-size:2rem;
+
+}
+
+h4{
+
+    font-size:1.5rem;
+
+}
+
+h5{
+
+    font-size:1.2rem;
+
+}
+
+h6{
+
+    font-size:1rem;
+
+}
+
+
+
+/*==================================================
+    PARAGRAPH
+==================================================*/
+
+.lead{
+
+    font-size:1.15rem;
+
+    color:var(--text);
+
+    line-height:1.9;
+
+}
+
+.text{
+
+    font-size:1rem;
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+.small-text{
+
+    font-size:.92rem;
+
+    color:#6B7280;
+
+}
+
+
+
+/*==================================================
+    BRAND NAME
+==================================================*/
+
+.brand-name{
+
+    font-size:1.9rem;
+
+    font-weight:800;
+
+    color:var(--white);
+
+    letter-spacing:1px;
+
+}
+
+.brand-tagline{
+
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+
+/*==================================================
+    HIGHLIGHT TEXT
+==================================================*/
+
+.highlight{
+
+    color:var(--gold);
+
+}
+
+.primary-text{
+
+    color:var(--primary);
+
+}
+
+.white-text{
+
+    color:var(--white);
+
+}
+
+
+
+/*==================================================
+    BADGE
+==================================================*/
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:rgba(11,93,75,.10);
+
+    color:var(--primary);
+
+    border-radius:50px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.badge-gold{
+
+    background:rgba(212,175,55,.15);
+
+    color:var(--gold-dark);
+
+}
+
+
+
+/*==================================================
+    LABEL
+==================================================*/
+
+.label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    BLOCKQUOTE
+==================================================*/
+
+blockquote{
+
+    padding:30px;
+
+    background:var(--white);
+
+    border-left:5px solid var(--gold);
+
+    border-radius:var(--radius);
+
+    font-style:italic;
+
+    color:var(--heading);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+
+/*==================================================
+    QURAN & HADITH QUOTE
+==================================================*/
+
+.islamic-quote{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:var(--white);
+
+    padding:40px;
+
+    border-radius:var(--radius-lg);
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.islamic-quote p{
+
+    color:var(--white);
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+}
+
+.islamic-quote span{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:var(--gold);
+
+    font-weight:600;
+
+}
+
+
+
+/*==================================================
+    LINK STYLE
+==================================================*/
+
+.text-link{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.text-link:hover{
+
+    color:var(--gold);
+
+}
+
+
+
+/*==================================================
+    TEXT UTILITIES
+==================================================*/
+
+.text-uppercase{
+
+    text-transform:uppercase;
+
+}
+
+.text-capitalize{
+
+    text-transform:capitalize;
+
+}
+
+.text-lowercase{
+
+    text-transform:lowercase;
+
+}
+
+.fw-300{
+
+    font-weight:300;
+
+}
+
+.fw-400{
+
+    font-weight:400;
+
+}
+
+.fw-500{
+
+    font-weight:500;
+
+}
+
+.fw-600{
+
+    font-weight:600;
+
+}
+
+.fw-700{
+
+    font-weight:700;
+
+}
+
+.fw-800{
+
+    font-weight:800;
+
+}
+
+
+
+/*==================================================
+    TEXT CLAMP
+==================================================*/
+
+.text-clamp-2{
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+.text-clamp-3{
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+
+/*==================================================
+    END OF MODULE 02
+==================================================*/
+
+
+/*==================================================
+    MODULE 02 : TYPOGRAPHY SYSTEM
+==================================================*/
+
+
+
+/*==================================================
+    DISPLAY TITLES
+==================================================*/
+
+.display-title{
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    font-weight:800;
+
+    color:var(--white);
+
+    line-height:1.15;
+
+    letter-spacing:-1px;
+
+}
+
+.display-dark{
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    HERO TITLE
+==================================================*/
+
+.hero-title{
+
+    font-size:clamp(2.5rem,4vw,4.2rem);
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    color:var(--white);
+
+}
+
+.hero-subtitle{
+
+    font-size:1.15rem;
+
+    color:rgba(255,255,255,.92);
+
+    max-width:760px;
+
+    margin:25px auto;
+
+}
+
+
+
+/*==================================================
+    SECTION TITLE
+==================================================*/
+
+.section-title{
+
+    font-size:clamp(2rem,3vw,3rem);
+
+    font-weight:700;
+
+    color:var(--heading);
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    font-size:1.05rem;
+
+    color:var(--text);
+
+    max-width:760px;
+
+    margin:auto;
+
+}
+
+
+
+/*==================================================
+    SMALL SECTION TITLE
+==================================================*/
+
+.small-title{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    HEADINGS
+==================================================*/
+
+h1{
+
+    font-size:3rem;
+
+}
+
+h2{
+
+    font-size:2.5rem;
+
+}
+
+h3{
+
+    font-size:2rem;
+
+}
+
+h4{
+
+    font-size:1.5rem;
+
+}
+
+h5{
+
+    font-size:1.2rem;
+
+}
+
+h6{
+
+    font-size:1rem;
+
+}
+
+
+
+/*==================================================
+    PARAGRAPH
+==================================================*/
+
+.lead{
+
+    font-size:1.15rem;
+
+    color:var(--text);
+
+    line-height:1.9;
+
+}
+
+.text{
+
+    font-size:1rem;
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+.small-text{
+
+    font-size:.92rem;
+
+    color:#6B7280;
+
+}
+
+
+
+/*==================================================
+    BRAND NAME
+==================================================*/
+
+.brand-name{
+
+    font-size:1.9rem;
+
+    font-weight:800;
+
+    color:var(--white);
+
+    letter-spacing:1px;
+
+}
+
+.brand-tagline{
+
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+
+
+/*==================================================
+    HIGHLIGHT TEXT
+==================================================*/
+
+.highlight{
+
+    color:var(--gold);
+
+}
+
+.primary-text{
+
+    color:var(--primary);
+
+}
+
+.white-text{
+
+    color:var(--white);
+
+}
+
+
+
+/*==================================================
+    BADGE
+==================================================*/
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    background:rgba(11,93,75,.10);
+
+    color:var(--primary);
+
+    border-radius:50px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.badge-gold{
+
+    background:rgba(212,175,55,.15);
+
+    color:var(--gold-dark);
+
+}
+
+
+
+/*==================================================
+    LABEL
+==================================================*/
+
+.label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:var(--heading);
+
+}
+
+
+
+/*==================================================
+    BLOCKQUOTE
+==================================================*/
+
+blockquote{
+
+    padding:30px;
+
+    background:var(--white);
+
+    border-left:5px solid var(--gold);
+
+    border-radius:var(--radius);
+
+    font-style:italic;
+
+    color:var(--heading);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+
+
+/*==================================================
+    QURAN & HADITH QUOTE
+==================================================*/
+
+.islamic-quote{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
+
+    color:var(--white);
+
+    padding:40px;
+
+    border-radius:var(--radius-lg);
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.islamic-quote p{
+
+    color:var(--white);
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+}
+
+.islamic-quote span{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:var(--gold);
+
+    font-weight:600;
+
+}
+
+
+
+/*==================================================
+    LINK STYLE
+==================================================*/
+
+.text-link{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.text-link:hover{
+
+    color:var(--gold);
+
+}
+
+
+
+/*==================================================
+    TEXT UTILITIES
+==================================================*/
+
+.text-uppercase{
+
+    text-transform:uppercase;
+
+}
+
+.text-capitalize{
+
+    text-transform:capitalize;
+
+}
+
+.text-lowercase{
+
+    text-transform:lowercase;
+
+}
+
+.fw-300{
+
+    font-weight:300;
+
+}
+
+.fw-400{
+
+    font-weight:400;
+
+}
+
+.fw-500{
+
+    font-weight:500;
+
+}
+
+.fw-600{
+
+    font-weight:600;
+
+}
+
+.fw-700{
+
+    font-weight:700;
+
+}
+
+.fw-800{
+
+    font-weight:800;
+
+}
+
+
+
+/*==================================================
+    TEXT CLAMP
+==================================================*/
+
+.text-clamp-2{
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:2;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+.text-clamp-3{
+
+    display:-webkit-box;
+
+    -webkit-line-clamp:3;
+
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+
+}
+
+
+
+/*==================================================
+    END OF MODULE 02
+==================================================*/
+
+/*==================================================
+    MODULE 03 : PREMIUM BUTTON SYSTEM
+==================================================*/
+
+
+/*==================================================
+    BUTTON BASE
+==================================================*/
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:14px 32px;
+
+    border:none;
+
+    border-radius:var(--radius);
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+}
+
+
+
+/*==================================================
+    PRIMARY BUTTON
+==================================================*/
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+/*==================================================
+    GOLD BUTTON
+==================================================*/
+
+.btn-gold{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-gold:hover{
+
+    background:var(--gold-dark);
+
+    color:var(--white);
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+
+/*==================================================
+    OUTLINE BUTTON
+==================================================*/
+
+.btn-outline{
+
+    background:transparent;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+
+
+/*==================================================
+    WHITE BUTTON
+==================================================*/
+
+.btn-white{
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn-white:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+}
+
+
+
+/*==================================================
+    GLASS BUTTON
+==================================================*/
+
+.btn-glass{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:var(--white);
+
+}
+
+.btn-glass:hover{
+
+    background:rgba(255,255,255,.28);
+
+}
+
+
+
+/*==================================================
+    ICON BUTTON
+==================================================*/
+
+.btn-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    padding:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.2rem;
+
+}
+
+
+
+/*==================================================
+    SMALL BUTTON
+==================================================*/
+
+.btn-sm{
+
+    padding:10px 22px;
+
+    font-size:.9rem;
+
+}
+
+
+
+/*==================================================
+    LARGE BUTTON
+==================================================*/
+
+.btn-lg{
+
+    padding:18px 42px;
+
+    font-size:1.1rem;
+
+}
+
+
+
+/*==================================================
+    FULL WIDTH BUTTON
+==================================================*/
+
+.btn-block{
+
+    width:100%;
+
+}
+
+
+
+/*==================================================
+    RIPPLE EFFECT
+==================================================*/
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.30);
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.6s;
+
+}
+
+.btn:active::after{
+
+    width:320px;
+
+    height:320px;
+
+}
+
+
+
+/*==================================================
+    SHINE EFFECT
+==================================================*/
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transition:.7s;
+
+}
+
+.btn:hover::before{
+
+    left:100%;
+
+}
+
+
+
+/*==================================================
+    DISABLED
+==================================================*/
+
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+
+
+/*==================================================
+    LOADING BUTTON
+==================================================*/
+
+.btn-loading{
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+.btn-loading::after{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    border:3px solid rgba(255,255,255,.30);
+
+    border-top:3px solid var(--white);
+
+    border-radius:50%;
+
+    animation:btn-spin .8s linear infinite;
+
+}
+
+
+
+/*==================================================
+    FLOATING ACTION BUTTON
+==================================================*/
+
+.fab{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.4rem;
+
+    box-shadow:var(--shadow-lg);
+
+    z-index:999;
+
+    transition:var(--transition);
+
+}
+
+.fab:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+    background:var(--primary);
+
+    color:var(--white);
+
+}
+
+
+
+/*==================================================
+    BUTTON GROUP
+==================================================*/
+
+.btn-group{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    align-items:center;
+
+}
+
+
+
+/*==================================================
+    BUTTON ANIMATION
+==================================================*/
+
+@keyframes btn-spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/*==================================================
+    END OF MODULE 03
+==================================================*/
+
+/*==================================================
+    MODULE 04-A : PREMIUM NAVBAR FOUNDATION
+==================================================*/
+
+
+/*==================================================
+    TOP INFO BAR
+==================================================*/
+
+.topbar{
+
+    width:100%;
+
+    background:var(--primary-dark);
+
+    color:rgba(255,255,255,.90);
+
+    font-size:.90rem;
+
+    padding:8px 0;
+
+    position:relative;
+
+    z-index:1000;
+
+}
+
+.topbar .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.topbar-left,
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.topbar i{
+
+    color:var(--gold);
+
+    margin-right:6px;
+
+}
+
+
+
+/*==================================================
+    MAIN HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    transition:all .35s ease;
+
+}
+
+
+
+/*==================================================
+    NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:100%;
+
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(5,43,34,.78);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:all .35s ease;
+
+}
+
+
+
+/*==================================================
+    NAVBAR CONTAINER
+==================================================*/
+
+.navbar .container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+
+
+/*==================================================
+    STICKY NAVBAR
+==================================================*/
+
+.header.scrolled .navbar{
+
+    height:78px;
+
+    background:rgba(5,43,34,.95);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+}
+
+
+
+/*==================================================
+    LOGO AREA
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-shrink:0;
+
+}
+
+
+
+/*==================================================
+    LOGO IMAGE
+==================================================*/
+
+.logo img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    padding:4px;
+
+    transition:var(--transition);
+
+}
+
+.logo:hover img{
+
+    transform:rotate(6deg) scale(1.05);
+
+}
+
+
+
+/*==================================================
+    LOGO TEXT
+==================================================*/
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.logo-text h2{
+
+    font-size:1.45rem;
+
+    font-weight:800;
+
+    color:var(--white);
+
+    line-height:1.1;
+
+    margin:0;
+
+    letter-spacing:.5px;
+
+}
+
+.logo-text span{
+
+    font-size:.82rem;
+
+    color:rgba(255,255,255,.82);
+
+    margin-top:3px;
+
+}
+
+
+
+/*==================================================
+    NAVIGATION WRAPPER
+==================================================*/
+
+.nav-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:25px;
+
+    flex:1;
+
+}
+
+
+
+/*==================================================
+    RIGHT ACTION AREA
+==================================================*/
+
+.nav-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+/*==================================================
+    ICON BUTTON
+==================================================*/
+
+.nav-icon{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.nav-icon:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*==================================================
+    CTA BUTTON AREA
+==================================================*/
+
+.nav-cta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+/*==================================================
+    PLACEHOLDER
+==================================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+/*==================================================
+    MENU TOGGLE
+==================================================*/
+
+.menu-toggle{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.3rem;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.menu-toggle:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+}
+
+
+
+/*==================================================
+    HEADER SPACER
+==================================================*/
+
+.header-space{
+
+    height:90px;
+
+}
+
+
+
+/*==================================================
+    END OF MODULE 04-A
+==================================================*/
+
+/*==================================================
+    MODULE 04-B : PREMIUM DESKTOP NAVIGATION
+==================================================*/
+
+/* Navigation Container */
+.navigation{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:1;
+}
+
+/* Navigation List */
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin:0;
+    padding:0;
+}
+
+/* Navigation Item */
+.nav-links li{
+    position:relative;
+    list-style:none;
+}
+
+/* Navigation Link */
+.nav-links li a{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 18px;
+
+    font-size:.97rem;
+    font-weight:600;
+
+    color:var(--white);
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    white-space:nowrap;
+
+}
+
+/* Hover */
+.nav-links li a:hover{
+
+    color:var(--gold);
+
+    background:rgba(255,255,255,.06);
+
+}
+
+/* Active */
+.nav-links li.active>a{
+
+    color:var(--gold);
+
+}
+
+/* Animated Underline */
+.nav-links li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:6px;
+
+    width:0;
+    height:2px;
+
+    background:var(--gold);
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+.nav-links li a:hover::after,
+.nav-links li.active>a::after{
+
+    width:70%;
+
+}
+
+/* Small Arrow */
+.nav-links li.has-dropdown>a i{
+
+    font-size:.75rem;
+
+    margin-left:8px;
+
+    transition:.3s;
+
+}
+
+.nav-links li.has-dropdown:hover>a i{
+
+    transform:rotate(180deg);
+
+}
+
+/* CTA Area */
+.nav-actions{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-left:25px;
+
+}
+
+/* Search Button */
+
+.search-btn{
+
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.search-btn:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+}
+
+/* Donate Button */
+
+.nav-donate{
+
+    padding:12px 26px;
+
+    border-radius:50px;
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.nav-donate:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+/* Admission Button */
+
+.nav-admission{
+
+    padding:12px 26px;
+
+    border-radius:50px;
+
+    border:2px solid var(--gold);
+
+    color:#fff;
+
+    transition:var(--transition);
+
+}
+
+.nav-admission:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+}
+
+/* Large Desktop */
+
+@media(min-width:1400px){
+
+.nav-links{
+
+gap:14px;
+
+}
+
+.nav-links li a{
+
+padding:14px 22px;
+
+}
+
+}
+
+/*==================================================
+    END MODULE 04-B
+==================================================*/
+
+
+/*==================================================
+    MODULE 04-C : PREMIUM MOBILE NAVIGATION
+==================================================*/
+
+/*==============================
+  Mobile Toggle Button
+==============================*/
+
+.menu-toggle{
+
+    display:none;
+
+    width:52px;
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:var(--white);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    z-index:1201;
+
+}
+
+.menu-toggle:hover{
+
+    background:var(--gold);
+
+    color:var(--primary-dark);
+
+    transform:scale(1.05);
+
+}
+
+/*==============================
+  Hamburger Icon
+==============================*/
+
+.menu-toggle span{
+
+    display:block;
+
+    width:24px;
+
+    height:2px;
+
+    margin:5px auto;
+
+    background:currentColor;
+
+    transition:.35s;
+
+}
+
+/*==============================
+  Active Animation
+==============================*/
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:translateY(7px) rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:translateY(-7px) rotate(-45deg);
+
+}
+
+/*==============================
+  Mobile Navigation Panel
+==============================*/
+
+@media(max-width:991px){
+
+.navigation{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:340px;
+
+max-width:100%;
+
+height:100vh;
+
+background:rgba(5,43,34,.97);
+
+backdrop-filter:blur(22px);
+
+padding:120px 30px 40px;
+
+transition:.45s ease;
+
+overflow-y:auto;
+
+z-index:1200;
+
+box-shadow:-15px 0 45px rgba(0,0,0,.25);
+
+}
+
+.navigation.active{
+
+right:0;
+
+}
+
+.nav-links{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:8px;
+
+width:100%;
+
+}
+
+.nav-links li{
+
+width:100%;
+
+}
+
+.nav-links li a{
+
+width:100%;
+
+padding:16px 18px;
+
+border-radius:14px;
+
+font-size:1rem;
+
+}
+
+.nav-links li a:hover{
+
+background:rgba(255,255,255,.08);
+
+padding-left:24px;
+
+}
+
+.nav-actions{
+
+flex-direction:column;
+
+width:100%;
+
+margin-top:35px;
+
+gap:15px;
+
+margin-left:0;
+
+}
+
+.nav-admission,
+
+.nav-donate{
+
+width:100%;
+
+text-align:center;
+
+justify-content:center;
+
+}
+
+.menu-toggle{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+}
+
+/*==============================
+  Overlay
+==============================*/
+
+.mobile-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+z-index:1190;
+
+}
+
+.mobile-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/*==============================
+ Prevent Background Scroll
+==============================*/
+
+body.menu-open{
+
+overflow:hidden;
+
+}
+
+/*==============================
+ Mobile Logo Area
+==============================*/
+
+.mobile-logo{
+
+display:none;
+
+}
+
+@media(max-width:991px){
+
+.mobile-logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:35px;
+
+}
+
+.mobile-logo img{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+padding:5px;
+
+}
+
+.mobile-logo h3{
+
+color:#fff;
+
+font-size:1.4rem;
+
+margin:0;
+
+}
+
+.mobile-logo span{
+
+display:block;
+
+font-size:.85rem;
+
+color:rgba(255,255,255,.75);
+
+}
+
+}
+
+/*==============================
+ Close Button
+==============================*/
+
+.mobile-close{
+
+position:absolute;
+
+top:28px;
+
+right:28px;
+
+width:46px;
+
+height:46px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(255,255,255,.08);
+
+color:#fff;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+}
+
+.mobile-close:hover{
+
+background:var(--gold);
+
+color:var(--primary-dark);
+
+transform:rotate(90deg);
+
+}
+
+/*==================================================
+ END MODULE 04-C
+==================================================*/
+
+  
