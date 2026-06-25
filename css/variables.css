@@ -1,1 +1,95 @@
+:root{
 
+/* ========= Brand Colors ========= */
+
+--primary:#0F766E;
+--primary-dark:#0B5E58;
+--primary-light:#E8FFFC;
+
+--secondary:#C89B3C;
+--secondary-light:#FDF6E6;
+
+--white:#ffffff;
+--black:#111827;
+
+--gray-50:#F9FAFB;
+--gray-100:#F3F4F6;
+--gray-200:#E5E7EB;
+--gray-300:#D1D5DB;
+--gray-400:#9CA3AF;
+--gray-500:#6B7280;
+--gray-600:#4B5563;
+--gray-700:#374151;
+--gray-800:#1F2937;
+--gray-900:#111827;
+
+
+/* ========= Background ========= */
+
+--body-bg:#ffffff;
+
+--section-bg:#F8FAFC;
+
+--card-bg:#ffffff;
+
+
+/* ========= Text ========= */
+
+--text:#222222;
+
+--heading:#111827;
+
+--muted:#6B7280;
+
+
+/* ========= Shadow ========= */
+
+--shadow-sm:
+
+0 5px 15px rgba(0,0,0,.06);
+
+--shadow:
+
+0 10px 30px rgba(0,0,0,.10);
+
+--shadow-lg:
+
+0 20px 60px rgba(0,0,0,.16);
+
+
+/* ========= Radius ========= */
+
+--radius-sm:10px;
+
+--radius:18px;
+
+--radius-lg:30px;
+
+--radius-full:999px;
+
+
+/* ========= Transition ========= */
+
+--transition:
+
+all .35s ease;
+
+
+/* ========= Width ========= */
+
+--container:1280px;
+
+
+/* ========= Font ========= */
+
+--font:
+
+"Segoe UI",
+
+Poppins,
+
+Roboto,
+
+sans-serif;
+
+}
