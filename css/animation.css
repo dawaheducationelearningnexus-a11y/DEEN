@@ -1,1 +1,214 @@
+/*==================================================
+    DEEN OFFICIAL WEBSITE
+    MODULE 04 : PREMIUM ANIMATION SYSTEM
+==================================================*/
 
+/* =========================
+   FADE UP
+========================= */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(60px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   FADE LEFT
+========================= */
+
+.fade-left{
+    opacity:0;
+    transform:translateX(-60px);
+    transition:.8s ease;
+}
+
+.fade-left.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================
+   FADE RIGHT
+========================= */
+
+.fade-right{
+    opacity:0;
+    transform:translateX(60px);
+    transition:.8s ease;
+}
+
+.fade-right.show{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================
+   ZOOM
+========================= */
+
+.zoom{
+    opacity:0;
+    transform:scale(.90);
+    transition:.8s ease;
+}
+
+.zoom.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+/* =========================
+   ROTATE
+========================= */
+
+.rotate{
+    opacity:0;
+    transform:rotate(-8deg);
+    transition:.8s ease;
+}
+
+.rotate.show{
+    opacity:1;
+    transform:rotate(0deg);
+}
+
+/* =========================
+   FLOATING
+========================= */
+
+@keyframes floating{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.floating{
+
+animation:
+floating 4s ease-in-out infinite;
+
+}
+
+/* =========================
+   PULSE
+========================= */
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.pulse{
+
+animation:
+
+pulse 2.5s infinite;
+
+}
+
+/* =========================
+   SPIN
+========================= */
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.spin{
+
+animation:
+
+spin 20s linear infinite;
+
+}
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.hover-zoom{
+
+overflow:hidden;
+
+}
+
+.hover-zoom img{
+
+transition:.6s;
+
+}
+
+.hover-zoom:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.hover-lift{
+
+transition:.35s ease;
+
+}
+
+.hover-lift:hover{
+
+transform:translateY(-12px);
+
+}
+
+/* =========================
+   GLOW
+========================= */
+
+.glow:hover{
+
+box-shadow:
+
+0 0 40px rgba(15,118,110,.30);
+
+}
