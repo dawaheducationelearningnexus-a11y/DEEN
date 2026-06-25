@@ -1,1 +1,147 @@
+/*==================================================
+    DEEN OFFICIAL WEBSITE
+    MODULE 03 : COMPONENTS
+==================================================*/
 
+/*=========================
+    SECTION HEADER
+=========================*/
+
+.section-header{
+    max-width:800px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.section-subtitle{
+    display:inline-block;
+    padding:8px 18px;
+    background:var(--primary-light);
+    color:var(--primary);
+    border-radius:50px;
+    font-size:.95rem;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.section-title{
+    margin-bottom:20px;
+}
+
+.section-description{
+    font-size:1.05rem;
+    color:var(--muted);
+}
+
+/*=========================
+    BUTTONS
+=========================*/
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    border-radius:var(--radius-full);
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+    box-shadow:var(--shadow);
+}
+
+.btn-primary:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);
+    color:var(--primary);
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+/*=========================
+    CARD
+=========================*/
+
+.card{
+    background:var(--card-bg);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+    padding:30px;
+    transition:var(--transition);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-lg);
+}
+
+/*=========================
+    ICON BOX
+=========================*/
+
+.icon-box{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--primary-light);
+    color:var(--primary);
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/*=========================
+    BADGE
+=========================*/
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    background:var(--secondary-light);
+    color:var(--secondary);
+    border-radius:50px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+/*=========================
+    GLASS EFFECT
+=========================*/
+
+.glass{
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.35);
+    box-shadow:var(--shadow);
+}
+
+/*=========================
+    IMAGE
+=========================*/
+
+.image-cover{
+    overflow:hidden;
+    border-radius:var(--radius);
+}
+
+.image-cover img{
+    width:100%;
+    transition:.5s;
+}
+
+.image-cover:hover img{
+    transform:scale(1.08);
+}
