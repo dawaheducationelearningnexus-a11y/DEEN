@@ -348,3 +348,1204 @@ transition:.35s;
 transform:scale(1.04);
 
 }
+/* ==========================================================
+   MODULE 4 — PART 2
+   ADVANCED COMPONENTS
+========================================================== */
+
+
+/* ==========================================================
+   COURSE CARD
+========================================================== */
+
+.course-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+.course-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.course-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.course-image img{
+
+    width:100%;
+
+    aspect-ratio:16/10;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.course-card:hover .course-image img{
+
+    transform:scale(1.08);
+
+}
+
+.course-content{
+
+    padding:30px;
+
+    flex:1;
+
+}
+
+.course-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    font-size:.9rem;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================================
+   DEPARTMENT CARD
+========================================================== */
+
+.department-card{
+
+    text-align:center;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.department-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.department-card .icon{
+
+    margin:0 auto 24px;
+
+}
+
+/* ==========================================================
+   GALLERY CARD
+========================================================== */
+
+.gallery-card{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    position:relative;
+
+}
+
+.gallery-card img{
+
+    width:100%;
+
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.gallery-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.gallery-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.45)
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.gallery-card:hover::after{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   NOTICE CARD
+========================================================== */
+
+.notice-card{
+
+    background:#fff;
+
+    border-left:5px solid var(--primary);
+
+    padding:28px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.notice-card:hover{
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.notice-date{
+
+    color:var(--secondary-dark);
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================================================
+   EVENT CARD
+========================================================== */
+
+.event-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.event-banner img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+}
+
+.event-content{
+
+    padding:30px;
+
+}
+
+/* ==========================================================
+   TEAM CARD
+========================================================== */
+
+.team-card{
+
+    text-align:center;
+
+    background:#fff;
+
+    border-radius:26px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.team-photo{
+
+    width:140px;
+
+    height:140px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+}
+
+.team-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+/* ==========================================================
+   STATISTICS CARD
+========================================================== */
+
+.stats-card{
+
+    text-align:center;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    border-radius:24px;
+
+    padding:40px 25px;
+
+}
+
+.stats-card h2{
+
+    color:#fff;
+
+    font-size:2.6rem;
+
+}
+
+.stats-card p{
+
+    color:#eefdfb;
+
+    margin:0;
+
+}
+
+/* ==========================================================
+   TESTIMONIAL CARD
+========================================================== */
+
+.testimonial-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow-sm);
+
+    position:relative;
+
+}
+
+.testimonial-card::before{
+
+    content:"❝";
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    font-size:3rem;
+
+    color:rgba(15,118,110,.15);
+
+}
+
+.testimonial-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.testimonial-user img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+/* ==========================================================
+   DONATION CARD
+========================================================== */
+
+.donation-card{
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #f7fffd
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:26px;
+
+    padding:35px;
+
+    transition:var(--transition);
+
+}
+
+.donation-card:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================================
+   CONTACT CARD
+========================================================== */
+
+.contact-card{
+
+    text-align:center;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.contact-card .icon{
+
+    margin:0 auto 20px;
+}
+
+/* ==========================================================
+   MODULE 4 — PART 3
+   FORMS & ADVANCED UI COMPONENTS
+========================================================== */
+
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.form-group{
+    margin-bottom:24px;
+}
+
+.form-label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.form-control{
+    width:100%;
+    padding:16px 20px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#fff;
+    transition:var(--transition);
+    font-size:1rem;
+}
+
+.form-control:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(15,118,110,.12);
+}
+
+textarea.form-control{
+    min-height:170px;
+    resize:vertical;
+}
+
+/* ==========================================================
+   SEARCH BOX
+========================================================== */
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px 55px 16px 20px;
+    border-radius:999px;
+    border:1px solid var(--border);
+}
+
+.search-box button{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--primary);
+}
+
+/* ==========================================================
+   NEWSLETTER
+========================================================== */
+
+.newsletter{
+    background:var(--gradient-primary);
+    padding:50px;
+    border-radius:28px;
+    color:#fff;
+}
+
+.newsletter-form{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.newsletter-form input{
+    flex:1;
+    min-width:250px;
+    padding:16px 20px;
+    border:none;
+    border-radius:999px;
+}
+
+/* ==========================================================
+   PAGINATION
+========================================================== */
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:50px;
+}
+
+.pagination a{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:var(--shadow-sm);
+    transition:var(--transition);
+}
+
+.pagination a:hover,
+.pagination a.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* ==========================================================
+   BREADCRUMB
+========================================================== */
+
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.breadcrumb a{
+    color:var(--primary);
+}
+
+.breadcrumb span{
+    color:var(--text-muted);
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table th{
+    background:var(--gradient-primary);
+    color:#fff;
+    padding:18px;
+}
+
+.table td{
+    padding:18px;
+    border-bottom:1px solid var(--border);
+}
+
+.table tr:hover{
+    background:#f8fafc;
+}
+
+/* ==========================================================
+   ACCORDION
+========================================================== */
+
+.accordion-item{
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:18px;
+}
+
+.accordion-header{
+    padding:20px;
+    cursor:pointer;
+    background:#fff;
+    font-weight:600;
+}
+
+.accordion-body{
+    display:none;
+    padding:20px;
+    border-top:1px solid var(--border);
+}
+
+.accordion-item.active .accordion-body{
+    display:block;
+}
+
+/* ==========================================================
+   TABS
+========================================================== */
+
+.tabs{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.tab-btn{
+    padding:14px 24px;
+    border-radius:999px;
+    background:#eef7f6;
+    cursor:pointer;
+    transition:var(--transition);
+}
+
+.tab-btn.active,
+.tab-btn:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* ==========================================================
+   TIMELINE
+========================================================== */
+
+.timeline{
+    position:relative;
+    margin-left:25px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--primary);
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:35px;
+    margin-bottom:35px;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-9px;
+    top:6px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--secondary);
+}
+
+/* ==========================================================
+   MODAL
+========================================================== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:var(--z-modal);
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-content{
+    background:#fff;
+    border-radius:24px;
+    padding:40px;
+    width:min(700px,92%);
+    max-height:85vh;
+    overflow:auto;
+    box-shadow:var(--shadow-xl);
+}
+
+/* ==========================================================
+   MODULE 4 — PART 4
+   PREMIUM & ENTERPRISE COMPONENTS
+========================================================== */
+
+
+/* ==========================================================
+   LOADING SPINNER
+========================================================== */
+
+.spinner{
+
+    width:48px;
+    height:48px;
+
+    border:4px solid #E5E7EB;
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:auto;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   TOAST NOTIFICATION
+========================================================== */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+    right:30px;
+
+    min-width:320px;
+
+    background:#fff;
+
+    border-left:5px solid var(--success);
+
+    border-radius:18px;
+
+    padding:18px 22px;
+
+    box-shadow:var(--shadow-xl);
+
+    z-index:1400;
+
+    opacity:0;
+
+    transform:translateX(40px);
+
+    transition:var(--transition);
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+.toast.success{
+
+    border-color:var(--success);
+
+}
+
+.toast.warning{
+
+    border-color:var(--warning);
+
+}
+
+.toast.error{
+
+    border-color:var(--danger);
+
+}
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+.progress{
+
+    width:100%;
+
+    height:10px;
+
+    background:#E5E7EB;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0;
+
+    background:var(--gradient-primary);
+
+    transition:width .8s ease;
+
+}
+
+/* ==========================================================
+   SKELETON LOADING
+========================================================== */
+
+.skeleton{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#EDF2F7;
+
+    border-radius:12px;
+
+}
+
+.skeleton::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.65),
+        transparent
+    );
+
+    animation:skeletonMove 1.4s infinite;
+
+}
+
+@keyframes skeletonMove{
+
+    from{
+
+        transform:translateX(-100%);
+
+    }
+
+    to{
+
+        transform:translateX(100%);
+
+    }
+
+}
+
+/* ==========================================================
+   PRICING CARD
+========================================================== */
+
+.pricing-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.pricing-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.pricing-price{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin:25px 0;
+
+}
+
+/* ==========================================================
+   MEMBER CARD
+========================================================== */
+
+.member-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.member-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.member-cover{
+
+    height:120px;
+
+    background:var(--gradient-primary);
+
+}
+
+.member-avatar{
+
+    width:110px;
+
+    height:110px;
+
+    border-radius:50%;
+
+    margin:-55px auto 20px;
+
+    border:5px solid #fff;
+
+    overflow:hidden;
+
+}
+
+.member-avatar img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.member-content{
+
+    text-align:center;
+
+    padding:0 30px 35px;
+
+}
+
+/* ==========================================================
+   BLOG CARD
+========================================================== */
+
+.blog-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.blog-card img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+}
+
+.blog-content{
+
+    padding:30px;
+
+}
+
+.blog-meta{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:18px;
+
+    color:var(--text-muted);
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   FLOATING ACTION BUTTON
+========================================================== */
+
+.fab{
+
+    position:fixed;
+
+    left:30px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--gradient-gold);
+
+    color:#111827;
+
+    box-shadow:var(--shadow-lg);
+
+    z-index:1300;
+
+    transition:var(--transition);
+
+}
+
+.fab:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   COOKIE CONSENT
+========================================================== */
+
+.cookie-banner{
+
+    position:fixed;
+
+    left:25px;
+
+    right:25px;
+
+    bottom:25px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+    box-shadow:var(--shadow-xl);
+
+    z-index:1350;
+
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:80px 30px;
+
+}
+
+.empty-state img{
+
+    width:180px;
+
+    margin:auto auto 30px;
+
+}
+
+.empty-state h3{
+
+    margin-bottom:15px;
+
+}
+
+.empty-state p{
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+   ERROR PAGE
+========================================================== */
+
+.error-state{
+
+    min-height:70vh;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+}
+
+.error-code{
+
+    font-size:7rem;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+    line-height:1;
+
+}
+
+/* ==========================================================
+   END OF COMPONENT SYSTEM
+========================================================== */
