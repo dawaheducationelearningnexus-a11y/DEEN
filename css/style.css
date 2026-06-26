@@ -1,13 +1,14 @@
-/*==================================================
-    DEEN OFFICIAL WEBSITE
-    MODULE 02 : GLOBAL RESET & BASE
-==================================================*/
+/*
+/* =========================================================
+   DEEN WEBSITE
+   Global Styles
+   Dawah Education & E-learning Nexus
+   Knowledge Changes Lives
+========================================================== */
 
-@import url("variables.css");
-
-/*=========================
-    RESET
-=========================*/
+/* ==========================================================
+   CSS RESET
+========================================================== */
 
 *,
 *::before,
@@ -19,70 +20,64 @@
 
 html{
     scroll-behavior:smooth;
-    -webkit-text-size-adjust:100%;
+    font-size:16px;
 }
 
 body{
-    font-family:var(--font);
-    background:var(--body-bg);
+    font-family:var(--font-body);
+    font-size:var(--fs-base);
     color:var(--text);
+    background:var(--bg);
     line-height:1.7;
     overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
 }
 
-/*=========================
-    SELECTION
-=========================*/
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
 
-::selection{
-    background:var(--primary);
-    color:#fff;
+h1,h2,h3,h4,h5,h6{
+    font-family:var(--font-heading);
+    font-weight:var(--fw-bold);
+    color:var(--text);
+    line-height:1.2;
+    margin-bottom:1rem;
 }
 
-/*=========================
-    SCROLLBAR
-=========================*/
-
-::-webkit-scrollbar{
-    width:10px;
+h1{
+    font-size:clamp(2.5rem,5vw,4.5rem);
 }
 
-::-webkit-scrollbar-track{
-    background:#f5f5f5;
+h2{
+    font-size:clamp(2rem,4vw,3.25rem);
 }
 
-::-webkit-scrollbar-thumb{
-    background:var(--primary);
-    border-radius:50px;
+h3{
+    font-size:1.5rem;
 }
 
-::-webkit-scrollbar-thumb:hover{
-    background:var(--primary-dark);
+h4{
+    font-size:1.25rem;
 }
 
-/*=========================
-    CONTAINER
-=========================*/
-
-.container{
-    width:min(92%, var(--container));
-    margin:auto;
+p{
+    color:var(--text-light);
+    margin-bottom:1rem;
 }
 
-/*=========================
-    IMAGE
-=========================*/
-
-img{
-    display:block;
-    max-width:100%;
-    height:auto;
+small{
+    color:var(--text-muted);
 }
 
-/*=========================
-    LINKS
-=========================*/
+strong{
+    font-weight:700;
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
 
 a{
     text-decoration:none;
@@ -90,30 +85,54 @@ a{
     transition:var(--transition);
 }
 
-/*=========================
-    LIST
-=========================*/
+a:hover{
+    color:var(--primary);
+}
+
+/* ==========================================================
+   LISTS
+========================================================== */
 
 ul,
 ol{
     list-style:none;
 }
 
-/*=========================
-    BUTTON
-=========================*/
+/* ==========================================================
+   IMAGES & MEDIA
+========================================================== */
 
-button{
-    font:inherit;
-    border:none;
-    outline:none;
-    cursor:pointer;
-    background:none;
+img{
+    display:block;
+    max-width:100%;
+    height:auto;
 }
 
-/*=========================
-    INPUT
-=========================*/
+video{
+    display:block;
+    width:100%;
+}
+
+iframe{
+    width:100%;
+    border:none;
+}
+
+/* ==========================================================
+   BUTTON RESET
+========================================================== */
+
+button{
+    border:none;
+    outline:none;
+    background:none;
+    cursor:pointer;
+    font:inherit;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
 
 input,
 textarea,
@@ -122,132 +141,115 @@ select{
     outline:none;
 }
 
-/*=========================
-    HEADINGS
-=========================*/
+/* ==========================================================
+   CONTAINER
+========================================================== */
 
-h1,h2,h3,h4,h5,h6{
-    color:var(--heading);
-    line-height:1.25;
-    font-weight:700;
+.container{
+    width:min(
+        var(--container-width),
+        calc(100% - (var(--container-padding) * 2))
+    );
+    margin-inline:auto;
 }
 
-h1{
-    font-size:clamp(2.5rem,5vw,4.5rem);
-}
+/* ==========================================================
+   SECTION
+========================================================== */
 
-h2{
-    font-size:clamp(2rem,4vw,3rem);
-}
-
-h3{
-    font-size:1.6rem;
-}
-
-p{
-    color:var(--muted);
-}
-
-/*=========================
-    SECTION
-=========================*/
-
-section{
+.section{
     padding:100px 0;
     position:relative;
 }
 
-/*=========================
-    GRID
-=========================*/
+.section-header{
+    max-width:760px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.section-subtitle{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:var(--radius-pill);
+    background:rgba(15,118,110,.10);
+    color:var(--primary);
+    font-weight:600;
+    margin-bottom:16px;
+}
+
+.section-title{
+    margin-bottom:18px;
+}
+
+.section-description{
+    max-width:700px;
+    margin:auto;
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
 
 .grid{
     display:grid;
     gap:30px;
 }
 
-.flex{
-    display:flex;
-}
-
-.flex-center{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-/*=========================
-    TEXT HELPERS
-=========================*/
+/* ==========================================================
+   UTILITIES
+========================================================== */
 
 .text-center{
     text-align:center;
 }
 
-.text-left{
-    text-align:left;
+.mt-1{margin-top:1rem;}
+.mt-2{margin-top:2rem;}
+.mt-3{margin-top:3rem;}
+.mt-4{margin-top:4rem;}
+.mt-5{margin-top:5rem;}
+
+.mb-1{margin-bottom:1rem;}
+.mb-2{margin-bottom:2rem;}
+.mb-3{margin-bottom:3rem;}
+.mb-4{margin-bottom:4rem;}
+.mb-5{margin-bottom:5rem;}
+
+.w-100{
+    width:100%;
 }
-
-.text-right{
-    text-align:right;
-}
-
-/*=========================
-    SPACING
-=========================*/
-
-.mt-1{margin-top:10px;}
-.mt-2{margin-top:20px;}
-.mt-3{margin-top:30px;}
-.mt-4{margin-top:40px;}
-.mt-5{margin-top:50px;}
-
-.mb-1{margin-bottom:10px;}
-.mb-2{margin-bottom:20px;}
-.mb-3{margin-bottom:30px;}
-.mb-4{margin-bottom:40px;}
-.mb-5{margin-bottom:50px;}
-
-/*=========================
-    HIDE
-=========================*/
 
 .hidden{
     display:none!important;
 }
 
-/*=========================
-    RESPONSIVE BASE
-=========================*/
+/* ==========================================================
+   SELECTION
+========================================================== */
 
-@media(max-width:992px){
-
-section{
-    padding:80px 0;
+::selection{
+    background:var(--primary);
+    color:#fff;
 }
 
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
 }
 
-@media(max-width:768px){
-
-.container{
-    width:94%;
+::-webkit-scrollbar-track{
+    background:#e8ecef;
 }
 
-section{
-    padding:70px 0;
+::-webkit-scrollbar-thumb{
+    background:var(--primary);
+    border-radius:20px;
 }
 
-}
-
-@media(max-width:480px){
-
-h1{
-    font-size:2.2rem;
-}
-
-h2{
-    font-size:1.8rem;
-}
-
+::-webkit-scrollbar-thumb:hover{
+    background:var(--primary-dark);
 }
