@@ -440,3 +440,172 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+/* ==========================================================
+   Module 7-B — Part 3 (FINAL)
+   Performance & Multi Slider Support
+========================================================== */
+
+class SliderManager {
+
+    constructor() {
+
+        this.instances = [];
+
+        this.init();
+
+    }
+
+    /* ======================================================
+       INITIALIZE
+    ====================================================== */
+
+    init() {
+
+        this.initializeHero();
+
+        this.initializeGallery();
+
+        this.initializeTestimonials();
+
+        this.lazyLoadSlides();
+
+    }
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+
+    initializeHero() {
+
+        if(document.querySelector(".hero-slider")){
+
+            this.instances.push(
+
+                new AdvancedSlider(".hero-slider",{
+
+                    autoPlay:true,
+
+                    interval:5000
+
+                })
+
+            );
+
+        }
+
+    }
+
+    /* ======================================================
+       GALLERY
+    ====================================================== */
+
+    initializeGallery(){
+
+        document.querySelectorAll(".gallery-slider")
+
+        .forEach(slider=>{
+
+            this.instances.push(
+
+                new AdvancedSlider(slider,{
+
+                    autoPlay:false
+
+                })
+
+            );
+
+        });
+
+    }
+
+    /* ======================================================
+       TESTIMONIAL
+    ====================================================== */
+
+    initializeTestimonials(){
+
+        document.querySelectorAll(".testimonial-slider")
+
+        .forEach(slider=>{
+
+            this.instances.push(
+
+                new AdvancedSlider(slider,{
+
+                    autoPlay:true,
+
+                    interval:7000
+
+                })
+
+            );
+
+        });
+
+    }
+
+    /* ======================================================
+       LAZY LOAD
+    ====================================================== */
+
+    lazyLoadSlides(){
+
+        const images=document.querySelectorAll(
+
+            ".slide img[data-src]"
+
+        );
+
+        if(images.length===0) return;
+
+        const observer=new IntersectionObserver(
+
+            entries=>{
+
+                entries.forEach(entry=>{
+
+                    if(!entry.isIntersecting) return;
+
+                    const img=entry.target;
+
+                    img.src=img.dataset.src;
+
+                    img.removeAttribute("data-src");
+
+                    observer.unobserve(img);
+
+                });
+
+            },
+
+            {
+
+                rootMargin:"100px"
+
+            }
+
+        );
+
+        images.forEach(img=>observer.observe(img));
+
+    }
+
+}
+
+/* ==========================================================
+   FINAL INITIALIZATION
+========================================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    ()=>{
+
+        new SliderManager();
+
+    }
+
+);
+
