@@ -860,3 +860,32 @@ img{
     }
 
 }
+/*==========================================
+        WHY SECTION
+==========================================*/
+
+@media(max-width:992px){
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .why-card{
+
+        padding:30px 25px;
+
+    }
+
+}
