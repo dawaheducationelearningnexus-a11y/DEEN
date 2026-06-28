@@ -104,3 +104,190 @@
     line-height:1.7;
 
 }
+
+/*==========================================
+      RIGHT SIDE CARDS
+==========================================*/
+
+.trust-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    position:relative;
+
+}
+
+.trust-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:22px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(15,118,110,.12);
+
+}
+
+.trust-card:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    box-shadow:0 30px 60px rgba(15,118,110,.20);
+
+}
+
+.trust-card h2{
+
+    font-size:46px;
+
+    color:#0F766E;
+
+    margin-bottom:10px;
+
+    font-weight:800;
+
+}
+
+.trust-card span{
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.trust-card.featured{
+
+    grid-column:span 2;
+
+    background:linear-gradient(135deg,#0F766E,#14B8A6);
+
+    color:#fff;
+
+}
+
+.trust-card.featured h3{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.trust-card.featured p{
+
+    color:#fff;
+
+    opacity:.95;
+
+    line-height:1.8;
+
+}
+/*==========================================
+      FLOATING EFFECT
+==========================================*/
+
+.trust-card{
+
+    animation:trustFloat 6s ease-in-out infinite;
+
+}
+
+.trust-card:nth-child(2){
+
+    animation-delay:1s;
+
+}
+
+.trust-card:nth-child(3){
+
+    animation-delay:2s;
+
+}
+
+.trust-card:nth-child(4){
+
+    animation-delay:3s;
+
+}
+
+@keyframes trustFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================
+      DECORATION
+==========================================*/
+
+.trust-section::before{
+
+    content:"";
+
+    width:420px;
+
+    height:420px;
+
+    position:absolute;
+
+    top:-150px;
+
+    right:-150px;
+
+    border-radius:50%;
+
+    background:rgba(20,184,166,.08);
+
+}
+
+.trust-section::after{
+
+    content:"";
+
+    width:320px;
+
+    height:320px;
+
+    position:absolute;
+
+    bottom:-120px;
+
+    left:-120px;
+
+    border-radius:50%;
+
+    background:rgba(15,118,110,.08);
+
+}
