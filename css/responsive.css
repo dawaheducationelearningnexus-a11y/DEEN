@@ -768,3 +768,95 @@ img{
 /* ==========================================================
    END OF RESPONSIVE SYSTEM
 ========================================================== */
+
+/*==========================================
+    TRUST SECTION RESPONSIVE
+==========================================*/
+
+@media (max-width:992px){
+
+    .trust-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .trust-content{
+
+        order:2;
+
+    }
+
+    .trust-cards{
+
+        order:1;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .trust-section{
+
+        padding:70px 0;
+
+    }
+
+    .trust-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .trust-card.featured{
+
+        grid-column:span 1;
+
+    }
+
+    .trust-item{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .trust-item i{
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .trust-card{
+
+        padding:25px;
+
+    }
+
+    .trust-card h2{
+
+        font-size:36px;
+
+    }
+
+    .trust-item{
+
+        padding:18px;
+
+    }
+
+    .trust-item h4{
+
+        font-size:18px;
+
+    }
+
+}
