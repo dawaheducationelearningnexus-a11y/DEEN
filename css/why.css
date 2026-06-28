@@ -1,0 +1,239 @@
+/*==========================================
+        WHY CHOOSE DEEN
+==========================================*/
+
+.why-deen{
+
+    padding:110px 0;
+
+    background:#ffffff;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.why-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(15,118,110,.08);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
+
+}
+
+.why-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#0F766E,#14B8A6);
+
+    transition:.45s;
+
+}
+
+.why-card:hover::before{
+
+    left:0;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 60px rgba(15,118,110,.18);
+
+}
+
+.why-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(135deg,#0F766E,#14B8A6);
+
+    color:#fff;
+
+    font-size:36px;
+
+    transition:.4s;
+
+}
+
+.why-card:hover .why-icon{
+
+    transform:rotate(12deg) scale(1.1);
+
+}
+
+.why-card h3{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+    color:#0F172A;
+
+}
+
+.why-card p{
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+/*==========================================
+      PREMIUM BACKGROUND
+==========================================*/
+
+.why-deen::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(20,184,166,.05);
+
+    top:-180px;
+
+    right:-180px;
+
+}
+
+.why-deen::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(15,118,110,.05);
+
+    bottom:-120px;
+
+    left:-120px;
+
+}
+/*==========================================
+      FLOAT ANIMATION
+==========================================*/
+
+.why-card{
+
+    animation:whyFloat 6s ease-in-out infinite;
+
+}
+
+.why-card:nth-child(2){
+
+    animation-delay:.8s;
+
+}
+
+.why-card:nth-child(3){
+
+    animation-delay:1.6s;
+
+}
+
+.why-card:nth-child(4){
+
+    animation-delay:2.4s;
+
+}
+
+.why-card:nth-child(5){
+
+    animation-delay:3.2s;
+
+}
+
+.why-card:nth-child(6){
+
+    animation-delay:4s;
+
+}
+
+@keyframes whyFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
