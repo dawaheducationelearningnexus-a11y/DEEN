@@ -472,3 +472,22 @@ box-shadow:
     }
 
 }
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+*{
+
+    -webkit-tap-highlight-color:transparent;
+
+}
