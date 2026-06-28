@@ -291,3 +291,37 @@
     background:rgba(15,118,110,.08);
 
 }
+/*==========================================
+    MICRO INTERACTIONS
+==========================================*/
+
+.trust-item,
+.trust-card{
+
+    will-change:transform;
+
+}
+
+.trust-item i{
+
+    transition:.35s;
+
+}
+
+.trust-item:hover i{
+
+    transform:rotate(10deg) scale(1.15);
+
+}
+
+.trust-card h2{
+
+    transition:.35s;
+
+}
+
+.trust-card:hover h2{
+
+    transform:scale(1.08);
+
+}
