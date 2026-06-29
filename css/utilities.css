@@ -119,3 +119,25 @@ box-shadow:var(--shadow-xl);
 .uppercase{text-transform:uppercase;}
 .capitalize{text-transform:capitalize;}
 .lowercase{text-transform:lowercase;}
+
+/* ==========================================================
+   Accessibility
+========================================================== */
+
+.keyboard-navigation *:focus{
+
+    outline:3px solid var(--primary);
+
+    outline-offset:3px;
+
+}
+
+.reduce-motion *{
+
+    animation:none!important;
+
+    transition:none!important;
+
+    scroll-behavior:auto!important;
+
+}
