@@ -1,178 +1,92 @@
-'use strict';
+/* ==========================================================
+   DEEN Scroll Framework
+========================================================== */
 
-/* ==========================================
-   DEEN - Scroll Manager
-   Version: 1.0
-========================================== */
+"use strict";
 
-class ScrollManager {
+/* ==========================================================
+   Scroll Engine
+========================================================== */
 
-    constructor() {
+function initScroll() {
 
-        this.scrollTopBtn = document.getElementById('scrollTop');
-        this.progressBar = document.querySelector('.scroll-progress');
-        this.header = document.querySelector('.site-header');
+    const scrollTop = document.getElementById("scrollTop");
+    const progress = document.querySelector(".scroll-progress");
 
-        this.lastScroll = 0;
-        this.ticking = false;
+    /* ---------- Scroll Event ---------- */
 
-        this.init();
+    window.addEventListener("scroll", () => {
 
-    }
+        const scrollY = window.scrollY;
 
-    init() {
-
-        this.bindEvents();
-
-        this.observeAnimations();
-
-        this.updateProgress();
-
-        this.toggleScrollButton();
-
-    }
-
-    bindEvents() {
-
-        window.addEventListener('scroll', () => {
-
-            if (!this.ticking) {
-
-                window.requestAnimationFrame(() => {
-
-                    this.updateProgress();
-
-                    this.toggleScrollButton();
-
-                    this.headerEffect();
-
-                    this.ticking = false;
-
-                });
-
-                this.ticking = true;
-
-            }
-
-        });
-
-        if (this.scrollTopBtn) {
-
-            this.scrollTopBtn.addEventListener('click', () => {
-
-                window.scrollTo({
-
-                    top: 0,
-
-                    behavior: 'smooth'
-
-                });
-
-            });
-
-        }
-
-    }
-
-    updateProgress() {
-
-        if (!this.progressBar) return;
-
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        const scrollHeight =
+        const pageHeight =
             document.documentElement.scrollHeight -
-            document.documentElement.clientHeight;
+            window.innerHeight;
 
-        const progress =
-            scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        const percent = (scrollY / pageHeight) * 100;
 
-        this.progressBar.style.width = progress + '%';
+        /* Progress */
 
-    }
+        if (progress)
 
-    toggleScrollButton() {
+            progress.style.width = percent + "%";
 
-        if (!this.scrollTopBtn) return;
+        /* Scroll Top Button */
 
-        if (window.pageYOffset > 300) {
+        if (scrollTop) {
 
-            this.scrollTopBtn.classList.add('show');
+            if (scrollY > 300)
 
-        } else {
+                scrollTop.classList.add("show");
 
-            this.scrollTopBtn.classList.remove('show');
+            else
 
-        }
-
-    }
-
-    headerEffect() {
-
-        if (!this.header) return;
-
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 60) {
-
-            this.header.classList.add('scrolled');
-
-        } else {
-
-            this.header.classList.remove('scrolled');
+                scrollTop.classList.remove("show");
 
         }
 
-        this.lastScroll = currentScroll;
+    });
 
-    }
+    /* ---------- Scroll To Top ---------- */
 
-    observeAnimations() {
+    scrollTop?.addEventListener("click", () => {
 
-        const elements = document.querySelectorAll(
-            '.fade-up, .fade-left, .fade-right, .zoom'
-        );
+        window.scrollTo({
 
-        if (!elements.length) return;
+            top:0,
 
-        const observer = new IntersectionObserver((entries) => {
+            behavior:"smooth"
 
-            entries.forEach(entry => {
+        });
 
-                if (entry.isIntersecting) {
+    });
 
-                    entry.target.classList.add('show');
+    /* ---------- Smooth Anchor ---------- */
 
-                    observer.unobserve(entry.target);
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-                }
+        link.addEventListener("click", e => {
+
+            const id = link.getAttribute("href");
+
+            if(id === "#") return;
+
+            const target = document.querySelector(id);
+
+            if(!target) return;
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
 
             });
 
-        }, {
-
-            threshold: 0.15,
-
-            rootMargin: '0px 0px -50px 0px'
-
         });
 
-        elements.forEach(element => {
-
-            observer.observe(element);
-
-        });
-
-    }
+    });
 
 }
-
-/* ==========================================
-   Initialize Scroll Manager
-========================================== */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    new ScrollManager();
-
-});
