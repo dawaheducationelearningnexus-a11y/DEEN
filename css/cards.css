@@ -1,1 +1,200 @@
+/* ==========================================================
+   DEEN Cards System
+   Premium UI Component
+   ========================================================== */
 
+/* Base Card */
+
+.card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+    box-shadow:var(--shadow-sm);
+}
+
+/* Hover */
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+/* Image */
+
+.card-image{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.card-image img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.card:hover .card-image img{
+
+    transform:scale(1.08);
+
+}
+
+/* Body */
+
+.card-body{
+
+    padding:24px;
+
+    flex:1;
+
+}
+
+/* Title */
+
+.card-title{
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+    color:var(--text-primary);
+
+}
+
+/* Text */
+
+.card-text{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+/* Footer */
+
+.card-footer{
+
+    padding:20px 24px;
+
+    border-top:1px solid var(--border-color);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* Badge */
+
+.card-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:.82rem;
+
+}
+
+/* Card Icon */
+
+.card-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    background:rgba(15,118,110,.08);
+
+    color:var(--primary);
+
+    font-size:30px;
+
+}
+
+/* Horizontal Card */
+
+.card-horizontal{
+
+    display:flex;
+
+    flex-direction:row;
+
+}
+
+.card-horizontal .card-image{
+
+    width:40%;
+
+}
+
+.card-horizontal .card-body{
+
+    width:60%;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.card-horizontal{
+
+flex-direction:column;
+
+}
+
+.card-horizontal .card-image,
+
+.card-horizontal .card-body{
+
+width:100%;
+
+}
+
+}
