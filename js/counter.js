@@ -1,90 +1,75 @@
-'use strict';
+/* ==========================================================
+   DEEN Counter Framework
+========================================================== */
 
-/* ==========================================
-   DEEN Counter Animation
-========================================== */
+"use strict";
 
-class CounterManager {
+/* ==========================================================
+   Counter Engine
+========================================================== */
 
-    constructor() {
+function initCounter() {
 
-        this.counters = document.querySelectorAll('.counter');
+    const counters = document.querySelectorAll(".counter");
 
-        if (!this.counters.length) return;
+    if (!counters.length) return;
 
-        this.init();
+    const observer = new IntersectionObserver(entries => {
 
-    }
+        entries.forEach(entry => {
 
-    init() {
+            if (!entry.isIntersecting) return;
 
-        const observer = new IntersectionObserver((entries) => {
+            const counter = entry.target;
 
-            entries.forEach(entry => {
+            const target = Number(counter.dataset.target);
 
-                if (entry.isIntersecting) {
+            const duration = 2000;
 
-                    this.animate(entry.target);
+            const start = performance.now();
 
-                    observer.unobserve(entry.target);
+            function update(time) {
 
-                }
+                const progress = Math.min(
 
-            });
+                    (time - start) / duration,
 
-        }, {
+                    1
 
-            threshold: 0.5
+                );
 
-        });
+                counter.textContent = Math.floor(
 
-        this.counters.forEach(counter => {
+                    progress * target
 
-            observer.observe(counter);
+                );
 
-        });
+                if (progress < 1)
 
-    }
+                    requestAnimationFrame(update);
 
-    animate(counter) {
+                else
 
-        const target = Number(counter.dataset.target) || 0;
-
-        const duration = 2000;
-
-        const startTime = performance.now();
-
-        const update = (currentTime) => {
-
-            const progress = Math.min(
-                (currentTime - startTime) / duration,
-                1
-            );
-
-            const value = Math.floor(progress * target);
-
-            counter.textContent = value;
-
-            if (progress < 1) {
-
-                requestAnimationFrame(update);
-
-            } else {
-
-                counter.textContent = target;
+                    counter.textContent = target;
 
             }
 
-        };
+            requestAnimationFrame(update);
 
-        requestAnimationFrame(update);
+            observer.unobserve(counter);
 
-    }
+        });
+
+    }, {
+
+        threshold: 0.4
+
+    });
+
+    counters.forEach(counter => {
+
+        observer.observe(counter);
+
+    });
 
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    new CounterManager();
-
-});
