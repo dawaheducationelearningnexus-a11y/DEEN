@@ -1,1 +1,161 @@
+/* ==========================================================
+   DEEN Forms
+   ========================================================== */
 
+/* Form */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--text-primary);
+}
+
+/* Inputs */
+
+.form-control,
+input,
+textarea,
+select{
+
+    width:100%;
+    padding:14px 16px;
+
+    border:1px solid var(--border-color);
+
+    border-radius:var(--radius-md);
+
+    background:var(--bg-card);
+
+    color:var(--text-primary);
+
+    font-family:inherit;
+
+    font-size:var(--fs-base);
+
+    transition:var(--transition);
+
+}
+
+/* Focus */
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(15,118,110,.15);
+
+}
+
+/* Textarea */
+
+textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+/* Placeholder */
+
+::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+/* Checkbox */
+
+input[type="checkbox"],
+
+input[type="radio"]{
+
+    width:auto;
+
+    margin-right:8px;
+
+}
+
+/* Disabled */
+
+input:disabled,
+
+textarea:disabled,
+
+select:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* Form Row */
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+/* Validation */
+
+.is-valid{
+
+    border-color:#16a34a;
+
+}
+
+.is-invalid{
+
+    border-color:#dc2626;
+
+}
+
+/* Messages */
+
+.form-error{
+
+    color:#dc2626;
+
+    font-size:14px;
+
+    margin-top:6px;
+
+}
+
+.form-success{
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    margin-top:6px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.form-row{
+
+grid-template-columns:1fr;
+
+}
+
+}
