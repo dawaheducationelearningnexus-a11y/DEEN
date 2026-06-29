@@ -1,1 +1,180 @@
+/* ==========================================================
+   DEEN Sections System
+   ========================================================== */
 
+/* ---------- Default Section ---------- */
+
+.section{
+
+    position:relative;
+
+    padding:100px 0;
+
+}
+
+/* ---------- Background ---------- */
+
+.section-light{
+
+    background:#ffffff;
+
+}
+
+.section-soft{
+
+    background:var(--bg-soft);
+
+}
+
+.section-dark{
+
+    background:#08141f;
+
+    color:#fff;
+
+}
+
+/* ---------- Header ---------- */
+
+.section-header{
+
+    max-width:760px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+/* ---------- Subtitle ---------- */
+
+.section-subtitle{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(15,118,110,.08);
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+/* ---------- Title ---------- */
+
+.section-title{
+
+    margin-bottom:22px;
+
+    font-size:clamp(2rem,4vw,3rem);
+
+    line-height:1.2;
+
+}
+
+/* ---------- Description ---------- */
+
+.section-description{
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    color:var(--text-secondary);
+
+}
+
+/* ---------- Grid ---------- */
+
+.section-grid{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+/* ---------- CTA Box ---------- */
+
+.cta-box{
+
+    border-radius:30px;
+
+    padding:70px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:#fff;
+
+}
+
+.cta-box h2{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.cta-box p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    opacity:.95;
+
+}
+
+/* ---------- Glass ---------- */
+
+.glass{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+.section{
+
+padding:70px 0;
+
+}
+
+.section-header{
+
+margin-bottom:50px;
+
+}
+
+.cta-box{
+
+padding:40px 25px;
+
+}
+
+}
