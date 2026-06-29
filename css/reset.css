@@ -1,1 +1,144 @@
+/* ==========================================================
+   DEEN CSS RESET
+   ========================================================== */
 
+/* Box Model */
+
+*,
+*::before,
+*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* HTML */
+
+html{
+scroll-behavior:smooth;
+font-size:16px;
+-webkit-text-size-adjust:100%;
+}
+
+/* Body */
+
+body{
+min-height:100vh;
+text-rendering:optimizeLegibility;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+/* Images */
+
+img,
+picture,
+svg,
+video,
+canvas{
+display:block;
+max-width:100%;
+height:auto;
+}
+
+/* Form */
+
+input,
+button,
+textarea,
+select{
+font:inherit;
+outline:none;
+border:none;
+background:none;
+}
+
+/* Button */
+
+button{
+cursor:pointer;
+}
+
+/* Link */
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+/* List */
+
+ul,
+ol{
+list-style:none;
+}
+
+/* Table */
+
+table{
+border-collapse:collapse;
+border-spacing:0;
+width:100%;
+}
+
+/* Quote */
+
+blockquote,
+q{
+quotes:none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after{
+content:"";
+}
+
+/* HR */
+
+hr{
+border:none;
+height:1px;
+}
+
+/* Text Selection */
+
+::selection{
+background:#0F766E;
+color:#fff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:10px;
+height:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#f1f5f9;
+}
+
+::-webkit-scrollbar-thumb{
+background:#0F766E;
+border-radius:50px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#115E59;
+}
+
+/* Disabled */
+
+:disabled{
+cursor:not-allowed;
+opacity:.6;
+}
+
+/* Focus */
+
+:focus-visible{
+outline:2px solid #0F766E;
+outline-offset:3px;
+}
