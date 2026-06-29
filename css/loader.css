@@ -1,0 +1,132 @@
+/* ==========================================================
+   DEEN Loader System
+========================================================== */
+
+/* ---------- Preloader ---------- */
+
+#preloader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:#ffffff;
+
+    z-index:99999;
+
+    transition:opacity .5s ease,
+               visibility .5s ease;
+
+}
+
+#preloader.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+/* ---------- Logo ---------- */
+
+#preloader img{
+
+    width:90px;
+
+    animation:loaderLogo 2s infinite ease-in-out;
+
+}
+
+@keyframes loaderLogo{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* ---------- Spinner ---------- */
+
+.loader-spinner{
+
+    width:46px;
+
+    height:46px;
+
+    border:4px solid rgba(15,118,110,.15);
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:loaderSpin .8s linear infinite;
+
+}
+
+@keyframes loaderSpin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ---------- Progress ---------- */
+
+.loader-progress{
+
+    width:220px;
+
+    height:5px;
+
+    border-radius:999px;
+
+    background:#e8ecef;
+
+    overflow:hidden;
+
+}
+
+.loader-progress span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:var(--primary);
+
+    animation:loadingBar 2.2s ease forwards;
+
+}
+
+@keyframes loadingBar{
+
+to{
+
+width:100%;
+
+}
+
+}
