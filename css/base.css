@@ -1,1 +1,104 @@
+/* ==========================================================
+   DEEN BASE STYLES
+   ========================================================== */
 
+body{
+    font-family:var(--font-body);
+    font-size:var(--font-size-base);
+    font-weight:400;
+    line-height:1.7;
+    color:var(--text-color);
+    background:var(--background-color);
+    overflow-x:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:var(--font-heading);
+    color:var(--heading-color);
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:1rem;
+}
+
+h1{font-size:var(--h1);}
+h2{font-size:var(--h2);}
+h3{font-size:var(--h3);}
+h4{font-size:var(--h4);}
+h5{font-size:var(--h5);}
+h6{font-size:var(--h6);}
+
+p{
+    margin-bottom:1rem;
+    color:var(--text-color);
+}
+
+small{
+    font-size:.875rem;
+}
+
+strong{
+    font-weight:700;
+}
+
+em{
+    font-style:italic;
+}
+
+a{
+    color:var(--primary-color);
+    transition:.3s ease;
+}
+
+a:hover{
+    color:var(--secondary-color);
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+iframe{
+    width:100%;
+    border:0;
+}
+
+section{
+    position:relative;
+    padding:80px 0;
+}
+
+main{
+    display:block;
+    width:100%;
+}
+
+.container{
+    width:min(1320px,92%);
+    margin:auto;
+}
+
+.container-fluid{
+    width:96%;
+    margin:auto;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.text-left{
+    text-align:left;
+}
+
+.text-right{
+    text-align:right;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.visible{
+    display:block!important;
+}
