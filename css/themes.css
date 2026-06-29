@@ -1,0 +1,125 @@
+/* ==========================================================
+   DEEN Theme System
+========================================================== */
+
+/* ===========================
+   Default Theme
+=========================== */
+
+:root{
+
+    color-scheme:light;
+
+}
+
+/* ===========================
+   Dark Theme
+=========================== */
+
+[data-theme="dark"]{
+
+    --bg:#0b1220;
+    --bg-soft:#111827;
+
+    --surface:#1e293b;
+
+    --text:#f8fafc;
+    --text-secondary:#cbd5e1;
+
+    --border:#334155;
+
+}
+
+/* ===========================
+   DEEN Green
+=========================== */
+
+[data-theme="green"]{
+
+    --primary:#0F766E;
+    --secondary:#14B8A6;
+
+}
+
+/* ===========================
+   Blue Theme
+=========================== */
+
+[data-theme="blue"]{
+
+    --primary:#2563EB;
+    --secondary:#3B82F6;
+
+}
+
+/* ===========================
+   Purple Theme
+=========================== */
+
+[data-theme="purple"]{
+
+    --primary:#7C3AED;
+    --secondary:#A855F7;
+
+}
+
+/* ===========================
+   Sepia Reading
+=========================== */
+
+[data-theme="sepia"]{
+
+    --bg:#F7F2E8;
+    --bg-soft:#EFE5D0;
+
+    --surface:#FFFFFF;
+
+    --text:#3E3122;
+    --text-secondary:#5B4A37;
+
+}
+
+/* ===========================
+   Print
+=========================== */
+
+@media print{
+
+header,
+footer,
+.hero,
+nav,
+button{
+
+display:none!important;
+
+}
+
+body{
+
+background:#fff;
+color:#000;
+
+}
+
+}
+
+/* ===========================
+   Auto Dark
+=========================== */
+
+@media(prefers-color-scheme:dark){
+
+html:not([data-theme]){
+
+    --bg:#0b1220;
+    --bg-soft:#111827;
+
+    --surface:#1e293b;
+
+    --text:#f8fafc;
+    --text-secondary:#cbd5e1;
+
+}
+
+}
