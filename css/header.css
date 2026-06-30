@@ -247,3 +247,83 @@ display:block;
     }
 
 }
+
+
+/* ==========================================================
+   PREMIUM NAVIGATION
+========================================================== */
+
+.main-navigation{
+
+    background:#fff;
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:36px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.nav-menu>li{
+
+    position:relative;
+
+}
+
+.nav-menu>li>a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    height:64px;
+
+    color:var(--text-color);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-menu>li>a:hover,
+.nav-menu>li>a.active{
+
+    color:var(--primary);
+
+}
+
+.nav-menu i{
+
+    font-size:.72rem;
+
+}
+
+@media(max-width:992px){
+
+    .main-navigation{
+
+        display:none;
+
+    }
+
+}
