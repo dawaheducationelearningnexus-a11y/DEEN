@@ -1594,3 +1594,101 @@ padding:24px;
 }
 
 }
+
+/* ==========================================================
+   ABOUT PAGE
+   ADMINISTRATIVE DEPARTMENTS
+========================================================== */
+
+.departments-section{
+    padding:100px 0;
+    background:#F8FAFC;
+}
+
+.departments-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.department-card{
+    position:relative;
+    background:#fff;
+    border-radius:28px;
+    padding:40px 32px;
+    overflow:hidden;
+    transition:.4s ease;
+    box-shadow:var(--shadow-sm);
+    border:1px solid rgba(15,118,110,.08);
+}
+
+.department-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:var(--gradient-primary);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.45s;
+}
+
+.department-card:hover::before{
+    transform:scaleX(1);
+}
+
+.department-card:hover{
+    transform:translateY(-12px);
+    box-shadow:var(--shadow-xl);
+}
+
+.department-icon{
+    width:78px;
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:22px;
+    background:var(--gradient-primary);
+    color:#fff;
+    font-size:30px;
+    margin-bottom:24px;
+}
+
+.department-card h3{
+    font-size:1.35rem;
+    margin-bottom:8px;
+}
+
+.department-card h4{
+    font-size:1rem;
+    color:var(--primary);
+    margin-bottom:18px;
+    font-weight:600;
+}
+
+.department-card p{
+    color:var(--text-muted);
+    line-height:1.8;
+    margin:0;
+}
+
+.department-card:hover .department-icon{
+    transform:rotate(-8deg) scale(1.08);
+    transition:.4s;
+}
+
+@media(max-width:768px){
+
+    .departments-section{
+        padding:80px 0;
+    }
+
+    .departments-grid{
+        grid-template-columns:1fr;
+    }
+
+}
