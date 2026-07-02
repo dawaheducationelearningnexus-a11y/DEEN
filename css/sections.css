@@ -1692,3 +1692,145 @@ padding:24px;
     }
 
 }
+
+/* ==========================================================
+   ABOUT PAGE
+   COURSES OVERVIEW
+========================================================== */
+
+.courses-overview{
+    padding:120px 0;
+    background:#ffffff;
+}
+
+.course-category{
+    margin-top:60px;
+}
+
+.course-category:not(:last-child){
+    margin-bottom:80px;
+}
+
+.course-category h3{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:2rem;
+    margin-bottom:35px;
+    color:var(--primary);
+}
+
+.course-category h3 i{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    background:var(--gradient-primary);
+    box-shadow:var(--shadow-md);
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.course-item{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    transition:var(--transition);
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+}
+
+.course-item::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:5px;
+    height:100%;
+    background:var(--gradient-primary);
+    transform:scaleY(0);
+    transform-origin:top;
+    transition:.35s;
+}
+
+.course-item:hover::before{
+    transform:scaleY(1);
+}
+
+.course-item:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow-xl);
+}
+
+.course-item h4{
+    font-size:1.2rem;
+    margin-bottom:14px;
+    color:var(--text);
+}
+
+.course-item p{
+    color:var(--text-muted);
+    margin-bottom:20px;
+}
+
+.course-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:.9rem;
+    color:var(--text-muted);
+}
+
+.course-meta span{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.course-item .btn{
+    margin-top:24px;
+    width:100%;
+}
+
+/* ==========================================================
+   COURSES OVERVIEW RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .course-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:768px){
+
+    .courses-overview{
+        padding:90px 0;
+    }
+
+    .course-grid{
+        grid-template-columns:1fr;
+    }
+
+    .course-category h3{
+        font-size:1.6rem;
+    }
+
+    .course-category h3 i{
+        width:50px;
+        height:50px;
+        font-size:1.2rem;
+    }
+
+}
