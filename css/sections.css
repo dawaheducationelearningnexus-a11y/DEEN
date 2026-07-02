@@ -885,3 +885,153 @@ padding:40px 25px;
 }
 Premium Latest News Section Complete
 
+/* ==========================================================
+   CALL TO ACTION SECTION
+========================================================== */
+
+.cta-section{
+
+    padding:120px 0;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6,
+        #0EA5E9
+    );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.cta-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    top:-180px;
+    left:-180px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.cta-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-120px;
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.cta-box{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding:70px 50px;
+
+    border-radius:32px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.cta-box .section-badge{
+
+    background:rgba(255,255,255,.18);
+
+    color:#fff;
+
+}
+
+.cta-box h2{
+
+    color:#fff;
+
+    font-size:clamp(2rem,5vw,3.4rem);
+
+    margin:25px 0;
+
+}
+
+.cta-box p{
+
+    color:rgba(255,255,255,.92);
+
+    max-width:680px;
+
+    margin:0 auto 40px;
+
+    line-height:1.9;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.cta-buttons .btn{
+
+    min-width:220px;
+
+}
+
+@media(max-width:768px){
+
+    .cta-box{
+
+        padding:50px 25px;
+
+    }
+
+    .cta-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .cta-buttons .btn{
+
+        width:100%;
+
+    }
+
+}
