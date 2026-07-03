@@ -3817,3 +3817,993 @@ justify-content:center;
 }
 
 }
+
+/* ==========================================================
+   DEPARTMENTS INTRODUCTION
+========================================================== */
+
+.departments-intro{
+
+    padding:110px 0;
+
+    position:relative;
+
+}
+
+.intro-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.intro-image{
+
+    position:relative;
+
+}
+
+.intro-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-xl);
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+
+}
+
+.intro-image:hover img{
+
+    transform:scale(1.03);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+}
+
+.intro-content p{
+
+    margin-bottom:22px;
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+.intro-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-top:35px;
+
+}
+
+.intro-features .feature-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 20px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-md);
+
+    transition:.35s ease;
+
+}
+
+.intro-features .feature-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.intro-features i{
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+}
+
+/* ==========================================================
+   ADMINISTRATIVE DEPARTMENTS
+========================================================== */
+
+.departments-section{
+
+    padding:120px 0;
+
+    background:var(--bg-soft);
+
+}
+
+.departments-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.department-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.department-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.department-image{
+
+    overflow:hidden;
+
+}
+
+.department-image img{
+
+    width:100%;
+
+    display:block;
+
+    transition:transform .6s ease;
+
+}
+
+.department-card:hover .department-image img{
+
+    transform:scale(1.06);
+
+}
+
+.department-content{
+
+    padding:30px;
+
+}
+
+.department-number{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.department-content h3{
+
+    margin-bottom:8px;
+
+}
+
+.department-content h4{
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.department-content p{
+
+    line-height:1.9;
+
+    margin-bottom:24px;
+
+}
+
+.department-content ul{
+
+    display:grid;
+
+    gap:14px;
+
+}
+
+.department-content li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.department-content li i{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   DEPARTMENT RESPONSIBILITIES
+========================================================== */
+
+.department-responsibilities{
+
+    padding:120px 0;
+
+    position:relative;
+
+}
+
+.responsibility-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+    margin-top:70px;
+
+}
+
+.responsibility-card{
+
+    background:#fff;
+
+    padding:35px 30px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.responsibility-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.responsibility-card .icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+}
+
+.responsibility-card .icon i{
+
+    color:#fff;
+
+    font-size:2rem;
+
+}
+
+.responsibility-card h3{
+
+    margin-bottom:18px;
+
+}
+
+.responsibility-card p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   LEADERSHIP STRUCTURE
+========================================================== */
+
+.leadership-structure{
+
+    padding:120px 0;
+
+    background:var(--bg-soft);
+
+}
+
+.leadership-tree{
+
+    margin-top:70px;
+
+}
+
+.leader-card{
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.leader-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.leader-card img{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    display:block;
+
+    margin:0 auto 22px;
+
+    border-radius:50%;
+
+    border:6px solid rgba(15,118,110,.12);
+
+}
+
+.leader-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.leader-card h4{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+}
+
+.leader-card p{
+
+    line-height:1.9;
+
+}
+
+.founder{
+
+    max-width:450px;
+
+    margin:0 auto;
+
+}
+
+.tree-line{
+
+    width:4px;
+
+    height:60px;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+    background:var(--gradient-primary);
+
+}
+
+.leadership-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================================
+   DEPARTMENT HEADS
+========================================================== */
+
+.department-heads{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:20px;
+
+}
+
+.head-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:22px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.head-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.head-item i{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:1.3rem;
+
+}
+
+.head-item span{
+
+    font-weight:600;
+
+    color:var(--text-dark);
+
+}
+
+/* ==========================================================
+   WORKING PROCESS
+========================================================== */
+
+.working-process{
+
+    padding:120px 0;
+
+    position:relative;
+
+}
+
+.process-timeline{
+
+    position:relative;
+
+    max-width:1000px;
+
+    margin:70px auto 0;
+
+}
+
+.process-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:35px;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    border-radius:20px;
+
+    background:var(--gradient-primary);
+
+}
+
+.process-step{
+
+    position:relative;
+
+    display:flex;
+
+    gap:35px;
+
+    margin-bottom:45px;
+
+}
+
+.step-number{
+
+    flex-shrink:0;
+
+    width:74px;
+
+    height:74px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:var(--gradient-primary);
+
+    box-shadow:var(--shadow-lg);
+
+    z-index:2;
+
+}
+
+.step-content{
+
+    flex:1;
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow-lg);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.step-content:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.step-content h3{
+
+    margin-bottom:8px;
+
+}
+
+.step-content h4{
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+}
+
+.step-content p{
+
+    line-height:1.9;
+
+}
+
+
+/* ==========================================================
+   DEPARTMENTS FAQ
+========================================================== */
+
+.departments-faq{
+
+    padding:120px 0;
+
+    background:var(--bg-soft);
+
+}
+
+.faq-wrapper{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+}
+
+.departments-faq .faq-item{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.departments-faq summary{
+
+    cursor:pointer;
+
+    padding:24px 28px;
+
+    font-weight:700;
+
+    list-style:none;
+
+    position:relative;
+
+}
+
+.departments-faq summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.departments-faq summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:28px;
+
+    font-size:1.4rem;
+
+    color:var(--primary);
+
+}
+
+.departments-faq details[open] summary::after{
+
+    content:"−";
+
+}
+
+.departments-faq details p{
+
+    padding:0 28px 28px;
+
+    line-height:1.9;
+
+}
+
+
+/* ==========================================================
+   DEPARTMENTS FINAL CTA
+========================================================== */
+
+.departments-cta{
+
+    padding:120px 0;
+
+}
+
+.departments-cta .cta-box{
+
+    text-align:center;
+
+    padding:80px 60px;
+
+    border-radius:32px;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.departments-cta .cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+    circle at top right,
+    rgba(255,255,255,.15),
+    transparent 60%
+    );
+
+}
+
+.departments-cta .cta-box>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.departments-cta h2{
+
+    color:#fff;
+
+    margin:22px 0 12px;
+
+}
+
+.departments-cta h3{
+
+    color:#FCD34D;
+
+    margin-bottom:24px;
+
+}
+
+.departments-cta p{
+
+    max-width:850px;
+
+    margin:0 auto 40px;
+
+    line-height:1.9;
+
+}
+
+.cta-features{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+    margin-bottom:45px;
+
+}
+
+.cta-feature{
+
+    padding:22px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.cta-feature i{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:#FCD34D;
+
+    font-size:2rem;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+/* ==========================================================
+   DEPARTMENTS RESPONSIVE
+========================================================== */
+
+@media (max-width:992px){
+
+    .intro-grid,
+
+    .leadership-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cta-features{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .process-timeline::before{
+
+        left:28px;
+
+    }
+
+    .process-step{
+
+        gap:20px;
+
+    }
+
+    .step-number{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:1rem;
+
+    }
+
+    .step-content{
+
+        padding:22px;
+
+    }
+
+    .departments-cta .cta-box{
+
+        padding:60px 30px;
+
+    }
+
+    .cta-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .intro-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .departments-grid,
+
+    .department-heads,
+
+    .responsibility-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
