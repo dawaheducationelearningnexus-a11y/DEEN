@@ -2573,4 +2573,299 @@ font-size:1rem;
 
 }
 
+/* ==========================================================
+   HADITH HERO
+========================================================== */
+
+.hadith-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 0 110px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(15,118,110,.08),
+        rgba(20,184,166,.06)
+    );
+
+}
+
+.hadith-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at top right,
+        rgba(212,175,55,.12),
+        transparent 40%
+    ),
+
+    radial-gradient(
+        circle at bottom left,
+        rgba(14,165,233,.10),
+        transparent 45%
+    );
+
+    pointer-events:none;
+
+}
+
+.hadith-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   HERO GRID
+========================================================== */
+
+.hadith-hero .hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.hadith-hero .hero-content h1{
+
+    margin:22px 0 18px;
+
+}
+
+.hadith-hero .hero-content h2{
+
+    color:var(--primary);
+
+    margin-bottom:22px;
+
+}
+
+.hadith-hero .hero-content p{
+
+    max-width:650px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.hadith-hero .hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:45px;
+
+}
+
+/* ==========================================================
+   HADITH HIGHLIGHTS
+========================================================== */
+
+.hadith-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.hadith-highlights .highlight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 22px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.hadith-highlights .highlight:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.hadith-highlights .highlight i{
+
+    color:var(--primary);
+
+    font-size:1.15rem;
+
+}
+
+.hadith-highlights .highlight span{
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   HERO IMAGE
+========================================================== */
+
+.hadith-hero .hero-image{
+
+    text-align:center;
+
+}
+
+.hadith-hero .hero-image img{
+
+    width:100%;
+
+    max-width:560px;
+
+    animation:floatImage 6s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   BREADCRUMB
+========================================================== */
+
+.hadith-hero .breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:80px;
+
+    font-size:.95rem;
+
+}
+
+.hadith-hero .breadcrumb a{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:color .3s ease;
+
+}
+
+.hadith-hero .breadcrumb a:hover{
+
+    color:var(--secondary);
+
+}
+
+.hadith-hero .breadcrumb i{
+
+    color:var(--text-light);
+
+}
+
+.hadith-hero .breadcrumb span{
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:991px){
+
+    .hadith-hero{
+
+        padding:110px 0 90px;
+
+    }
+
+    .hadith-hero .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hadith-hero{
+
+        padding:90px 0 70px;
+
+    }
+
+    .hadith-hero .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .hadith-highlights{
+
+        flex-direction:column;
+
+    }
+
+    .hadith-hero .breadcrumb{
+
+        margin-top:50px;
+
+    }
+
+}
+
 
