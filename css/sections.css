@@ -10112,3 +10112,1177 @@ justify-content:center;
     }
 
 }
+
+/* ==========================================================
+   HADITH INTRODUCTION
+========================================================== */
+
+.hadith-introduction{
+
+    padding:120px 0;
+
+    background:#F8FAFC;
+
+}
+
+.hadith-intro-grid{
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    margin-top:70px;
+
+}
+
+.hadith-intro-content{
+
+    display:grid;
+
+    gap:25px;
+
+}
+
+.intro-card{
+
+    display:flex;
+
+    gap:22px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.intro-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.intro-icon{
+
+    width:70px;
+
+    height:70px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:1.5rem;
+
+}
+
+.intro-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.intro-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+.hadith-intro-image{
+
+    text-align:center;
+
+}
+
+.hadith-intro-image img{
+
+    width:100%;
+
+    max-width:560px;
+
+    animation:floatImage 6s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   FEATURED HADITH
+========================================================== */
+
+.featured-hadith{
+
+    padding:120px 0;
+
+}
+
+.featured-hadith-card{
+
+    margin-top:70px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.hadith-label{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.hadith-arabic{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.hadith-arabic blockquote{
+
+    font-size:2rem;
+
+    line-height:2.2;
+
+    direction:rtl;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.hadith-translation{
+
+    margin-bottom:35px;
+
+}
+
+.hadith-translation h3{
+
+    margin-bottom:15px;
+
+}
+
+.hadith-translation p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+.hadith-reference{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.reference-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 20px;
+
+    border-radius:16px;
+
+    background:#F8FAFC;
+
+}
+
+.reference-item i{
+
+    color:var(--primary);
+
+}
+
+.hadith-lessons{
+
+    margin-bottom:40px;
+
+}
+
+.hadith-lessons h3{
+
+    margin-bottom:20px;
+
+}
+
+.hadith-lessons ul{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+.hadith-lessons li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    line-height:1.8;
+
+}
+
+.hadith-lessons i{
+
+    color:var(--primary);
+
+    margin-top:4px;
+
+}
+
+.hadith-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:991px){
+
+    .hadith-intro-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hadith-introduction,
+
+    .featured-hadith{
+
+        padding:80px 0;
+
+    }
+
+    .intro-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .intro-icon{
+
+        margin:0 auto;
+
+    }
+
+    .featured-hadith-card{
+
+        padding:30px 24px;
+
+    }
+
+    .hadith-arabic blockquote{
+
+        font-size:1.5rem;
+
+        line-height:2;
+
+    }
+
+    .hadith-reference{
+
+        flex-direction:column;
+
+    }
+
+    .hadith-actions{
+
+        flex-direction:column;
+
+    }
+
+}
+/* ==========================================================
+   HADITH CATEGORIES
+========================================================== */
+
+.hadith-categories{
+
+    padding:120px 0;
+
+    background:#F8FAFC;
+
+}
+
+.hadith-categories .categories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.hadith-categories .category-card{
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.hadith-categories .category-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.hadith-categories .category-card i{
+
+    width:85px;
+
+    height:85px;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:2rem;
+
+}
+
+.hadith-categories .category-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.hadith-categories .category-card p{
+
+    line-height:1.8;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   DAILY HADITH
+========================================================== */
+
+.daily-hadith{
+
+    padding:120px 0;
+
+}
+
+.daily-hadith-card{
+
+    margin-top:70px;
+
+    padding:45px;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.daily-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.hadith-date,
+.hadith-status{
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+.daily-arabic{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.daily-arabic blockquote{
+
+    direction:rtl;
+
+    font-size:2rem;
+
+    line-height:2.2;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.daily-translation{
+
+    margin-bottom:30px;
+
+}
+
+.daily-translation p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+.daily-explanation{
+
+    margin:35px 0;
+
+}
+
+.daily-explanation p{
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+.daily-actions{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================================================
+   HADITH COLLECTIONS
+========================================================== */
+
+.hadith-collections{
+
+    padding:120px 0;
+
+    background:#F8FAFC;
+
+}
+
+.collections-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.collection-card{
+
+    padding:35px;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.collection-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.collection-card i{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    margin-bottom:22px;
+
+}
+
+.collection-card h3{
+
+    margin-bottom:16px;
+
+}
+
+.collection-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+
+}
+
+.collection-count{
+
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#EEF9F8;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   SEARCH & FILTER
+========================================================== */
+
+.hadith-search{
+
+    padding:120px 0;
+
+}
+
+.search-panel{
+
+    margin-top:70px;
+
+    padding:40px;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.search-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.form-group input,
+.form-group select{
+
+    padding:16px 18px;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:14px;
+
+    outline:none;
+
+    transition:border-color .3s ease;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:var(--primary);
+
+}
+
+.form-group button{
+
+    margin-top:32px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:768px){
+
+    .hadith-categories,
+    .daily-hadith,
+    .hadith-collections,
+    .hadith-search{
+
+        padding:80px 0;
+
+    }
+
+    .daily-hadith-card,
+    .search-panel{
+
+        padding:28px 22px;
+
+    }
+
+    .daily-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .daily-arabic blockquote{
+
+        font-size:1.5rem;
+
+        line-height:2;
+
+    }
+
+    .daily-actions{
+
+        flex-direction:column;
+
+    }
+
+    .search-form{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ==========================================================
+   HADITH BENEFITS
+========================================================== */
+
+.hadith-benefits{
+
+    padding:120px 0;
+
+    background:#fff;
+
+}
+
+.benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.benefit-card{
+
+    padding:38px 32px;
+
+    text-align:center;
+
+    background:#F8FAFC;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.benefit-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.benefit-card i{
+
+    width:85px;
+
+    height:85px;
+
+    margin:0 auto 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--gradient-primary);
+
+    color:#fff;
+
+    font-size:2rem;
+
+}
+
+.benefit-card h3{
+
+    margin-bottom:16px;
+
+}
+
+.benefit-card p{
+
+    line-height:1.8;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   HADITH FAQ
+========================================================== */
+
+.hadith-faq{
+
+    padding:120px 0;
+
+    background:#F8FAFC;
+
+}
+
+.hadith-faq .faq-wrapper{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+}
+
+.hadith-faq .faq-item{
+
+    margin-bottom:22px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.hadith-faq .faq-item:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.hadith-faq summary{
+
+    cursor:pointer;
+
+    list-style:none;
+
+    position:relative;
+
+    padding:24px 30px;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+}
+
+.hadith-faq summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.hadith-faq summary::after{
+
+    content:"+";
+
+    position:absolute;
+
+    right:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:1.6rem;
+
+    color:var(--primary);
+
+}
+
+.hadith-faq details[open] summary::after{
+
+    content:"−";
+
+}
+
+.hadith-faq .faq-item p{
+
+    padding:0 30px 30px;
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   HADITH FINAL CTA
+========================================================== */
+
+.hadith-final-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#fff;
+
+}
+
+.hadith-final-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,.12),
+            transparent 55%
+        );
+
+}
+
+.hadith-final-cta .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hadith-cta-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.hadith-cta-content h2{
+
+    margin:20px 0 16px;
+
+    color:#fff;
+
+}
+
+.hadith-cta-content h3{
+
+    color:#FCD34D;
+
+    margin-bottom:24px;
+
+}
+
+.hadith-cta-content p{
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+}
+
+.hadith-final-cta .cta-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.hadith-final-cta .cta-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.hadith-final-cta .cta-feature i{
+
+    color:#FCD34D;
+
+    font-size:1.15rem;
+
+}
+
+.hadith-final-cta .hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.hadith-cta-image{
+
+    text-align:center;
+
+}
+
+.hadith-cta-image img{
+
+    width:100%;
+
+    max-width:560px;
+
+    animation:floatImage 6s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:991px){
+
+    .hadith-cta-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .hadith-final-cta .cta-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hadith-benefits,
+    .hadith-faq,
+    .hadith-final-cta{
+
+        padding:80px 0;
+
+    }
+
+    .hadith-faq summary{
+
+        padding:20px 24px;
+
+        font-size:1rem;
+
+    }
+
+    .hadith-faq .faq-item p{
+
+        padding:0 24px 24px;
+
+    }
+
+    .hadith-final-cta .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+}
