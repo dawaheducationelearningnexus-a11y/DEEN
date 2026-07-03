@@ -1390,3 +1390,300 @@ font-size:1rem;
 
 }
 
+/* ==========================================================
+   ADMISSION HERO
+========================================================== */
+
+.admission-hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 0 110px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(15,118,110,.08),
+        rgba(20,184,166,.06)
+    );
+
+}
+
+.admission-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at top right,
+        rgba(212,175,55,.12),
+        transparent 40%
+    ),
+
+    radial-gradient(
+        circle at bottom left,
+        rgba(14,165,233,.10),
+        transparent 45%
+    );
+
+    pointer-events:none;
+
+}
+
+.admission-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   HERO GRID
+========================================================== */
+
+.admission-hero .hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+/* ==========================================================
+   HERO CONTENT
+========================================================== */
+
+.admission-hero .hero-content h1{
+
+    margin:22px 0 18px;
+
+}
+
+.admission-hero .hero-content h2{
+
+    color:var(--primary);
+
+    margin-bottom:22px;
+
+}
+
+.admission-hero .hero-content p{
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+
+    max-width:650px;
+
+}
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
+
+.admission-hero .hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:45px;
+
+}
+
+/* ==========================================================
+   HERO IMAGE
+========================================================== */
+
+.admission-hero .hero-image{
+
+    text-align:center;
+
+}
+
+.admission-hero .hero-image img{
+
+    width:100%;
+
+    max-width:560px;
+
+    animation:floatImage 6s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   ADMISSION STATS
+========================================================== */
+
+.admission-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+    margin-top:20px;
+
+}
+
+.admission-stats .stat-item{
+
+    text-align:center;
+
+    padding:28px 18px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:var(--shadow-md);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.admission-stats .stat-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.admission-stats .stat-item h3{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.admission-stats .stat-item span{
+
+    color:var(--text-light);
+
+    font-weight:600;
+
+}
+
+/* ==========================================================
+   BREADCRUMB
+========================================================== */
+
+.admission-hero .breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:80px;
+
+    flex-wrap:wrap;
+
+    font-size:.95rem;
+
+}
+
+.admission-hero .breadcrumb a{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    transition:color .3s ease;
+
+}
+
+.admission-hero .breadcrumb a:hover{
+
+    color:var(--secondary);
+
+}
+
+.admission-hero .breadcrumb span{
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:991px){
+
+    .admission-hero{
+
+        padding:110px 0 90px;
+
+    }
+
+    .admission-hero .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .admission-stats{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .admission-hero{
+
+        padding:90px 0 70px;
+
+    }
+
+    .admission-hero .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .admission-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .admission-hero .breadcrumb{
+
+        margin-top:50px;
+
+    }
+
+}
+
