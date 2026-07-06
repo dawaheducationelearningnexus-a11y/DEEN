@@ -399,3 +399,55 @@ body.menu-open{
     flex-shrink:0;
 
 }
+
+/* ==========================================
+   MOBILE HEADER FIX
+========================================== */
+
+@media (max-width:992px){
+
+.main-navigation{
+
+display:flex !important;
+
+}
+
+.main-navigation .nav-menu,
+
+.main-navigation .nav-btn{
+
+display:none !important;
+
+}
+
+.main-navigation .container{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+min-height:70px;
+
+}
+
+.menu-toggle{
+
+display:flex !important;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.nav-logo img{
+
+width:46px;
+
+height:46px;
+
+}
+
+}
