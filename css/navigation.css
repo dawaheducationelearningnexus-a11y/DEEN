@@ -296,7 +296,7 @@ border-radius:12px;
 
 }
 
-.mobile-nav{
+.mobile-nav-list{
 
     list-style:none;
 
@@ -306,13 +306,13 @@ border-radius:12px;
 
 }
 
-.mobile-nav li{
+.mobile-nav-list li{
 
     margin-bottom:8px;
 
 }
 
-.mobile-nav a{
+.mobile-nav-list a{
 
     display:flex;
 
@@ -334,7 +334,7 @@ border-radius:12px;
 
 }
 
-.mobile-nav a:hover{
+.mobile-nav-list a:hover{
 
     background:var(--bg-soft);
 
@@ -371,5 +371,31 @@ border-radius:12px;
 body.menu-open{
 
     overflow:hidden;
+
+}
+
+/* ==========================================
+   NAVIGATION FLEX LAYOUT
+========================================== */
+
+.nav-logo{
+
+    flex-shrink:0;
+
+}
+
+.navigation{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.nav-btn{
+
+    flex-shrink:0;
 
 }
