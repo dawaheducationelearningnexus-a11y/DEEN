@@ -1,0 +1,335 @@
+/* ==========================================================
+   DEEN PREMIUM PROGRAMS
+   PART 1 — LAYOUT
+========================================================== */
+
+.programs-section{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:#F8FAFC;
+
+    overflow:hidden;
+
+}
+
+.programs-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    top:-180px;
+    right:-180px;
+
+    border-radius:50%;
+
+    background:rgba(15,118,110,.05);
+
+}
+
+.programs-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    left:-120px;
+    bottom:-120px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+}
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.section-heading{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:720px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.section-heading .section-tag{
+
+    margin:0 auto 20px;
+
+}
+
+.section-heading .section-title{
+
+    margin-bottom:20px;
+
+}
+
+.section-heading .section-description{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.program-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   DEEN PREMIUM PROGRAMS
+   PART 2 — CARDS
+========================================================== */
+
+/* ==========================================================
+   PROGRAM CARD
+========================================================== */
+
+.program-card{
+
+    position:relative;
+
+    background:#ffffff;
+
+    padding:40px 35px;
+
+    border-radius:28px;
+
+    border:1px solid rgba(15,118,110,.08);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.06);
+
+    transition:all .35s ease;
+
+    overflow:hidden;
+
+}
+
+.program-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #0F766E,
+        #14B8A6,
+        #D4AF37
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s ease;
+
+}
+
+.program-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(15,118,110,.20);
+
+    box-shadow:0 28px 70px rgba(15,118,110,.15);
+
+}
+
+.program-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.program-card i{
+
+    width:78px;
+
+    height:78px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#ffffff;
+
+    font-size:30px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 18px 35px rgba(15,118,110,.25);
+
+    transition:.35s ease;
+
+}
+
+.program-card:hover i{
+
+    transform:rotate(-10deg) scale(1.08);
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.program-card h3{
+
+    margin-bottom:15px;
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.program-card p{
+
+    margin-bottom:28px;
+
+    color:#6B7280;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+.program-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--primary-color);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.30s;
+
+}
+
+.program-card a:hover{
+
+    color:#D4AF37;
+
+    transform:translateX(6px);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1100px){
+
+    .program-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .programs-section{
+
+        padding:90px 0;
+
+    }
+
+    .program-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .program-card{
+
+        padding:30px 25px;
+
+    }
+
+    .program-card i{
+
+        width:68px;
+
+        height:68px;
+
+        font-size:26px;
+
+    }
+
+}
