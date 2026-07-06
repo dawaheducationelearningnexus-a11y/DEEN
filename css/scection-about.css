@@ -1,0 +1,148 @@
+/* ==========================================================
+   PREMIUM ABOUT SECTION
+   PART 1 — LAYOUT
+========================================================== */
+
+.about-section{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+}
+
+.about-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    top:-180px;
+
+    left:-180px;
+
+    border-radius:50%;
+
+    background:rgba(15,118,110,.05);
+
+}
+
+.about-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    bottom:-150px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+}
+
+.about-container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:90px;
+
+}
+
+.about-image{
+
+    position:relative;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:28px;
+
+    object-fit:cover;
+
+    box-shadow:0 35px 70px rgba(0,0,0,.12);
+
+    transition:.45s ease;
+
+}
+
+.about-image:hover img{
+
+    transform:translateY(-8px);
+
+}
+
+.experience-card{
+
+    position:absolute;
+
+    right:-25px;
+
+    bottom:35px;
+
+    width:220px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:#ffffff;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+    text-align:center;
+
+}
+
+.experience-card h3{
+
+    margin:0;
+
+    font-size:42px;
+
+    color:var(--primary-color);
+
+    font-weight:800;
+
+}
+
+.experience-card p{
+
+    margin-top:10px;
+
+    margin-bottom:0;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    color:#6B7280;
+
+}
