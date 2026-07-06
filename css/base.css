@@ -102,3 +102,39 @@ main{
 .visible{
     display:block!important;
 }
+
+/* ==========================================================
+   SKIP LINK
+========================================================== */
+
+.skip-link{
+
+    position:absolute;
+
+    left:-9999px;
+
+    top:auto;
+
+    background:#ffffff;
+
+    color:#000000;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    z-index:99999;
+
+}
+
+.skip-link:focus{
+
+    left:20px;
+
+    top:20px;
+
+}
