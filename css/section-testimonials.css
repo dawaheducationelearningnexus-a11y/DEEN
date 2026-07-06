@@ -1,0 +1,374 @@
+/* ==========================================================
+   DEEN PREMIUM TESTIMONIALS
+   PART 1 — LAYOUT
+========================================================== */
+
+.testimonials-section{
+
+    position:relative;
+
+    padding:120px 0;
+
+    background:linear-gradient(
+        180deg,
+        #F8FAFC 0%,
+        #FFFFFF 100%
+    );
+
+    overflow:hidden;
+
+}
+
+.testimonials-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    top:-180px;
+
+    left:-180px;
+
+    border-radius:50%;
+
+    background:rgba(15,118,110,.05);
+
+}
+
+.testimonials-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    bottom:-140px;
+
+    right:-120px;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.08);
+
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.testimonials-section .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.testimonials-section .section-heading{
+
+    max-width:720px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+}
+
+.testimonials-section .section-tag{
+
+    margin:0 auto 18px;
+
+}
+
+.testimonials-section .section-title{
+
+    margin-bottom:18px;
+
+}
+
+.testimonials-section .section-description{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   DEEN PREMIUM TESTIMONIALS
+   PART 2 — CARDS
+========================================================== */
+
+/* ==========================================================
+   TESTIMONIAL CARD
+========================================================== */
+
+.testimonial-card{
+
+    position:relative;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(15,118,110,.08);
+
+    border-radius:28px;
+
+    padding:40px 35px;
+
+    overflow:hidden;
+
+    transition:all .35s ease;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.06);
+
+}
+
+.testimonial-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #0F766E,
+        #14B8A6,
+        #D4AF37
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.35s;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 30px 70px rgba(15,118,110,.15);
+
+}
+
+.testimonial-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   QUOTE ICON
+========================================================== */
+
+.quote-icon{
+
+    width:70px;
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    box-shadow:0 18px 35px rgba(15,118,110,.25);
+
+}
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+.testimonial-card p{
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    color:#6B7280;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================================
+   USER
+========================================================== */
+
+.testimonial-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.testimonial-user img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid rgba(15,118,110,.10);
+
+}
+
+.testimonial-user h4{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#111827;
+
+}
+
+.testimonial-user span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   STARS
+========================================================== */
+
+.stars{
+
+    display:flex;
+
+    gap:6px;
+
+}
+
+.stars i{
+
+    color:#D4AF37;
+
+    font-size:15px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1100px){
+
+    .testimonial-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .testimonials-section{
+
+        padding:90px 0;
+
+    }
+
+    .testimonial-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .testimonial-card{
+
+        padding:30px 25px;
+
+    }
+
+    .quote-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+    .testimonial-user img{
+
+        width:60px;
+
+        height:60px;
+
+    }
+
+}
