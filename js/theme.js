@@ -1,57 +1,124 @@
-/* ==========================================================
-   DEEN Theme Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Theme Engine
+   DEEN WEBSITE
+   THEME MODULE
 ========================================================== */
 
-function initTheme() {
+window.DEEN = window.DEEN || {};
 
-    const root = document.documentElement;
+DEEN.theme = {
 
-    const storageKey = "deen-theme";
+    init() {
 
-    /* ---------- Apply Theme ---------- */
+        this.button = document.querySelector(".theme-toggle");
 
-    function applyTheme(theme) {
+        this.icon = this.button?.querySelector("i");
 
-        if (!theme) {
+        this.loadTheme();
 
-            root.removeAttribute("data-theme");
+        this.bindEvents();
+
+    },
+
+    /* ======================================================
+       EVENTS
+    ====================================================== */
+
+    bindEvents() {
+
+        if (!this.button) return;
+
+        this.button.addEventListener(
+
+            "click",
+
+            () => this.toggle()
+
+        );
+
+    },
+
+    /* ======================================================
+       TOGGLE
+    ====================================================== */
+
+    toggle() {
+
+        document.body.classList.toggle("dark-theme");
+
+        const dark =
+
+            document.body.classList.contains("dark-theme");
+
+        localStorage.setItem(
+
+            "deen-theme",
+
+            dark ? "dark" : "light"
+
+        );
+
+        this.updateIcon(dark);
+
+    },
+
+    /* ======================================================
+       LOAD
+    ====================================================== */
+
+    loadTheme() {
+
+        const saved =
+
+            localStorage.getItem("deen-theme");
+
+        if (saved === "dark") {
+
+            document.body.classList.add("dark-theme");
+
+            this.updateIcon(true);
 
         } else {
 
-            root.setAttribute("data-theme", theme);
+            this.updateIcon(false);
 
         }
 
-        localStorage.setItem(storageKey, theme);
+    },
+
+    /* ======================================================
+       ICON
+    ====================================================== */
+
+    updateIcon(dark) {
+
+        if (!this.icon) return;
+
+        this.icon.className =
+
+            dark
+
+                ? "fa-solid fa-sun"
+
+                : "fa-solid fa-moon";
 
     }
 
-    /* ---------- Load Saved Theme ---------- */
+};
 
-    const savedTheme = localStorage.getItem(storageKey);
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-    if (savedTheme) {
+document.addEventListener(
 
-        applyTheme(savedTheme);
+    "DOMContentLoaded",
+
+    () => {
+
+        DEEN.theme.init();
 
     }
 
-    /* ---------- Theme Buttons ---------- */
-
-    document.querySelectorAll("[data-set-theme]").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            applyTheme(button.dataset.setTheme);
-
-        });
-
-    });
-
-}
+);
