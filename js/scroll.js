@@ -1,92 +1,137 @@
-/* ==========================================================
-   DEEN Scroll Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Scroll Engine
+   DEEN WEBSITE
+   SCROLL MODULE
 ========================================================== */
 
-function initScroll() {
+window.DEEN = window.DEEN || {};
 
-    const scrollTop = document.getElementById("scrollTop");
-    const progress = document.querySelector(".scroll-progress");
+DEEN.scroll = {
 
-    /* ---------- Scroll Event ---------- */
+    init() {
 
-    window.addEventListener("scroll", () => {
+        this.cache();
 
-        const scrollY = window.scrollY;
+        this.bindEvents();
 
-        const pageHeight =
-            document.documentElement.scrollHeight -
-            window.innerHeight;
+        this.update();
 
-        const percent = (scrollY / pageHeight) * 100;
+    },
 
-        /* Progress */
+    /* ======================================================
+       CACHE
+    ====================================================== */
 
-        if (progress)
+    cache() {
 
-            progress.style.width = percent + "%";
+        this.scrollTopButton =
+            DEEN.helper.$(
+                DEEN.constants.SELECTOR.scrollTop
+            );
 
-        /* Scroll Top Button */
+        this.progressBar =
+            DEEN.helper.$(
+                DEEN.constants.SELECTOR.progressBar
+            );
 
-        if (scrollTop) {
+    },
 
-            if (scrollY > 300)
+    /* ======================================================
+       EVENTS
+    ====================================================== */
 
-                scrollTop.classList.add("show");
+    bindEvents() {
 
-            else
+        window.addEventListener(
 
-                scrollTop.classList.remove("show");
+            "scroll",
+
+            () => this.update()
+
+        );
+
+        if (this.scrollTopButton) {
+
+            this.scrollTopButton.addEventListener(
+
+                "click",
+
+                () => DEEN.helper.scrollTop()
+
+            );
 
         }
 
-    });
+    },
 
-    /* ---------- Scroll To Top ---------- */
+    /* ======================================================
+       UPDATE
+    ====================================================== */
 
-    scrollTop?.addEventListener("click", () => {
+    update() {
 
-        window.scrollTo({
+        this.updateScrollButton();
 
-            top:0,
+        this.updateProgressBar();
 
-            behavior:"smooth"
+    },
 
-        });
+    /* ======================================================
+       SCROLL BUTTON
+    ====================================================== */
 
-    });
+    updateScrollButton() {
 
-    /* ---------- Smooth Anchor ---------- */
+        if (!this.scrollTopButton) return;
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        if (window.scrollY > 500) {
 
-        link.addEventListener("click", e => {
+            this.scrollTopButton.classList.add("show");
 
-            const id = link.getAttribute("href");
+        } else {
 
-            if(id === "#") return;
+            this.scrollTopButton.classList.remove("show");
 
-            const target = document.querySelector(id);
+        }
 
-            if(!target) return;
+    },
 
-            e.preventDefault();
+    /* ======================================================
+       PROGRESS BAR
+    ====================================================== */
 
-            target.scrollIntoView({
+    updateProgressBar() {
 
-                behavior:"smooth",
+        if (!this.progressBar) return;
 
-                block:"start"
+        const totalHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
 
-            });
+        const progress =
+            (window.scrollY / totalHeight) * 100;
 
-        });
+        this.progressBar.style.width =
+            `${progress}%`;
 
-    });
+    }
 
-}
+};
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    () => {
+
+        DEEN.scroll.init();
+
+    }
+
+);
+
