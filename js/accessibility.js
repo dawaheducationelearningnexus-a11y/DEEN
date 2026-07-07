@@ -1,30 +1,95 @@
-/* ==========================================================
-   DEEN Accessibility Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Accessibility Engine
+   DEEN WEBSITE
+   ACCESSIBILITY MODULE
 ========================================================== */
 
-function initAccessibility() {
+window.DEEN = window.DEEN || {};
 
-    /* ---------- Skip Link ---------- */
+DEEN.accessibility = {
 
-    const skipLink = document.querySelector(".skip-link");
+    init() {
 
-    if (skipLink) {
+        this.enableKeyboardNavigation();
 
-        skipLink.addEventListener("click", function () {
+        this.enableFocusVisible();
 
-            const target = document.querySelector("#main");
+        this.enableEscapeKey();
 
-            if (target) {
+    },
 
-                target.setAttribute("tabindex", "-1");
+    /* ======================================================
+       KEYBOARD NAVIGATION
+    ====================================================== */
 
-                target.focus();
+    enableKeyboardNavigation() {
+
+        document.addEventListener("keydown", e => {
+
+            if (e.key === "Tab") {
+
+                document.body.classList.add("using-keyboard");
+
+            }
+
+        });
+
+        document.addEventListener("mousedown", () => {
+
+            document.body.classList.remove("using-keyboard");
+
+        });
+
+    },
+
+    /* ======================================================
+       FOCUS VISIBLE
+    ====================================================== */
+
+    enableFocusVisible() {
+
+        const focusable = document.querySelectorAll(
+
+            "a, button, input, textarea, select"
+
+        );
+
+        focusable.forEach(item => {
+
+            item.addEventListener("focus", () => {
+
+                item.classList.add("focus-visible");
+
+            });
+
+            item.addEventListener("blur", () => {
+
+                item.classList.remove("focus-visible");
+
+            });
+
+        });
+
+    },
+
+    /* ======================================================
+       ESCAPE KEY
+    ====================================================== */
+
+    enableEscapeKey() {
+
+        document.addEventListener("keydown", e => {
+
+            if (e.key === "Escape") {
+
+                const active = document.activeElement;
+
+                if (active) {
+
+                    active.blur();
+
+                }
 
             }
 
@@ -32,34 +97,20 @@ function initAccessibility() {
 
     }
 
-    /* ---------- Keyboard Focus ---------- */
+};
 
-    document.addEventListener("keydown", function (event) {
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-        if (event.key === "Tab") {
+document.addEventListener(
 
-            document.body.classList.add("keyboard-navigation");
+    "DOMContentLoaded",
 
-        }
+    () => {
 
-    });
-
-    document.addEventListener("mousedown", function () {
-
-        document.body.classList.remove("keyboard-navigation");
-
-    });
-
-    /* ---------- Reduced Motion ---------- */
-
-    const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    );
-
-    if (prefersReducedMotion.matches) {
-
-        document.documentElement.classList.add("reduce-motion");
+        DEEN.accessibility.init();
 
     }
 
-}
+);
