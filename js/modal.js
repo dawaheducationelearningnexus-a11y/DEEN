@@ -1,91 +1,143 @@
-/* ==========================================================
-   DEEN Modal Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Modal Engine
+   DEEN WEBSITE
+   MODAL MODULE
 ========================================================== */
 
-function initModal() {
+window.DEEN = window.DEEN || {};
 
-    const modalTriggers =
-        document.querySelectorAll("[data-modal]");
+DEEN.modal = {
 
-    const closeButtons =
-        document.querySelectorAll("[data-close-modal]");
+    init() {
 
-    /* ---------- Open ---------- */
+        this.cache();
 
-    modalTriggers.forEach(trigger => {
+        if (!this.modal) return;
 
-        trigger.addEventListener("click", () => {
+        this.bindEvents();
 
-            const id = trigger.dataset.modal;
+    },
 
-            const modal = document.getElementById(id);
+    /* ======================================================
+       CACHE
+    ====================================================== */
 
-            if (!modal) return;
+    cache() {
 
-            modal.classList.add("active");
+        this.modal =
+            document.querySelector("[data-modal]");
 
-            document.body.classList.add("modal-open");
+        this.openButtons =
+            document.querySelectorAll("[data-modal-open]");
+
+        this.closeButtons =
+            document.querySelectorAll("[data-modal-close]");
+
+    },
+
+    /* ======================================================
+       EVENTS
+    ====================================================== */
+
+    bindEvents() {
+
+        this.openButtons.forEach(button => {
+
+            button.addEventListener(
+
+                "click",
+
+                () => this.open()
+
+            );
 
         });
 
-    });
+        this.closeButtons.forEach(button => {
 
-    /* ---------- Close Button ---------- */
+            button.addEventListener(
 
-    closeButtons.forEach(button => {
+                "click",
 
-        button.addEventListener("click", () => {
+                () => this.close()
 
-            const modal = button.closest(".modal");
-
-            modal?.classList.remove("active");
-
-            document.body.classList.remove("modal-open");
+            );
 
         });
 
-    });
+        this.modal.addEventListener(
 
-    /* ---------- Overlay ---------- */
+            "click",
 
-    document.querySelectorAll(".modal").forEach(modal => {
+            e => {
 
-        modal.addEventListener("click", e => {
+                if (e.target === this.modal) {
 
-            if (e.target === modal) {
+                    this.close();
 
-                modal.classList.remove("active");
-
-                document.body.classList.remove("modal-open");
+                }
 
             }
 
-        });
+        );
 
-    });
+        document.addEventListener(
 
-    /* ---------- ESC ---------- */
+            "keydown",
 
-    document.addEventListener("keydown", e => {
+            e => {
 
-        if (e.key !== "Escape") return;
+                if (e.key === "Escape") {
 
-        document.querySelectorAll(".modal.active")
+                    this.close();
 
-            .forEach(modal => {
+                }
 
-                modal.classList.remove("active");
+            }
 
-            });
+        );
+
+    },
+
+    /* ======================================================
+       OPEN
+    ====================================================== */
+
+    open() {
+
+        this.modal.classList.add("active");
+
+        document.body.classList.add("modal-open");
+
+    },
+
+    /* ======================================================
+       CLOSE
+    ====================================================== */
+
+    close() {
+
+        this.modal.classList.remove("active");
 
         document.body.classList.remove("modal-open");
 
-    });
+    }
 
-}
+};
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    () => {
+
+        DEEN.modal.init();
+
+    }
+
+);
