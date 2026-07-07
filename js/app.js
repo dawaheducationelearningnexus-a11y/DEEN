@@ -1,63 +1,83 @@
-/* ==========================================================
-   DEEN Frontend Framework
-   Main Application Controller
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   DEEN APP
+   DEEN WEBSITE
+   APPLICATION
+   Version 2.0
 ========================================================== */
 
-const DEEN = {
+window.DEEN = window.DEEN || {};
+
+DEEN.app = {
+
+    version: "2.0.0",
+
+    name: "DEEN Website",
 
     init() {
 
-        console.log("DEEN Framework Initialized");
+        console.log(
 
-        this.startModules();
+            `%c${this.name} v${this.version} Loaded Successfully`,
+
+            "color:#0F766E;font-weight:bold;font-size:14px"
+
+        );
+
+        this.performance();
 
     },
 
-    startModules() {
+    /* ======================================================
+       PERFORMANCE
+    ====================================================== */
 
-        if (typeof initLoader === "function")
-            initLoader();
+    performance() {
 
-        if (typeof initNavigation === "function")
-            initNavigation();
+        window.addEventListener(
 
-        if (typeof initHeroSlider === "function")
-            initHeroSlider();
+            "load",
 
-        if (typeof initCounter === "function")
-            initCounter();
+            () => {
 
-        if (typeof initScroll === "function")
-            initScroll();
+                if (
 
-        if (typeof initAnimations === "function")
-            initAnimations();
+                    "performance" in window
 
-        if (typeof initTheme === "function")
-            initTheme();
+                ) {
 
-        if (typeof initLanguage === "function")
-            initLanguage();
+                    const time =
 
-        if (typeof initAccessibility === "function")
-            initAccessibility();
+                        performance.now().toFixed(0);
+
+                    console.log(
+
+                        `Page Ready in ${time} ms`
+
+                    );
+
+                }
+
+            }
+
+        );
 
     }
 
 };
 
 /* ==========================================================
-   START
+   START APPLICATION
 ========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
 
-    DEEN.init();
+    "DOMContentLoaded",
 
-});
+    () => {
+
+        DEEN.app.init();
+
+    }
+
+);
