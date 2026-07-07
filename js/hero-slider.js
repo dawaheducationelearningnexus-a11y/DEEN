@@ -1,49 +1,96 @@
-/* ==========================================================
-   DEEN Hero Slider Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Hero Slider
+   DEEN WEBSITE
+   HERO MODULE
 ========================================================== */
 
-function initHeroSlider() {
+window.DEEN = window.DEEN || {};
 
-    const slides = document.querySelectorAll(".hero-slide");
+DEEN.hero = {
 
-    if (!slides.length) return;
+    current: 0,
 
-    let current = 0;
+    interval: null,
 
-    const total = slides.length;
+    delay: 6000,
 
-    function showSlide(index) {
+    init() {
 
-        slides.forEach(slide => {
+        this.cache();
 
-            slide.classList.remove("active");
+        if (!this.hero) return;
 
-        });
+        this.start();
 
-        slides[index].classList.add("active");
+    },
+
+    /* ======================================================
+       CACHE
+    ====================================================== */
+
+    cache() {
+
+        this.hero =
+            DEEN.helper.$(".hero-section");
+
+        this.slides =
+            DEEN.helper.$$(".hero-slide", this.hero);
+
+    },
+
+    /* ======================================================
+       START
+    ====================================================== */
+
+    start() {
+
+        if (this.slides.length <= 1) return;
+
+        this.interval = setInterval(() => {
+
+            this.next();
+
+        }, this.delay);
+
+    },
+
+    /* ======================================================
+       NEXT
+    ====================================================== */
+
+    next() {
+
+        this.slides[this.current]
+            .classList.remove("active");
+
+        this.current++;
+
+        if (this.current >= this.slides.length) {
+
+            this.current = 0;
+
+        }
+
+        this.slides[this.current]
+            .classList.add("active");
 
     }
 
-    function nextSlide() {
+};
 
-        current++;
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-        if (current >= total)
+document.addEventListener(
 
-            current = 0;
+    "DOMContentLoaded",
 
-        showSlide(current);
+    () => {
+
+        DEEN.hero.init();
 
     }
 
-    showSlide(current);
-
-    setInterval(nextSlide, 6000);
-
-}
+);
