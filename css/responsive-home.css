@@ -1,0 +1,250 @@
+/* ==========================================================
+   DEEN HOMEPAGE RESPONSIVE
+   PART 1
+   Desktop • Laptop • Tablet
+========================================================== */
+
+/* ===============================
+   Large Desktop
+=============================== */
+
+@media (min-width:1400px){
+
+    .container{
+
+        max-width:1320px;
+
+    }
+
+}
+
+/* ===============================
+   Laptop
+=============================== */
+
+@media (max-width:1200px){
+
+    .hero-container,
+    .about-container{
+
+        gap:60px;
+
+    }
+
+    .section-title{
+
+        font-size:42px;
+
+    }
+
+}
+
+/* ===============================
+   Tablet
+=============================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:90px 0;
+
+    }
+
+    .hero-container,
+    .about-container{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        text-align:center;
+
+    }
+
+    .hero-image{
+
+        order:-1;
+
+    }
+
+    .feature-grid,
+    .course-grid,
+    .program-grid,
+    .testimonial-grid,
+    .news-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .cta-content{
+
+        text-align:center;
+
+    }
+
+}
+
+/* ==========================================================
+   DEEN HOMEPAGE RESPONSIVE
+   PART 2
+   Mobile • Small Mobile
+========================================================== */
+
+/* ===============================
+   Mobile
+=============================== */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .hero-title{
+
+        font-size:38px;
+
+        line-height:1.25;
+
+    }
+
+    .hero-description{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .feature-grid,
+    .course-grid,
+    .program-grid,
+    .testimonial-grid,
+    .news-grid,
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section-title{
+
+        font-size:34px;
+
+    }
+
+    .section-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .about-image img{
+
+        border-radius:20px;
+
+    }
+
+    .experience-card{
+
+        position:relative;
+
+        right:auto;
+
+        bottom:auto;
+
+        margin:25px auto 0;
+
+    }
+
+}
+
+/* ===============================
+   Small Mobile
+=============================== */
+
+@media (max-width:576px){
+
+    .hero-title{
+
+        font-size:30px;
+
+    }
+
+    .section-title{
+
+        font-size:28px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        min-height:52px;
+
+        font-size:15px;
+
+    }
+
+    .footer-grid{
+
+        gap:28px;
+
+    }
+
+    .footer-logo img{
+
+        width:54px;
+
+        height:54px;
+
+    }
+
+    .footer-logo h3{
+
+        font-size:24px;
+
+    }
+
+    .footer-bottom{
+
+        font-size:14px;
+
+        line-height:1.7;
+
+    }
+
+}
