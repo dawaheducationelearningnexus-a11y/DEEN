@@ -1,29 +1,64 @@
-/* ==========================================================
-   DEEN Loader Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Loader Engine
+   DEEN WEBSITE
+   LOADER MODULE
 ========================================================== */
 
-function initLoader() {
+window.DEEN = window.DEEN || {};
 
-    const preloader = document.getElementById("preloader");
+DEEN.loader = {
 
-    if (!preloader) return;
+    init() {
 
-    window.addEventListener("load", () => {
+        this.loader = document.getElementById("preloader");
 
-        preloader.classList.add("hidden");
+        if (!this.loader) return;
+
+        window.addEventListener(
+
+            "load",
+
+            () => this.hide()
+
+        );
+
+    },
+
+    /* ======================================================
+       HIDE LOADER
+    ====================================================== */
+
+    hide() {
+
+        this.loader.style.opacity = "0";
+
+        this.loader.style.visibility = "hidden";
+
+        this.loader.style.pointerEvents = "none";
 
         setTimeout(() => {
 
-            preloader.remove();
+            this.loader.remove();
 
-        }, 600);
+        }, 700);
 
-    });
+    }
 
-}
+};
+
+/* ==========================================================
+   INITIALIZE
+========================================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    () => {
+
+        DEEN.loader.init();
+
+    }
+
+);
