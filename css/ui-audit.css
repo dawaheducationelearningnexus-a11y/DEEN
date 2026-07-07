@@ -1,0 +1,284 @@
+/* ==========================================================
+   DEEN UI AUDIT
+   PART 1
+   GLOBAL DESIGN SYSTEM
+========================================================== */
+
+/* ---------- Border Radius ---------- */
+
+:root{
+
+    --radius-sm:12px;
+    --radius-md:18px;
+    --radius-lg:24px;
+    --radius-xl:32px;
+
+}
+
+/* ---------- Container ---------- */
+
+.container{
+
+    max-width:1320px;
+    margin:auto;
+
+}
+
+/* ---------- Section ---------- */
+
+section{
+
+    position:relative;
+
+}
+
+section:nth-child(even){
+
+    background:#FCFDFD;
+
+}
+
+/* ---------- Premium Card ---------- */
+
+.course-card,
+.program-card,
+.news-card,
+.testimonial-card,
+.feature-card,
+.stat-card{
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    border:1px solid rgba(15,118,110,.06);
+
+}
+
+/* ---------- Image ---------- */
+
+.course-card img,
+.program-card img,
+.news-card img,
+.about-image img{
+
+    display:block;
+
+    width:100%;
+
+    object-fit:cover;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.btn{
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    letter-spacing:.2px;
+
+}
+
+/* ---------- Headings ---------- */
+
+.section-title{
+
+    margin-bottom:18px;
+
+    font-weight:800;
+
+}
+
+.section-subtitle{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   DEEN UI AUDIT
+   PART 2
+   HEADER • NAVIGATION • FINAL POLISH
+========================================================== */
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header{
+
+    box-shadow:0 4px 20px rgba(0,0,0,.04);
+
+    transition:all .35s ease;
+
+}
+
+.site-header.scrolled{
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.nav-logo img{
+
+    transition:transform .35s ease;
+
+}
+
+.nav-logo:hover img{
+
+    transform:rotate(-5deg) scale(1.05);
+
+}
+
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
+.nav-menu>li>a{
+
+    position:relative;
+
+}
+
+.nav-menu>li>a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:18px;
+
+    right:18px;
+
+    bottom:10px;
+
+    height:2px;
+
+    background:var(--primary-color);
+
+    transform:scaleX(0);
+
+    transform-origin:center;
+
+    transition:transform .30s ease;
+
+}
+
+.nav-menu>li>a:hover::after,
+.nav-menu>li>a.active::after{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.btn{
+
+    box-shadow:0 10px 25px rgba(15,118,110,.12);
+
+}
+
+.btn:hover{
+
+    box-shadow:0 18px 40px rgba(15,118,110,.20);
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.course-card,
+.program-card,
+.news-card,
+.feature-card,
+.testimonial-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.course-card:hover,
+.program-card:hover,
+.news-card:hover,
+.feature-card:hover,
+.testimonial-card:hover{
+
+    border-color:rgba(20,184,166,.25);
+
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.course-card img,
+.program-card img,
+.news-card img{
+
+    transition:transform .60s ease;
+
+}
+
+.course-card:hover img,
+.program-card:hover img,
+.news-card:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.feature-item i,
+.stat-card i,
+.footer-social i{
+
+    transition:all .30s ease;
+
+}
+
+.feature-item:hover i,
+.stat-card:hover i{
+
+    transform:scale(1.15);
+
+    color:#D4AF37;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    border-top:4px solid #14B8A6;
+
+}
