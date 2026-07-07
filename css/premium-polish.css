@@ -1,0 +1,250 @@
+/* ==========================================================
+   DEEN PREMIUM POLISH
+   PART 1
+========================================================== */
+
+/* ---------- Global Smooth ---------- */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+*{
+
+    transition:
+        background-color .30s ease,
+        color .30s ease,
+        border-color .30s ease;
+
+}
+
+/* ---------- Section ---------- */
+
+section{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ---------- Premium Card ---------- */
+
+.about-card,
+.course-card,
+.program-card,
+.news-card,
+.testimonial-card,
+.stat-card,
+.feature-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.about-card:hover,
+.course-card:hover,
+.program-card:hover,
+.news-card:hover,
+.testimonial-card:hover,
+.stat-card:hover,
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+/* ---------- Image ---------- */
+
+img{
+
+    transition:transform .50s ease;
+
+}
+
+/* ---------- Button ---------- */
+
+.btn{
+
+    transition:all .35s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ---------- Title ---------- */
+
+.section-title{
+
+    letter-spacing:-0.5px;
+
+}
+
+/* ---------- Selection ---------- */
+
+::selection{
+
+    background:#14B8A6;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================================
+   DEEN PREMIUM POLISH
+   PART 2 — ANIMATION & MICRO INTERACTIONS
+========================================================== */
+
+/* ==========================================================
+   FADE UP
+========================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   FLOAT
+========================================================== */
+
+.float{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* ==========================================================
+   GLOW
+========================================================== */
+
+.glow:hover{
+
+    box-shadow:
+        0 0 20px rgba(20,184,166,.30),
+        0 20px 60px rgba(15,118,110,.18);
+
+}
+
+/* ==========================================================
+   IMAGE ZOOM
+========================================================== */
+
+.image-hover{
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+}
+
+.image-hover img{
+
+    transition:transform .70s ease;
+
+}
+
+.image-hover:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.icon-hover{
+
+    transition:.35s ease;
+
+}
+
+.icon-hover:hover{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+/* ==========================================================
+   GLASS EFFECT
+========================================================== */
+
+.glass{
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(255,255,255,.30);
+
+}
+
+/* ==========================================================
+   PREMIUM SHADOW
+========================================================== */
+
+.shadow-premium{
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.shadow-premium:hover{
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.16);
+
+}
