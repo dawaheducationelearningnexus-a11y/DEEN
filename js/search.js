@@ -1,101 +1,100 @@
-/* ==========================================================
-   DEEN Search Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Search Engine
+   DEEN WEBSITE
+   SEARCH MODULE
 ========================================================== */
 
-function initSearch() {
+window.DEEN = window.DEEN || {};
 
-    const searchButton =
-        document.querySelector(".search-btn");
+DEEN.search = {
 
-    const searchModal =
-        document.getElementById("searchModal");
+    init() {
 
-    const closeButton =
-        document.querySelector(".search-close");
+        this.cache();
 
-    const searchInput =
-        document.querySelector(".search-input");
+        if (!this.input) return;
 
-    if (!searchButton || !searchModal) return;
+        this.bindEvents();
 
-    /* ---------- Open ---------- */
+    },
 
-    function openSearch() {
+    /* ======================================================
+       CACHE
+    ====================================================== */
 
-        searchModal.classList.add("active");
+    cache() {
 
-        document.body.classList.add("modal-open");
+        this.input =
+            document.querySelector("[data-search]");
 
-        setTimeout(() => {
+        this.items =
+            document.querySelectorAll("[data-search-item]");
 
-            searchInput?.focus();
+    },
 
-        },150);
+    /* ======================================================
+       EVENTS
+    ====================================================== */
+
+    bindEvents() {
+
+        this.input.addEventListener(
+
+            "input",
+
+            () => this.filter()
+
+        );
+
+    },
+
+    /* ======================================================
+       FILTER
+    ====================================================== */
+
+    filter() {
+
+        const keyword =
+
+            this.input.value
+
+            .trim()
+
+            .toLowerCase();
+
+        this.items.forEach(item => {
+
+            const text =
+
+                item.textContent.toLowerCase();
+
+            item.style.display =
+
+                text.includes(keyword)
+
+                ? ""
+
+                : "none";
+
+        });
 
     }
 
-    /* ---------- Close ---------- */
+};
 
-    function closeSearch() {
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-        searchModal.classList.remove("active");
+document.addEventListener(
 
-        document.body.classList.remove("modal-open");
+    "DOMContentLoaded",
+
+    () => {
+
+        DEEN.search.init();
 
     }
 
-    /* ---------- Events ---------- */
-
-    searchButton.addEventListener(
-
-        "click",
-
-        openSearch
-
-    );
-
-    closeButton?.addEventListener(
-
-        "click",
-
-        closeSearch
-
-    );
-
-    searchModal.addEventListener(
-
-        "click",
-
-        function(e){
-
-            if(e.target===searchModal){
-
-                closeSearch();
-
-            }
-
-        }
-
-    );
-
-    document.addEventListener(
-
-        "keydown",
-
-        function(e){
-
-            if(e.key==="Escape")
-
-                closeSearch();
-
-        }
-
-    );
-
-}
+);
