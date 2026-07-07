@@ -1,75 +1,132 @@
-/* ==========================================================
-   DEEN Counter Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Counter Engine
+   DEEN WEBSITE
+   COUNTER MODULE
 ========================================================== */
 
-function initCounter() {
+window.DEEN = window.DEEN || {};
 
-    const counters = document.querySelectorAll(".counter");
+DEEN.counter = {
 
-    if (!counters.length) return;
+    started: false,
 
-    const observer = new IntersectionObserver(entries => {
+    init() {
 
-        entries.forEach(entry => {
+        this.counters = document.querySelectorAll(".counter");
 
-            if (!entry.isIntersecting) return;
+        if (!this.counters.length) return;
 
-            const counter = entry.target;
+        this.observe();
 
-            const target = Number(counter.dataset.target);
+    },
 
-            const duration = 2000;
+    /* ======================================================
+       OBSERVER
+    ====================================================== */
 
-            const start = performance.now();
+    observe() {
 
-            function update(time) {
+        const observer = new IntersectionObserver(
 
-                const progress = Math.min(
+            entries => {
 
-                    (time - start) / duration,
+                entries.forEach(entry => {
 
-                    1
+                    if (
 
-                );
+                        entry.isIntersecting &&
 
-                counter.textContent = Math.floor(
+                        !this.started
 
-                    progress * target
+                    ) {
 
-                );
+                        this.started = true;
 
-                if (progress < 1)
+                        this.start();
 
-                    requestAnimationFrame(update);
+                    }
 
-                else
+                });
 
-                    counter.textContent = target;
+            },
+
+            {
+
+                threshold: .35
 
             }
 
-            requestAnimationFrame(update);
+        );
 
-            observer.unobserve(counter);
+        observer.observe(this.counters[0]);
+
+    },
+
+    /* ======================================================
+       START
+    ====================================================== */
+
+    start() {
+
+        this.counters.forEach(counter => {
+
+            const target = Number(
+
+                counter.dataset.count
+
+            );
+
+            let current = 0;
+
+            const speed = Math.max(
+
+                20,
+
+                target / 100
+
+            );
+
+            const update = () => {
+
+                current += speed;
+
+                if (current >= target) {
+
+                    counter.textContent =
+                        target.toLocaleString() + "+";
+
+                    return;
+
+                }
+
+                counter.textContent =
+                    Math.floor(current).toLocaleString();
+
+                requestAnimationFrame(update);
+
+            };
+
+            update();
 
         });
 
-    }, {
+    }
 
-        threshold: 0.4
+};
 
-    });
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-    counters.forEach(counter => {
+document.addEventListener(
 
-        observer.observe(counter);
+    "DOMContentLoaded",
 
-    });
+    () => {
 
-}
+        DEEN.counter.init();
+
+    }
+
+);
