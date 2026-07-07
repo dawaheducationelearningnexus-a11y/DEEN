@@ -1,63 +1,125 @@
-/* ==========================================================
-   DEEN Language Framework
-========================================================== */
-
 "use strict";
 
 /* ==========================================================
-   Language Engine
+   DEEN WEBSITE
+   LANGUAGE MODULE
 ========================================================== */
 
-function initLanguage() {
+window.DEEN = window.DEEN || {};
 
-    const html = document.documentElement;
+DEEN.language = {
 
-    const storageKey = "deen-language";
+    current: "bn",
 
-    /* ---------- Apply Language ---------- */
+    init() {
 
-    function applyLanguage(lang) {
+        this.button =
+            DEEN.helper.$(
+                DEEN.constants.SELECTOR.languageToggle
+            );
 
-        html.setAttribute("lang", lang);
+        this.load();
 
-        if (lang === "ar") {
+        this.bindEvents();
 
-            html.setAttribute("dir", "rtl");
+    },
 
-        } else {
+    /* ======================================================
+       EVENTS
+    ====================================================== */
 
-            html.setAttribute("dir", "ltr");
+    bindEvents() {
+
+        if (!this.button) return;
+
+        this.button.addEventListener(
+
+            "click",
+
+            () => this.toggle()
+
+        );
+
+    },
+
+    /* ======================================================
+       TOGGLE
+    ====================================================== */
+
+    toggle() {
+
+        this.current =
+
+            this.current === "bn"
+
+                ? "en"
+
+                : "bn";
+
+        localStorage.setItem(
+
+            "deen-language",
+
+            this.current
+
+        );
+
+        this.updateButton();
+
+    },
+
+    /* ======================================================
+       LOAD
+    ====================================================== */
+
+    load() {
+
+        const saved =
+
+            localStorage.getItem("deen-language");
+
+        if (saved) {
+
+            this.current = saved;
 
         }
 
-        localStorage.setItem(storageKey, lang);
+        this.updateButton();
+
+    },
+
+    /* ======================================================
+       BUTTON
+    ====================================================== */
+
+    updateButton() {
+
+        if (!this.button) return;
+
+        this.button.textContent =
+
+            this.current === "bn"
+
+                ? "🌐 বাংলা"
+
+                : "🌐 English";
 
     }
 
-    /* ---------- Restore ---------- */
+};
 
-    const savedLanguage = localStorage.getItem(storageKey);
+/* ==========================================================
+   INITIALIZE
+========================================================== */
 
-    if (savedLanguage) {
+document.addEventListener(
 
-        applyLanguage(savedLanguage);
+    "DOMContentLoaded",
 
-    } else {
+    () => {
 
-        applyLanguage("bn");
+        DEEN.language.init();
 
     }
 
-    /* ---------- Language Buttons ---------- */
-
-    document.querySelectorAll("[data-language]").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            applyLanguage(button.dataset.language);
-
-        });
-
-    });
-
-}
+);
