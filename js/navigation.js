@@ -1,296 +1,255 @@
-"use strict";
-
 /* ==========================================================
-   DEEN WEBSITE
-   NAVIGATION MODULE
-   Version 2.0
+   DEEN PREMIUM NAVIGATION
+   VERSION 3.0
 ========================================================== */
 
-window.DEEN = window.DEEN || {};
+document.addEventListener("DOMContentLoaded", () => {
 
-DEEN.navigation = {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const menuOverlay = document.querySelector(".menu-overlay");
+    const body = document.body;
 
-    init() {
+    /* ==========================================
+       OPEN MENU
+    ========================================== */
 
-        this.cache();
+    function openMenu() {
 
-        this.bindEvents();
+        mobileMenu.classList.add("active");
+        menuOverlay.classList.add("active");
+        body.classList.add("menu-open");
 
-        this.setActiveMenu();
+    }
 
-        this.handleScroll();
-
-    },
-
-    /* ======================================================
-       CACHE ELEMENTS
-    ====================================================== */
-
-    cache() {
-
-        this.header =
-            DEEN.helper.$(
-                DEEN.constants.SELECTOR.header
-            );
-
-        this.menuToggle =
-            DEEN.helper.$(
-                DEEN.constants.SELECTOR.menuToggle
-            );
-
-        this.mobileMenu =
-            DEEN.helper.$(
-                DEEN.constants.SELECTOR.mobileMenu
-            );
-
-        this.overlay =
-            DEEN.helper.$(
-                DEEN.constants.SELECTOR.menuOverlay
-            );
-
-        this.navLinks =
-            DEEN.helper.$$(
-                DEEN.constants.SELECTOR.navLinks
-            );
-
-    },
-
-    /* ======================================================
-       EVENTS
-    ====================================================== */
-
-    bindEvents() {
-
-        if (this.menuToggle) {
-
-            DEEN.helper.on(
-
-                this.menuToggle,
-
-                "click",
-
-                () => this.toggleMenu()
-
-            );
-
-        }
-
-        if (this.overlay) {
-
-            DEEN.helper.on(
-
-                this.overlay,
-
-                "click",
-
-                () => this.closeMenu()
-
-            );
-
-        }
-
-        window.addEventListener(
-
-            "resize",
-
-            () => {
-
-                if (
-
-                    window.innerWidth >
-
-                    DEEN.config.mobileWidth
-
-                ) {
-
-                    this.closeMenu();
-
-                }
-
-            }
-
-        );
-
-        document.addEventListener(
-
-            "keydown",
-
-            e => {
-
-                if (e.key === "Escape") {
-
-                    this.closeMenu();
-
-                }
-
-            }
-
-        );
-
-        window.addEventListener(
-
-            "scroll",
-
-            () => this.handleScroll()
-
-        );
-
-    },
-
-    /* ======================================================
-       TOGGLE MENU
-    ====================================================== */
-
-    toggleMenu() {
-
-        this.mobileMenu?.classList.toggle("active");
-
-        this.overlay?.classList.toggle("active");
-
-        this.menuToggle?.classList.toggle("active");
-
-        document.body.classList.toggle("menu-open");
-
-    },
-
-    /* ======================================================
+    /* ==========================================
        CLOSE MENU
-    ====================================================== */
+    ========================================== */
 
-    closeMenu() {
+    function closeMenu() {
 
-        this.mobileMenu?.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        body.classList.remove("menu-open");
 
-        this.overlay?.classList.remove("active");
+    }
 
-        this.menuToggle?.classList.remove("active");
+    /* ==========================================
+       TOGGLE MENU
+    ========================================== */
 
-        document.body.classList.remove("menu-open");
+    menuToggle?.addEventListener("click", () => {
 
-    },
+        if (mobileMenu.classList.contains("active")) {
 
-       /* ======================================================
-       STICKY HEADER
-    ====================================================== */
-
-    handleScroll() {
-
-        if (!this.header) return;
-
-        if (window.scrollY > 60) {
-
-            this.header.classList.add("scrolled");
+            closeMenu();
 
         } else {
 
-            this.header.classList.remove("scrolled");
+            openMenu();
+
+        }
+
+    });
+
+    /* ==========================================
+       OVERLAY CLOSE
+    ========================================== */
+
+    menuOverlay?.addEventListener("click", closeMenu);
+
+});
+
+/* ==========================================
+   MOBILE SUBMENU
+========================================== */
+
+const submenuButtons = document.querySelectorAll(".submenu-toggle");
+
+submenuButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const submenu = button.nextElementSibling;
+
+        /* Close Other Submenus */
+
+        submenuButtons.forEach(otherButton => {
+
+            if (otherButton !== button) {
+
+                otherButton.classList.remove("active");
+
+                otherButton.nextElementSibling?.classList.remove("active");
+
+            }
+
+        });
+
+        /* Toggle Current */
+
+        button.classList.toggle("active");
+
+        submenu?.classList.toggle("active");
+
+    });
+
+});
+
+/* ==========================================
+   ESC KEY CLOSE
+========================================== */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        closeMenu();
+
+    }
+
+});
+
+/* ==========================================
+   CLOSE WHEN LINK CLICKED
+========================================== */
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        closeMenu();
+
+    });
+
+});
+
+/* ==========================================
+   OUTSIDE CLICK CLOSE
+========================================== */
+
+document.addEventListener("click", (event) => {
+
+    if (
+
+        mobileMenu.classList.contains("active") &&
+
+        !mobileMenu.contains(event.target) &&
+
+        !menuToggle.contains(event.target)
+
+    ) {
+
+        closeMenu();
+
+    }
+
+});
+/* ==========================================
+   STICKY HEADER SCROLL EFFECT
+========================================== */
+
+const header = document.querySelector(".site-header");
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 20) {
+
+            header?.classList.add("scrolled");
+
+        } else {
+
+            header?.classList.remove("scrolled");
 
         }
 
     },
+    { passive: true }
+);
 
-    /* ======================================================
-       ACTIVE MENU
-    ====================================================== */
+/* ==========================================
+   ACTIVE NAVIGATION
+========================================== */
 
-    setActiveMenu() {
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-        const page =
-            window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll(".nav-menu a").forEach(link => {
 
-        this.navLinks.forEach(link => {
+    const href = link.getAttribute("href");
 
-            const href = link.getAttribute("href");
+    if (href === currentPage) {
 
-            if (href === page) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    },
-
-    /* ======================================================
-       CLOSE MOBILE AFTER LINK CLICK
-    ====================================================== */
-
-    bindMenuLinks() {
-
-        const links = DEEN.helper.$$(".mobile-menu a");
-
-        links.forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                this.closeMenu();
-
-            });
-
-        });
-
-    },
-
-    /* ======================================================
-       ACCESSIBILITY
-    ====================================================== */
-
-    accessibility() {
-
-        if (!this.menuToggle) return;
-
-        this.menuToggle.setAttribute(
-
-            "aria-expanded",
-
-            "false"
-
-        );
-
-        this.menuToggle.addEventListener(
-
-            "click",
-
-            () => {
-
-                const expanded =
-
-                    this.menuToggle.classList.contains("active");
-
-                this.menuToggle.setAttribute(
-
-                    "aria-expanded",
-
-                    expanded
-
-                );
-
-            }
-
-        );
+        link.classList.add("active");
 
     }
+
+});
+
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth",
+            block: "start"
+
+        });
+
+    });
+
+});
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+menuToggle?.setAttribute("aria-expanded", "false");
+
+function updateMenuState(isOpen) {
+
+    menuToggle?.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+    );
+
+}
+
+/* Update ARIA when menu opens/closes */
+
+const originalOpenMenu = openMenu;
+const originalCloseMenu = closeMenu;
+
+openMenu = function () {
+
+    originalOpenMenu();
+
+    updateMenuState(true);
 
 };
 
-/* ==========================================================
-   INITIALIZE
-========================================================== */
+closeMenu = function () {
 
-document.addEventListener(
+    originalCloseMenu();
 
-    "DOMContentLoaded",
+    updateMenuState(false);
 
-    () => {
+};
 
-        DEEN.navigation.init();
+/* ==========================================
+   END OF FILE
+========================================== */
 
-        DEEN.navigation.bindMenuLinks();
-
-        DEEN.navigation.accessibility();
-
-    }
-
-);
-
+console.log("DEEN Navigation v3.0 Loaded Successfully");
