@@ -1,190 +1,22 @@
 /* ==========================================================
-   DEEN Navigation System
-   ========================================================== */
-
-/* ---------- Navigation ---------- */
-
-.navigation{
-    display:flex;
-    align-items:center;
-    margin-left:auto;
-}
-
-.nav-menu{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-.nav-menu>li{
-    position:relative;
-}
-
-.nav-menu>li>a{
-
-    display:flex;
-    align-items:center;
-    gap:8px;
-
-    padding:14px 18px;
-
-    text-decoration:none;
-
-    color:var(--text-primary);
-
-    font-weight:600;
-
-    border-radius:12px;
-
-    transition:.3s;
-
-}
-
-/* ---------- Hover ---------- */
-
-.nav-menu>li>a:hover{
-
-    background:var(--bg-soft);
-
-    color:var(--primary);
-
-}
-
-/* ---------- Active ---------- */
-
-.nav-menu>li.active>a{
-
-    color:var(--primary);
-
-}
-
-.nav-menu>li.active>a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:18px;
-
-    right:18px;
-
-    bottom:-8px;
-
-    height:3px;
-
-    background:var(--primary);
-
-    border-radius:20px;
-
-}
-
-/* ---------- Arrow ---------- */
-
-.nav-arrow{
-
-    font-size:12px;
-
-    transition:.3s;
-
-}
-
-.has-dropdown:hover .nav-arrow,
-
-.has-mega:hover .nav-arrow{
-
-    transform:rotate(180deg);
-
-}
-
-/* ---------- Mobile ---------- */
-
-@media(max-width:992px){
-
-.navigation{
-
-position:fixed;
-
-top:0;
-
-right:-100%;
-
-width:340px;
-
-max-width:100%;
-
-height:100vh;
-
-background:#fff;
-
-padding:100px 30px 40px;
-
-box-shadow:-10px 0 40px rgba(0,0,0,.08);
-
-transition:.4s ease;
-
-overflow-y:auto;
-
-z-index:1200;
-
-}
-
-.navigation.active{
-
-right:0;
-
-}
-
-.nav-menu{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-width:100%;
-
-gap:6px;
-
-}
-
-.nav-menu li{
-
-width:100%;
-
-}
-
-.nav-menu li a{
-
-width:100%;
-
-justify-content:space-between;
-
-padding:16px;
-
-border-radius:12px;
-
-}
-
-}
-/*=========================================
- PREMIUM NAVIGATION
-=========================================*/
+   DEEN PREMIUM NAVIGATION
+   VERSION 3.0
+========================================================== */
+
+/* ==========================================================
+   MAIN NAVIGATION
+========================================================== */
 
 .main-navigation{
 
-    position:sticky;
-    top:0;
-    z-index:999;
+    position:relative;
 
-    background:#fff;
+    background:#ffffff;
 
-    border-bottom:1px solid rgba(0,0,0,.06);
-
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    border-bottom:1px solid rgba(15,118,110,.08);
 
 }
+
 .main-navigation .container{
 
     display:flex;
@@ -193,20 +25,27 @@ border-radius:12px;
 
     justify-content:space-between;
 
-    gap:30px;
+    min-height:84px;
 
-    min-height:82px;
+    gap:32px;
 
 }
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
 .nav-logo{
 
     display:flex;
 
     align-items:center;
 
-    gap:15px;
+    gap:14px;
 
     text-decoration:none;
+
+    flex-shrink:0;
 
 }
 
@@ -218,75 +57,414 @@ border-radius:12px;
 
     object-fit:contain;
 
+    transition:.35s ease;
+
 }
+
+.nav-logo:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.nav-logo h2{
+
+    margin:0;
+
+    font-size:1.45rem;
+
+    font-weight:800;
+
+    color:#111827;
+
+}
+
+.nav-logo span{
+
+    display:block;
+
+    margin-top:3px;
+
+    font-size:.80rem;
+
+    color:#6B7280;
+
+}
+
+/* ==========================================================
+   DESKTOP MENU
+========================================================== */
+
 .nav-menu{
 
     display:flex;
 
     align-items:center;
 
-    gap:28px;
+    justify-content:center;
 
-    list-style:none;
+    gap:28px;
 
     margin:0;
 
     padding:0;
 
+    list-style:none;
+
+    flex:1;
+
 }
-.nav-menu a{
+
+.nav-menu>li{
+
+    position:relative;
+
+}
+
+.nav-menu>li>a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    height:84px;
 
     text-decoration:none;
 
-    font-weight:600;
-
     color:#1F2937;
 
-    transition:.30s;
+    font-weight:600;
+
+    transition:.30s ease;
 
 }
-.nav-menu a:hover{
 
-    color:var(--primary-color);
+.nav-menu>li>a:hover{
 
-}
-.nav-btn{
-
-    white-space:nowrap;
+    color:#0F766E;
 
 }
-.menu-toggle{
 
-    display:none;
+.nav-menu>li>a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:22px;
+
+    width:0;
+
+    height:2px;
+
+    background:#0F766E;
+
+    transition:.35s ease;
+
+}
+
+.nav-menu>li:hover>a::after{
+
+    width:100%;
+
+}
+
+.nav-menu i{
+
+    font-size:.72rem;
 
 }
 
 /* ==========================================================
-   MODULE 7-B
-   MOBILE MENU SYSTEM
+   APPLY BUTTON
 ========================================================== */
+
+.nav-btn{
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================================
+   DEEN PREMIUM NAVIGATION
+   VERSION 3.0
+   PART 2 - DROPDOWN & MEGA MENU
+========================================================== */
+
+/* ==========================================================
+   DROPDOWN MENU
+========================================================== */
+
+.has-dropdown{
+
+    position:relative;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+
+    min-width:260px;
+
+    padding:14px 0;
+
+    margin:0;
+
+    list-style:none;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    border:1px solid rgba(15,118,110,.08);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.10);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(18px);
+
+    transition:
+        opacity .30s ease,
+        transform .30s ease,
+        visibility .30s;
+
+    z-index:999;
+
+}
+
+.has-dropdown:hover>.dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================================================
+   DROPDOWN ITEMS
+========================================================== */
+
+.dropdown-menu li{
+
+    margin:0;
+
+}
+
+.dropdown-menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:13px 22px;
+
+    color:#374151;
+
+    text-decoration:none;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:.30s ease;
+
+}
+
+.dropdown-menu li a:hover{
+
+    background:#ECFDF5;
+
+    color:var(--primary);
+
+    padding-left:30px;
+
+}
+
+/* ==========================================================
+   DROPDOWN DIVIDER
+========================================================== */
+
+.dropdown-menu li+li{
+
+    border-top:1px solid rgba(0,0,0,.05);
+
+}
+
+/* ==========================================================
+   GOLD HOVER LINE
+========================================================== */
+
+.dropdown-menu::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    border-radius:18px 18px 0 0;
+
+    background:linear-gradient(
+        90deg,
+        #0F766E,
+        #14B8A6,
+        #D4AF37
+    );
+
+}
+
+/* ==========================================================
+   DROPDOWN ICON ROTATE
+========================================================== */
+
+.has-dropdown>a i{
+
+    transition:transform .30s ease;
+
+}
+
+.has-dropdown:hover>a i{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================================
+   NAVIGATION HOVER
+========================================================== */
+
+.nav-menu>li>a{
+
+    position:relative;
+
+}
+
+.nav-menu>li>a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================================
+   APPLY BUTTON EFFECT
+========================================================== */
+
+.nav-btn{
+
+    transition:
+        transform .30s ease,
+        box-shadow .30s ease;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(15,118,110,.25);
+
+}
+/* ==========================================================
+   DEEN PREMIUM NAVIGATION
+   VERSION 3.0
+   PART 3 - MOBILE MENU & RESPONSIVE
+========================================================== */
+
+/* ==========================================================
+   MOBILE TOGGLE
+========================================================== */
+
+.menu-toggle{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#F8FAFC;
+
+    color:#111827;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:all .35s ease;
+
+}
+
+.menu-toggle:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   MOBILE MENU
+========================================================== */
+
 .mobile-menu{
 
     position:fixed;
 
     top:0;
+
     right:-100%;
 
     width:340px;
+
     max-width:100%;
+
     height:100vh;
 
     background:#ffffff;
 
     overflow-y:auto;
 
-    transition:right .35s ease;
+    padding:95px 24px 35px;
 
-    z-index:1100;
+    box-shadow:-18px 0 45px rgba(0,0,0,.15);
 
-    padding:100px 25px 40px;
+    transition:right .40s ease;
 
-    box-shadow:-15px 0 40px rgba(0,0,0,.12);
+    z-index:1200;
 
 }
 
@@ -295,6 +473,10 @@ border-radius:12px;
     right:0;
 
 }
+
+/* ==========================================================
+   MOBILE LIST
+========================================================== */
 
 .mobile-nav-list{
 
@@ -306,9 +488,9 @@ border-radius:12px;
 
 }
 
-.mobile-nav-list li{
+.mobile-nav-list>li{
 
-    margin-bottom:8px;
+    border-bottom:1px solid rgba(15,118,110,.08);
 
 }
 
@@ -320,27 +502,117 @@ border-radius:12px;
 
     justify-content:space-between;
 
-    padding:14px 18px;
+    padding:15px 0;
 
     text-decoration:none;
 
-    color:var(--text-primary);
+    color:#1F2937;
 
     font-weight:600;
 
-    border-radius:12px;
-
-    transition:.30s;
+    transition:.30s ease;
 
 }
 
 .mobile-nav-list a:hover{
 
-    background:var(--bg-soft);
-
     color:var(--primary);
 
 }
+
+/* ==========================================================
+   SUBMENU
+========================================================== */
+
+.submenu{
+
+    display:none;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0 0 12px 18px;
+
+}
+
+.submenu.active{
+
+    display:block;
+
+}
+
+.submenu li a{
+
+    padding:10px 0;
+
+    color:#6B7280;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================================
+   SUBMENU BUTTON
+========================================================== */
+
+.submenu-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#1F2937;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+.submenu-toggle i{
+
+    transition:transform .30s ease;
+
+}
+
+.submenu-toggle.active i{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================================
+   MOBILE APPLY
+========================================================== */
+
+.mobile-apply{
+
+    margin-top:24px;
+
+}
+
+.mobile-apply .btn{
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   MENU OVERLAY
+========================================================== */
 
 .menu-overlay{
 
@@ -354,9 +626,9 @@ border-radius:12px;
 
     visibility:hidden;
 
-    transition:.30s;
+    transition:.35s ease;
 
-    z-index:1090;
+    z-index:1100;
 
 }
 
@@ -374,80 +646,80 @@ body.menu-open{
 
 }
 
-/* ==========================================
-   NAVIGATION FLEX LAYOUT
-========================================== */
+/* ==========================================================
+   TABLET
+========================================================== */
 
-.nav-logo{
+@media(max-width:992px){
 
-    flex-shrink:0;
+    .nav-menu{
 
-}
+        display:none;
 
-.navigation{
+    }
 
-    flex:1;
+    .nav-btn{
 
-    display:flex;
+        display:none;
 
-    justify-content:center;
+    }
 
-}
+    .menu-toggle{
 
-.nav-btn{
+        display:flex;
 
-    flex-shrink:0;
-
-}
-
-/* ==========================================
-   MOBILE HEADER FIX
-========================================== */
-
-@media (max-width:992px){
-
-.main-navigation{
-
-display:flex !important;
+    }
 
 }
 
-.main-navigation .nav-menu,
+/* ==========================================================
+   MOBILE
+========================================================== */
 
-.main-navigation .nav-btn{
+@media(max-width:768px){
 
-display:none !important;
+    .main-navigation .container{
 
-}
+        min-height:74px;
 
-.main-navigation .container{
+    }
 
-display:flex;
+    .nav-logo img{
 
-align-items:center;
+        width:48px;
 
-justify-content:space-between;
+        height:48px;
 
-min-height:70px;
+    }
 
-}
+    .nav-logo h2{
 
-.menu-toggle{
+        font-size:1.25rem;
 
-display:flex !important;
+    }
 
-align-items:center;
+    .nav-logo span{
 
-justify-content:center;
+        font-size:.72rem;
 
-}
-
-.nav-logo img{
-
-width:46px;
-
-height:46px;
+    }
 
 }
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media(max-width:480px){
+
+    .mobile-menu{
+
+        width:100%;
+
+        max-width:100%;
+
+        padding:85px 20px 30px;
+
+    }
 
 }
