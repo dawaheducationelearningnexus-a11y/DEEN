@@ -327,3 +327,445 @@
 
 }
 
+/* ==========================================================
+   DEEN PREMIUM COURSES
+   MODULE 7
+   STEP 2
+========================================================== */
+
+/* ==========================================
+   PREMIUM CARD EFFECT
+========================================== */
+
+.course-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+/* ==========================================
+   TOP GRADIENT BAR
+========================================== */
+
+.course-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #0F766E,
+        #14B8A6,
+        #D4AF37
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:transform .45s ease;
+
+}
+
+.course-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* ==========================================
+   SHINE EFFECT
+========================================== */
+
+.course-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.course-card:hover::after{
+
+    animation:courseShine .9s ease;
+
+}
+
+@keyframes courseShine{
+
+    to{
+
+        left:150%;
+
+    }
+
+}
+
+/* ==========================================
+   ICON GLOW
+========================================== */
+
+.course-icon{
+
+    position:relative;
+
+}
+
+.course-icon::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-10px;
+
+    border-radius:28px;
+
+    background:rgba(15,118,110,.12);
+
+    filter:blur(18px);
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:-1;
+
+}
+
+.course-card:hover .course-icon::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.course-card h3{
+
+    transition:color .35s ease;
+
+}
+
+.course-card:hover h3{
+
+    color:#0F766E;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.course-badge{
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        color .35s ease;
+
+}
+
+.course-card:hover .course-badge{
+
+    transform:scale(1.08);
+
+    background:#0F766E;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.courses-button .btn{
+
+    box-shadow:
+        0 18px 40px rgba(15,118,110,.18);
+
+}
+
+.courses-button .btn:hover{
+
+    box-shadow:
+        0 28px 60px rgba(15,118,110,.28);
+
+}
+/* ==========================================================
+   DEEN PREMIUM COURSES
+   MODULE 7
+   STEP 3 FINAL
+========================================================== */
+
+/* ==========================================
+   FLOATING ANIMATION
+========================================== */
+
+.course-card{
+
+    animation:courseFadeUp .8s ease both;
+
+}
+
+.course-card:nth-child(2){
+
+    animation-delay:.1s;
+
+}
+
+.course-card:nth-child(3){
+
+    animation-delay:.2s;
+
+}
+
+.course-card:nth-child(4){
+
+    animation-delay:.3s;
+
+}
+
+.course-card:nth-child(5){
+
+    animation-delay:.4s;
+
+}
+
+.course-card:nth-child(6){
+
+    animation-delay:.5s;
+
+}
+
+@keyframes courseFadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(45px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   HOVER BORDER
+========================================== */
+
+.course-card:hover{
+
+    border-color:rgba(15,118,110,.22);
+
+}
+
+/* ==========================================
+   IMAGE / ICON FLOAT
+========================================== */
+
+.course-card:hover .course-icon{
+
+    animation:iconFloat 2.2s ease-in-out infinite;
+
+}
+
+@keyframes iconFloat{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(-8deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px) rotate(-8deg);
+
+    }
+
+}
+
+/* ==========================================
+   BACKGROUND DECORATION
+========================================== */
+
+.courses-section .shape-course-1,
+.courses-section .shape-course-2{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.courses-section .shape-course-1{
+
+    width:120px;
+
+    height:120px;
+
+    top:120px;
+
+    left:60px;
+
+    border:2px solid rgba(15,118,110,.12);
+
+    animation:rotateCourse 18s linear infinite;
+
+}
+
+.courses-section .shape-course-2{
+
+    width:90px;
+
+    height:90px;
+
+    right:70px;
+
+    bottom:100px;
+
+    border:2px dashed rgba(212,175,55,.28);
+
+    animation:floatCourse 6s ease-in-out infinite;
+
+}
+
+@keyframes rotateCourse{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes floatCourse{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE POLISH
+========================================== */
+
+@media(max-width:768px){
+
+    .courses-section{
+
+        padding:80px 0;
+
+    }
+
+    .courses-section .shape-course-1,
+    .courses-section .shape-course-2{
+
+        display:none;
+
+    }
+
+    .section-title{
+
+        font-size:34px;
+
+    }
+
+    .section-description{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .course-card{
+
+        border-radius:22px;
+
+        padding:30px 22px;
+
+    }
+
+    .course-icon{
+
+        width:72px;
+
+        height:72px;
+
+        font-size:28px;
+
+    }
+
+    .course-card h3{
+
+        font-size:22px;
+
+    }
+
+}
