@@ -1,51 +1,63 @@
 /* ==========================================================
-   DEEN Mega Menu System
-   ========================================================== */
+   DEEN PREMIUM MEGA MENU
+   VERSION 3.0
+========================================================== */
 
-/* ---------- Dropdown Foundation ---------- */
+/* ==========================================================
+   MEGA MENU ROOT
+========================================================== */
 
-.has-dropdown,
 .has-mega{
-    position:relative;
-}
 
-/* ---------- Mega Menu ---------- */
+    position:relative;
+
+}
 
 .mega-menu{
 
     position:absolute;
 
     top:100%;
+
     left:50%;
 
     transform:translateX(-50%) translateY(20px);
 
-    width:1100px;
-    max-width:92vw;
+    width:min(1100px,95vw);
 
-    background:rgba(255,255,255,.96);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(0,0,0,.08);
+    background:#ffffff;
 
     border-radius:24px;
 
-    box-shadow:0 25px 60px rgba(0,0,0,.12);
+    border:1px solid rgba(15,118,110,.08);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.12);
+
+    padding:35px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:30px;
 
     opacity:0;
 
     visibility:hidden;
 
-    pointer-events:none;
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
 
-    transition:all .35s ease;
-
-    z-index:1000;
+    z-index:999;
 
 }
 
-/* ---------- Show ---------- */
+/* ==========================================================
+   SHOW MENU
+========================================================== */
 
 .has-mega:hover .mega-menu{
 
@@ -53,91 +65,77 @@
 
     visibility:visible;
 
-    pointer-events:auto;
-
-    transform:translateX(-50%) translateY(10px);
-
-}
-
-/* ---------- Container ---------- */
-
-.mega-container{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr 320px;
-
-    gap:32px;
-
-    padding:36px;
+    transform:
+        translateX(-50%)
+        translateY(0);
 
 }
 
-/* ---------- Columns ---------- */
+/* ==========================================================
+   COLUMN
+========================================================== */
 
-.mega-column h3{
+.mega-column h4{
 
-    margin-bottom:18px;
+    margin-bottom:16px;
 
-    font-size:1.1rem;
+    color:#0F766E;
 
-    color:var(--primary);
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+.mega-column ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.mega-column li{
+
+    margin-bottom:12px;
 
 }
 
 .mega-column a{
 
-    display:block;
-
-    padding:10px 0;
-
-    color:var(--text-primary);
-
     text-decoration:none;
 
-    transition:.25s;
+    color:#374151;
+
+    transition:.30s;
 
 }
 
 .mega-column a:hover{
 
-    color:var(--primary);
+    color:#0F766E;
 
-    padding-left:10px;
+    padding-left:8px;
 
 }
 
-/* ---------- Featured ---------- */
+/* ==========================================================
+   FEATURE CARD
+========================================================== */
 
 .mega-feature{
 
-    background:linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
+    background:#ECFDF5;
 
-    color:#fff;
+    border-radius:18px;
 
-    border-radius:20px;
-
-    padding:28px;
-
-    text-align:center;
-
-}
-
-.mega-feature img{
-
-    width:80px;
-
-    margin-bottom:18px;
+    padding:24px;
 
 }
 
 .mega-feature h3{
-
-    color:#fff;
 
     margin-bottom:12px;
 
@@ -145,222 +143,154 @@
 
 .mega-feature p{
 
-    opacity:.92;
+    color:#6B7280;
 
     line-height:1.7;
 
-    margin-bottom:20px;
+}
+/* ==========================================================
+   DEEN PREMIUM MEGA MENU
+   VERSION 3.0
+   PART 2 - RESPONSIVE & EFFECTS
+========================================================== */
+
+/* ==========================================================
+   FEATURE CARD HOVER
+========================================================== */
+
+.mega-feature{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
 }
 
-/* ---------- Normal Dropdown ---------- */
+.mega-feature:hover{
 
-.dropdown-menu{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(15,118,110,.15);
+
+}
+
+.mega-feature::before{
+
+    content:"";
 
     position:absolute;
 
-    top:100%;
+    top:0;
+
     left:0;
 
-    min-width:270px;
+    width:100%;
 
-    background:#fff;
+    height:4px;
 
-    border-radius:18px;
-
-    box-shadow:0 18px 40px rgba(0,0,0,.10);
-
-    padding:14px 0;
-
-    list-style:none;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.3s;
-
-}
-
-.has-dropdown:hover .dropdown-menu{
-
-    opacity:1;
-
-    visibility:visible;
-
-}
-
-.dropdown-menu li a{
-
-    display:block;
-
-    padding:12px 20px;
-
-    text-decoration:none;
-
-    color:var(--text-primary);
-
-}
-
-.dropdown-menu li a:hover{
-
-    background:var(--bg-soft);
-
-    color:var(--primary);
-
-}
-
-/* ---------- Mobile ---------- */
-
-@media(max-width:992px){
-
-.mega-menu{
-
-position:static;
-
-transform:none;
-
-width:100%;
-
-opacity:1;
-
-visibility:visible;
-
-pointer-events:auto;
-
-display:none;
-
-box-shadow:none;
-
-border:none;
-
-padding:0;
-
-background:transparent;
-
-}
-
-.has-mega.active .mega-menu{
-
-display:block;
-
-}
-
-.mega-container{
-
-grid-template-columns:1fr;
-
-padding:16px;
-
-gap:20px;
-
-}
-
-.dropdown-menu{
-
-position:static;
-
-display:none;
-
-opacity:1;
-
-visibility:visible;
-
-box-shadow:none;
-
-padding:0;
-
-}
-
-.has-dropdown.active .dropdown-menu{
-
-display:block;
-
-}
+    background:linear-gradient(
+        90deg,
+        #0F766E,
+        #14B8A6,
+        #D4AF37
+    );
 
 }
 
 /* ==========================================================
-   PREMIUM MEGA MENU
+   COLUMN LINKS
 ========================================================== */
-
-.has-dropdown{
-    position:relative;
-}
-
-.mega-menu{
-
-    position:absolute;
-
-    top:100%;
-    left:50%;
-
-    transform:translateX(-50%) translateY(20px);
-
-    width:900px;
-    max-width:95vw;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
-
-    padding:35px;
-
-    background:#fff;
-
-    border-radius:24px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.12);
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:.35s ease;
-
-    z-index:1000;
-
-}
-
-.has-dropdown:hover>.mega-menu{
-
-    opacity:1;
-    visibility:visible;
-
-    transform:translateX(-50%) translateY(0);
-
-}
-
-.mega-column h4{
-
-    margin-bottom:18px;
-
-    color:var(--primary);
-
-    font-size:1.05rem;
-
-}
 
 .mega-column a{
 
-    display:block;
+    display:flex;
 
-    padding:10px 0;
+    align-items:center;
 
-    color:var(--text-color);
+    gap:10px;
 
-    text-decoration:none;
-
-    transition:.25s;
+    padding:8px 0;
 
 }
 
-.mega-column a:hover{
+.mega-column a i{
 
-    color:var(--primary);
+    color:#0F766E;
 
-    padding-left:10px;
+    font-size:.85rem;
+
+    transition:transform .30s ease;
 
 }
+
+.mega-column a:hover i{
+
+    transform:translateX(5px);
+
+}
+
+/* ==========================================================
+   PREMIUM BADGE
+========================================================== */
+
+.mega-badge{
+
+    display:inline-block;
+
+    padding:5px 12px;
+
+    border-radius:999px;
+
+    background:#D4AF37;
+
+    color:#ffffff;
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+@keyframes megaFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.has-mega:hover .mega-menu{
+
+    animation:megaFade .35s ease;
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
 
 @media(max-width:992px){
 
@@ -372,97 +302,30 @@ display:block;
 
 }
 
-/*=========================================
-PREMIUM DROPDOWN MENU
-=========================================*/
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
 
-.has-dropdown{
+@media(min-width:1400px){
 
-    position:relative;
+    .mega-menu{
 
-}
-.dropdown-menu{
+        width:1200px;
 
-    position:absolute;
-
-    top:100%;
-    left:0;
-
-    min-width:260px;
-
-    background:#fff;
-
-    border-radius:18px;
-
-    padding:12px 0;
-
-    list-style:none;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.10);
-
-    border:1px solid rgba(0,0,0,.05);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(18px);
-
-    transition:.35s;
-
-    z-index:999;
+    }
 
 }
 
-.has-dropdown:hover .dropdown-menu{
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
 
-    opacity:1;
+.mega-column a:focus{
 
-    visibility:visible;
+    outline:2px solid #D4AF37;
 
-    transform:translateY(0);
+    outline-offset:4px;
 
-}
-.dropdown-menu li{
-
-    width:100%;
-
-}
-.dropdown-menu a{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:14px 22px;
-
-    color:#374151;
-
-    text-decoration:none;
-
-    font-size:15px;
-
-    transition:.30s;
-
-}
-
-.dropdown-menu a:hover{
-
-    background:#F3F4F6;
-
-    color:var(--primary-color);
-
-    padding-left:28px;
-
-}
-.has-dropdown>a{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
+    border-radius:8px;
 
 }
