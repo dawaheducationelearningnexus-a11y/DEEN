@@ -287,6 +287,148 @@
 }
 
 /* ==========================================================
+   DEEN PREMIUM PROGRAMS
+   STEP 2 — PREMIUM CONTENT
+========================================================== */
+
+/* Program Meta */
+
+.program-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:20px 0;
+
+}
+
+.program-meta span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(15,118,110,.08);
+
+    color:#0F766E;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.program-meta i{
+
+    font-size:12px;
+
+}
+
+/* Feature List */
+
+.program-features{
+
+    list-style:none;
+
+    margin:25px 0;
+
+    padding:0;
+
+}
+
+.program-features li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+    color:#4B5563;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.program-features li i{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#ECFDF5;
+
+    color:#0F766E;
+
+    font-size:11px;
+
+    box-shadow:none;
+
+    margin:0;
+
+}
+
+/* Footer */
+
+.program-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:30px;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(15,118,110,.10);
+
+}
+
+.program-price{
+
+    font-size:20px;
+
+    font-weight:800;
+
+    color:#0F766E;
+
+}
+
+.program-footer a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:700;
+
+}
+/* ==========================================================
    RESPONSIVE
 ========================================================== */
 
@@ -329,6 +471,246 @@
         height:68px;
 
         font-size:26px;
+
+    }
+
+}
+/* ==========================================================
+   PROGRAMS STEP 1
+   PREMIUM IMAGE SUPPORT
+========================================================== */
+
+.program-image{
+
+    position:relative;
+
+    margin:-40px -35px 28px;
+
+    overflow:hidden;
+
+    border-radius:28px 28px 0 0;
+
+}
+
+.program-image img{
+
+    width:100%;
+
+    height:230px;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+
+}
+
+.program-card:hover .program-image img{
+
+    transform:scale(1.08);
+
+    filter:brightness(1.05);
+
+}
+
+/* Dark Gradient Overlay */
+
+.program-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.35),
+        transparent 60%
+    );
+
+    opacity:.7;
+
+    transition:.35s;
+
+}
+
+.program-card:hover .program-image::after{
+
+    opacity:.45;
+
+}
+
+/* Featured Badge */
+
+.program-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:#D4AF37;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    z-index:2;
+
+    box-shadow:0 8px 20px rgba(212,175,55,.35);
+
+}
+/* ==========================================================
+   DEEN PREMIUM PROGRAMS
+   STEP 3 — PREMIUM EFFECTS
+========================================================== */
+
+/* ---------- Floating Background ---------- */
+
+.programs-section .shape-circle{
+
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    animation:programFloat 12s ease-in-out infinite;
+
+}
+
+.programs-section .shape-circle.one{
+
+    width:180px;
+    height:180px;
+
+    top:10%;
+    left:5%;
+
+    background:rgba(15,118,110,.05);
+
+}
+
+.programs-section .shape-circle.two{
+
+    width:120px;
+    height:120px;
+
+    bottom:12%;
+    right:8%;
+
+    background:rgba(212,175,55,.10);
+
+    animation-delay:3s;
+
+}
+
+@keyframes programFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+}
+
+/* ---------- Card Shine ---------- */
+
+.program-card{
+
+    isolation:isolate;
+
+}
+
+.program-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:translateX(-150%);
+
+    transition:transform .8s ease;
+
+    z-index:1;
+
+}
+
+.program-card:hover::after{
+
+    transform:translateX(150%);
+
+}
+
+/* ---------- Icon Animation ---------- */
+
+.program-card:hover i{
+
+    animation:programIcon .6s ease;
+
+}
+
+@keyframes programIcon{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    40%{
+
+        transform:scale(1.15) rotate(-8deg);
+
+    }
+
+    100%{
+
+        transform:scale(1.08) rotate(-10deg);
+
+    }
+
+}
+
+/* ---------- Responsive Polish ---------- */
+
+@media(max-width:768px){
+
+    .program-card{
+
+        border-radius:22px;
+
+    }
+
+    .program-card h3{
+
+        font-size:1.25rem;
+
+    }
+
+    .program-card p{
+
+        font-size:15px;
 
     }
 
