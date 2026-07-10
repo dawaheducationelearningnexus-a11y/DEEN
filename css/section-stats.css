@@ -425,3 +425,157 @@
     }
 
 }
+/* ==========================================================
+   DEEN PREMIUM STATS
+   MODULE 8
+   STEP 3
+========================================================== */
+
+/* ==========================================
+   CARD SHINE
+========================================== */
+
+.stat-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.30),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.stat-card:hover::before{
+
+    animation:statShine .9s ease;
+
+}
+
+@keyframes statShine{
+
+    to{
+
+        left:150%;
+
+    }
+
+}
+
+/* ==========================================
+   ICON GLOW
+========================================== */
+
+.stat-icon{
+
+    position:relative;
+
+}
+
+.stat-icon::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12px;
+
+    border-radius:30px;
+
+    background:rgba(247,215,116,.20);
+
+    filter:blur(20px);
+
+    opacity:0;
+
+    transition:.35s;
+
+    z-index:-1;
+
+}
+
+.stat-card:hover .stat-icon::after{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   FLOAT EFFECT
+========================================== */
+
+.stat-card:hover .stat-icon{
+
+    animation:statFloat 2s ease-in-out infinite;
+
+}
+
+@keyframes statFloat{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(-10deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px) rotate(-10deg);
+
+    }
+
+}
+
+/* ==========================================
+   COUNTER ANIMATION
+========================================== */
+
+.counter{
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================
+   MOBILE POLISH
+========================================== */
+
+@media(max-width:480px){
+
+    .stat-card{
+
+        border-radius:22px;
+
+    }
+
+    .stat-card h2{
+
+        font-size:2.1rem;
+
+    }
+
+}
