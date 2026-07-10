@@ -207,7 +207,7 @@
 
     filter:drop-shadow(0 35px 70px rgba(15,118,110,.20));
 
-    animation:heroFloat 6s ease-in-out infinite;
+    animation:heroFloat 10s cubic-bezier(.45,.05,.55,.95) infinite;
 
 }
 
@@ -292,26 +292,50 @@
 }
 
 /* ==========================================
-   FLOAT ANIMATION
+   HERO PREMIUM FLOAT ANIMATION
 ========================================== */
 
 @keyframes heroFloat{
 
     0%{
 
-        transform:translateY(0);
+        transform:translate3d(0,0,0)
+                  rotate(0deg);
 
     }
 
-    50%{
+    20%{
 
-        transform:translateY(-18px);
+        transform:translate3d(0,-2px,0)
+                  rotate(.15deg);
+
+    }
+
+    40%{
+
+        transform:translate3d(0,-5px,0)
+                  rotate(0deg);
+
+    }
+
+    60%{
+
+        transform:translate3d(0,-7px,0)
+                  rotate(-.15deg);
+
+    }
+
+    80%{
+
+        transform:translate3d(0,-3px,0)
+                  rotate(0deg);
 
     }
 
     100%{
 
-        transform:translateY(0);
+        transform:translate3d(0,0,0)
+                  rotate(0deg);
 
     }
 
