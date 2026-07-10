@@ -476,6 +476,130 @@
 
 }
 /* ==========================================================
+   PROGRAM CARD PREMIUM EFFECTS
+========================================================== */
+
+/* Image Zoom */
+
+.program-image{
+
+    overflow:hidden;
+
+}
+
+.program-image img{
+
+    transition:transform .6s ease;
+
+}
+
+.program-card:hover .program-image img{
+
+    transform:scale(1.08);
+
+}
+
+/* Badge Animation */
+
+.program-badge{
+
+    transition:all .35s ease;
+
+}
+
+.program-card:hover .program-badge{
+
+    transform:translateY(-4px);
+
+}
+
+/* Icon Animation */
+
+.program-card i{
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.program-card:hover i{
+
+    transform:rotate(-10deg) scale(1.08);
+
+}
+
+/* Learn More */
+
+.program-footer a{
+
+    transition:.35s ease;
+
+}
+
+.program-card:hover .program-footer a{
+
+    transform:translateX(6px);
+
+}
+
+/* Card Glow */
+
+.program-card{
+
+    overflow:hidden;
+
+}
+
+.program-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-60%;
+
+    width:60%;
+
+    height:260%;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent,
+
+        rgba(255,255,255,.25),
+
+        transparent
+
+    );
+
+    transform:rotate(25deg);
+
+}
+
+.program-card:hover::after{
+
+    animation:programShine .9s ease;
+
+}
+
+@keyframes programShine{
+
+    to{
+
+        left:150%;
+
+    }
+
+}
+
+/* ==========================================================
    PROGRAMS STEP 1
    PREMIUM IMAGE SUPPORT
 ========================================================== */
