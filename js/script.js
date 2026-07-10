@@ -70,3 +70,38 @@ class DeenApp {
 }
 
 new DeenApp();
+
+/* ==========================================================
+   DEEN MUSIC PLAYER
+========================================================== */
+
+const musicButton = document.querySelector(".music-toggle");
+const deenMusic = document.getElementById("deenMusic");
+
+if (musicButton && deenMusic) {
+
+    musicButton.addEventListener("click", () => {
+
+        if (deenMusic.paused) {
+
+            deenMusic.play();
+
+            musicButton.classList.add("playing");
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-pause"></i>';
+
+        } else {
+
+            deenMusic.pause();
+
+            musicButton.classList.remove("playing");
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-music"></i>';
+
+        }
+
+    });
+
+}
