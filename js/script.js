@@ -72,33 +72,66 @@ class DeenApp {
 new DeenApp();
 
 /* ==========================================================
-   DEEN MUSIC PLAYER
+   DEEN PREMIUM MUSIC PLAYER
 ========================================================== */
 
 const musicButton = document.querySelector(".music-toggle");
-const deenMusic = document.getElementById("deenMusic");
+const themeMusic = document.getElementById("themeMusic");
 
-if (musicButton && deenMusic) {
+if (musicButton && themeMusic){
 
-    musicButton.addEventListener("click", () => {
+    /* Default Volume */
 
-        if (deenMusic.paused) {
+    themeMusic.volume = 0.30;
 
-            deenMusic.play();
+    /* Restore Previous State */
 
-            musicButton.classList.add("playing");
+    if(localStorage.getItem("deenMusic") === "playing"){
 
-            musicButton.innerHTML =
-                '<i class="fa-solid fa-pause"></i>';
+        musicButton.classList.add("playing");
 
-        } else {
+        musicButton.innerHTML =
+            '<i class="fa-solid fa-pause"></i>';
 
-            deenMusic.pause();
+    }
+
+    musicButton.addEventListener("click", async()=>{
+
+        if(themeMusic.paused){
+
+            try{
+
+                await themeMusic.play();
+
+                musicButton.classList.add("playing");
+
+                musicButton.innerHTML =
+                    '<i class="fa-solid fa-pause"></i>';
+
+                localStorage.setItem(
+                    "deenMusic",
+                    "playing"
+                );
+
+            }catch(error){
+
+                console.log(error);
+
+            }
+
+        }else{
+
+            themeMusic.pause();
 
             musicButton.classList.remove("playing");
 
             musicButton.innerHTML =
                 '<i class="fa-solid fa-music"></i>';
+
+            localStorage.setItem(
+                "deenMusic",
+                "paused"
+            );
 
         }
 
