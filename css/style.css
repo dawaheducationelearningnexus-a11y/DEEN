@@ -20,3 +20,108 @@
 @import url("footer.css");
 @import url("animations.css");
 @import url("responsive.css");
+
+
+/* ==========================================================
+   DEEN MUSIC PLAYER
+========================================================== */
+
+.music-toggle{
+
+    position:fixed;
+
+    right:24px;
+
+    bottom:24px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+        0 15px 35px rgba(15,118,110,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    z-index:9999;
+
+}
+
+.music-toggle:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 22px 45px rgba(15,118,110,.35);
+
+}
+
+.music-toggle.playing{
+
+    animation:musicPulse 2s infinite;
+
+}
+
+@keyframes musicPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .music-toggle{
+
+        width:52px;
+
+        height:52px;
+
+        right:16px;
+
+        bottom:16px;
+
+        font-size:20px;
+
+    }
+
+}
