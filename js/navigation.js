@@ -234,7 +234,7 @@ function openMenu(){
     if(menuOpen)return;
 
     menuOpen=true;
-
+    state.menuOpen = true;
     mobileMenu.classList.add("active");
 
     overlay.classList.add("active");
@@ -257,7 +257,7 @@ function closeMenu(){
     if(!menuOpen)return;
 
     menuOpen=false;
-
+    state.menuOpen = false;
     mobileMenu.classList.remove("active");
 
     overlay.classList.remove("active");
@@ -267,6 +267,8 @@ function closeMenu(){
     menuToggle.setAttribute("aria-expanded","false");
 
     mobileMenu.setAttribute("aria-hidden","true");
+   
+    resetSubmenus();
 
 }
 
@@ -511,6 +513,7 @@ submenuButtons.forEach((button,index)=>{
 function resetSubmenus(){
 
     closeAllSubmenus();
+   
    
 }
 
