@@ -1,8 +1,8 @@
 /* ==========================================================
    DEEN - Dawah Education & E-learning Nexus
    CSS VARIABLES
-   Version : 1.0
-   ========================================================== */
+   Version : 2.0 (Production Ready)
+========================================================== */
 
 :root{
 
@@ -42,8 +42,8 @@
 --text-primary:#0F172A;
 --text-secondary:#475569;
 --text-light:#64748B;
---text-white:#FFFFFF;
 --text-muted:#94A3B8;
+--text-white:#FFFFFF;
 
 
 /* ==========================================================
@@ -59,14 +59,11 @@
 ========================================================== */
 
 --shadow-xs:0 1px 2px rgba(0,0,0,.05);
-
 --shadow-sm:0 2px 6px rgba(0,0,0,.08);
-
 --shadow-md:0 8px 20px rgba(0,0,0,.12);
-
 --shadow-lg:0 15px 40px rgba(0,0,0,.18);
-
 --shadow-xl:0 25px 60px rgba(0,0,0,.25);
+--shadow-2xl:0 35px 80px rgba(0,0,0,.30);
 
 
 /* ==========================================================
@@ -78,6 +75,7 @@
 --radius-md:12px;
 --radius-lg:18px;
 --radius-xl:24px;
+--radius-2xl:32px;
 --radius-round:999px;
 
 
@@ -111,11 +109,9 @@
    FONT FAMILY
 ========================================================== */
 
---font-english:'Inter',sans-serif;
-
---font-bangla:'Hind Siliguri',sans-serif;
-
---font-arabic:'Amiri',serif;
+--font-english:"Inter",sans-serif;
+--font-bangla:"Noto Sans Bengali",sans-serif;
+--font-arabic:"Noto Naskh Arabic",serif;
 
 
 /* ==========================================================
@@ -168,28 +164,22 @@
 
 
 /* ==========================================================
-   TRANSITION
+   TRANSITIONS
 ========================================================== */
 
 --transition-fast:.2s ease;
-
 --transition:.35s ease;
-
 --transition-slow:.6s ease;
+--transition-bounce:.45s cubic-bezier(.175,.885,.32,1.275);
 
 
 /* ==========================================================
-   BLUR
+   EFFECTS
 ========================================================== */
 
 --blur-sm:6px;
 --blur-md:12px;
 --blur-lg:20px;
-
-
-/* ==========================================================
-   OPACITY
-========================================================== */
 
 --opacity-disabled:.45;
 
@@ -199,12 +189,20 @@
 ========================================================== */
 
 --gradient-primary:linear-gradient(135deg,#0F766E,#14B8A6);
-
 --gradient-gold:linear-gradient(135deg,#D4AF37,#FACC15);
-
 --gradient-dark:linear-gradient(135deg,#0F172A,#1E293B);
-
 --gradient-hero:linear-gradient(135deg,#0F766E,#2563EB);
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+--focus-ring:#38BDF8;
+--overlay:rgba(15,23,42,.65);
+
+--selection-bg:#14B8A6;
+--selection-text:#FFFFFF;
 
 
 /* ==========================================================
@@ -212,7 +210,6 @@
 ========================================================== */
 
 --header-height:80px;
-
 --mobile-header:70px;
 
 
