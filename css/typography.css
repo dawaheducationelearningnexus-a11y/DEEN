@@ -1,25 +1,15 @@
 /* ==========================================================
-   DEEN - Typography
-   ========================================================== */
+   DEEN TYPOGRAPHY
+   Premium • Conflict-Free • Production Ready
+========================================================== */
 
-/* ---------- Body ---------- */
-
-body{
-    font-family:var(--font-bangla);
-    font-size:var(--fs-base);
-    font-weight:var(--fw-normal);
-    line-height:var(--lh-normal);
-    color:var(--text-primary);
-    background:var(--bg-body);
-}
-
-/* ---------- English ---------- */
+/* ==========================================================
+   LANGUAGE FONTS
+========================================================== */
 
 .en{
     font-family:var(--font-english);
 }
-
-/* ---------- Arabic ---------- */
 
 .ar{
     font-family:var(--font-arabic);
@@ -27,7 +17,9 @@ body{
     text-align:right;
 }
 
-/* ---------- Headings ---------- */
+/* ==========================================================
+   HEADINGS
+========================================================== */
 
 h1,
 h2,
@@ -35,10 +27,10 @@ h3,
 h4,
 h5,
 h6{
+    margin-bottom:1rem;
     color:var(--text-primary);
     font-weight:var(--fw-bold);
     line-height:1.25;
-    margin-bottom:16px;
 }
 
 h1{font-size:var(--fs-5xl);}
@@ -48,72 +40,55 @@ h4{font-size:var(--fs-2xl);}
 h5{font-size:var(--fs-xl);}
 h6{font-size:var(--fs-lg);}
 
-/* ---------- Paragraph ---------- */
+/* ==========================================================
+   PARAGRAPH
+========================================================== */
 
 p{
-    margin-bottom:16px;
+    margin-bottom:1rem;
     color:var(--text-secondary);
+    line-height:var(--lh-normal);
 }
 
-/* ---------- Small ---------- */
+/* ==========================================================
+   INLINE TYPOGRAPHY
+========================================================== */
 
 small{
     font-size:var(--fs-sm);
 }
-
-/* ---------- Link ---------- */
-
-a{
-    color:var(--primary);
-    transition:var(--transition);
-}
-
-a:hover{
-    color:var(--primary-dark);
-}
-
-/* ---------- Strong ---------- */
 
 strong,
 b{
     font-weight:var(--fw-bold);
 }
 
-/* ---------- Italic ---------- */
-
 em,
 i{
     font-style:italic;
 }
 
-/* ---------- Lists ---------- */
-
-ul,
-ol{
-    padding-left:20px;
-}
-
-li{
-    margin-bottom:8px;
-}
-
-/* ---------- Quote ---------- */
+/* ==========================================================
+   BLOCKQUOTE
+========================================================== */
 
 blockquote{
+    margin:1.5rem 0;
+    padding:1rem 1.25rem;
     border-left:4px solid var(--primary);
-    padding:16px 20px;
-    background:var(--bg-soft);
     border-radius:var(--radius-md);
-    margin:20px 0;
+    background:var(--bg-soft);
 }
 
-/* ---------- Code ---------- */
+/* ==========================================================
+   CODE
+========================================================== */
 
 code,
 pre{
     font-family:monospace;
-    background:#f3f4f6;
-    border-radius:6px;
+    background:var(--bg-soft);
+    border-radius:var(--radius-sm);
 }
 
 code{
@@ -121,37 +96,16 @@ code{
 }
 
 pre{
-    padding:16px;
+    padding:1rem;
     overflow:auto;
 }
 
-/* ---------- Text Helpers ---------- */
-
-.text-center{
-    text-align:center;
-}
-
-.text-left{
-    text-align:left;
-}
-
-.text-right{
-    text-align:right;
-}
-
-.text-primary{
-    color:var(--primary);
-}
-
-.text-secondary{
-    color:var(--text-secondary);
-}
-
-.text-white{
-    color:#fff;
-}
+/* ==========================================================
+   LEAD TEXT
+========================================================== */
 
 .lead{
     font-size:var(--fs-lg);
+    line-height:var(--lh-loose);
     color:var(--text-secondary);
 }
