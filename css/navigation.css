@@ -1,53 +1,39 @@
 /* ==========================================================
-   DEEN PREMIUM NAVIGATION V4
-   PART 1 — HEADER & DESKTOP
+   DEEN WEBSITE
+   NAVIGATION.CSS
+   VERSION : 5.0
+   PART 01
+   NAVIGATION FOUNDATION
 ========================================================== */
 
-/* ==========================
-   HEADER
-========================== */
 
-.site-header{
-
-    position:sticky;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    background:#ffffff;
-
-}
-
-/* ==========================
+/* ==========================================================
    MAIN NAVIGATION
-========================== */
+========================================================== */
 
 .main-navigation{
 
+    position:relative;
+
     width:100%;
 
-    background:#ffffff;
+    background:var(--bg-surface);
 
     border-bottom:1px solid rgba(15,118,110,.08);
 
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+
 }
 
+
+/* ==========================================================
+   NAVIGATION CONTAINER
+========================================================== */
+
 .main-navigation .container{
-
-    width:100%;
-
-    max-width:1320px;
-
-    margin:0 auto;
-
-    padding:0 20px;
-
-    min-height:84px;
 
     display:flex;
 
@@ -55,13 +41,16 @@
 
     justify-content:space-between;
 
-    gap:24px;
+    gap:var(--space-24);
+
+    min-height:84px;
 
 }
 
-/* ==========================
+
+/* ==========================================================
    LOGO
-========================== */
+========================================================== */
 
 .nav-logo{
 
@@ -71,11 +60,14 @@
 
     gap:14px;
 
-    text-decoration:none;
-
     flex-shrink:0;
 
+    text-decoration:none;
+
+    user-select:none;
+
 }
+
 
 .nav-logo img{
 
@@ -85,35 +77,65 @@
 
     object-fit:contain;
 
+    transition:
+        transform var(--transition);
+
 }
+
+
+.nav-logo:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================================
+   LOGO CONTENT
+========================================================== */
+
+.nav-logo div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
 
 .nav-logo h2{
 
     margin:0;
 
+    color:var(--text-primary);
+
     font-size:1.45rem;
 
     font-weight:800;
 
-    color:#111827;
+    line-height:1.1;
 
 }
+
 
 .nav-logo span{
 
-    display:block;
+    margin-top:4px;
 
-    margin-top:2px;
+    color:var(--text-light);
 
-    font-size:.80rem;
+    font-size:var(--fs-sm);
 
-    color:#6B7280;
+    line-height:1.2;
 
 }
 
-/* ==========================
-   DESKTOP MENU
-========================== */
+
+/* ==========================================================
+   DESKTOP MENU FOUNDATION
+========================================================== */
 
 .nav-menu{
 
@@ -123,9 +145,9 @@
 
     justify-content:center;
 
-    gap:28px;
-
     flex:1;
+
+    gap:28px;
 
     margin:0;
 
@@ -135,164 +157,70 @@
 
 }
 
+
 .nav-menu>li{
 
     position:relative;
 
+    flex-shrink:0;
+
 }
 
+
+/* ==========================================================
+   MENU LINK FOUNDATION
+========================================================== */
+
 .nav-menu>li>a{
+
+    position:relative;
 
     display:flex;
 
     align-items:center;
 
+    justify-content:center;
+
     gap:6px;
 
-    height:84px;
+    min-height:84px;
 
-    color:#1F2937;
-
-    text-decoration:none;
+    color:var(--text-primary);
 
     font-weight:600;
 
-    transition:.30s;
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    transition:
+        color var(--transition);
 
 }
 
-.nav-menu>li>a:hover{
 
-    color:#0F766E;
-
-}
-
-.nav-menu>li>a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:20px;
-
-    width:0;
-
-    height:2px;
-
-    background:#0F766E;
-
-    transition:.35s;
-
-}
-
-.nav-menu>li:hover>a::after{
-
-    width:100%;
-
-}
-
-/* ==========================
+/* ==========================================================
    APPLY BUTTON
-========================== */
+========================================================== */
 
 .nav-btn{
 
     flex-shrink:0;
 
 }
+
+
 /* ==========================================================
-   DEEN PREMIUM NAVIGATION V4
-   PART 2 — DROPDOWN & MOBILE MENU
+   MOBILE TOGGLE
 ========================================================== */
-
-/* ==========================
-   DROPDOWN
-========================== */
-
-.has-dropdown{
-    position:relative;
-}
-
-.dropdown-menu{
-
-    position:absolute;
-
-    top:100%;
-    left:0;
-
-    min-width:260px;
-
-    background:#ffffff;
-
-    border-radius:18px;
-
-    padding:12px 0;
-
-    list-style:none;
-
-    border:1px solid rgba(15,118,110,.08);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.12);
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(15px);
-
-    transition:.30s;
-
-    z-index:999;
-
-}
-
-.has-dropdown:hover>.dropdown-menu{
-
-    opacity:1;
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
-
-.dropdown-menu li{
-
-    margin:0;
-
-}
-
-.dropdown-menu li a{
-
-    display:block;
-
-    padding:14px 22px;
-
-    text-decoration:none;
-
-    color:#374151;
-
-    transition:.30s;
-
-}
-
-.dropdown-menu li a:hover{
-
-    background:#ECFDF5;
-
-    color:#0F766E;
-
-    padding-left:28px;
-
-}
-
-/* ==========================
-   MOBILE BUTTON
-========================== */
 
 .menu-toggle{
 
     display:none;
+
+    align-items:center;
+
+    justify-content:center;
 
     width:48px;
 
@@ -300,59 +228,616 @@
 
     border:none;
 
-    border-radius:12px;
+    border-radius:var(--radius-md);
 
-    background:#F3F4F6;
+    background:var(--bg-soft);
+
+    color:var(--text-primary);
 
     cursor:pointer;
 
-    font-size:20px;
-
-    color:#111827;
-
-    transition:.3s;
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
 
 }
+
 
 .menu-toggle:hover{
 
-    background:#0F766E;
+    background:var(--primary);
 
-    color:#ffffff;
+    color:var(--text-white);
 
 }
 
-/* ==========================
-   MOBILE MENU
-========================== */
+
+.menu-toggle:active{
+
+    transform:scale(.95);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.nav-menu a:focus-visible,
+.nav-logo:focus-visible,
+.menu-toggle:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:4px;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.nav-logo img,
+.nav-menu a,
+.menu-toggle{
+
+    will-change:transform;
+
+}
+
+
+/* ==========================================================
+   END OF PART 01
+========================================================== */
+
+/* ==========================================================
+   DEEN WEBSITE
+   NAVIGATION.CSS
+   VERSION : 5.0
+   PART 02
+   DESKTOP NAVIGATION
+========================================================== */
+
+
+/* ==========================================================
+   MENU ITEM
+========================================================== */
+
+.nav-menu>li{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   MENU LINK
+========================================================== */
+
+.nav-menu>li>a{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    min-height:84px;
+
+    padding:0 2px;
+
+    color:var(--text-primary);
+
+    font-size:var(--fs-base);
+
+    font-weight:var(--fw-semibold);
+
+    letter-spacing:.2px;
+
+    white-space:nowrap;
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+
+}
+
+
+/* ==========================================================
+   PREMIUM UNDERLINE
+========================================================== */
+
+.nav-menu>li>a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:999px;
+
+    background:var(--gradient-primary);
+
+    transform:translateX(-50%);
+
+    transition:
+        width var(--transition);
+
+}
+
+
+.nav-menu>li:hover>a::after,
+.nav-menu>li>a:focus-visible::after{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.nav-menu>li:hover>a{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   ACTIVE STATE
+========================================================== */
+
+.nav-menu>li>a.active,
+.nav-menu>li.active>a{
+
+    color:var(--primary);
+
+}
+
+
+.nav-menu>li>a.active::after,
+.nav-menu>li.active>a::after{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
+   CHEVRON
+========================================================== */
+
+.has-dropdown>a i{
+
+    font-size:.72rem;
+
+    transition:
+        transform var(--transition),
+        color var(--transition);
+
+}
+
+
+.has-dropdown:hover>a i{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* ==========================================================
+   CLICK FEEDBACK
+========================================================== */
+
+.nav-menu>li>a:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ==========================================================
+   APPLY BUTTON
+========================================================== */
+
+.nav-btn{
+
+    margin-left:var(--space-16);
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================================
+   APPLY BUTTON HOVER
+========================================================== */
+
+.nav-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   DESKTOP ONLY
+========================================================== */
+
+.main-navigation{
+
+    isolation:isolate;
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.nav-menu>li>a:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:5px;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.nav-menu>li>a,
+.nav-menu>li>a::after,
+.has-dropdown>a i{
+
+    will-change:transform;
+
+}
+
+
+/* ==========================================================
+   END OF PART 02
+========================================================== */
+
+/* ==========================================================
+   DEEN WEBSITE
+   NAVIGATION.CSS
+   VERSION : 5.0
+   PART 03
+   PREMIUM DROPDOWN SYSTEM
+========================================================== */
+
+
+/* ==========================================================
+   DROPDOWN ROOT
+========================================================== */
+
+.has-dropdown{
+
+    position:relative;
+
+}
+
+
+/* ==========================================================
+   HOVER BRIDGE
+   Prevent dropdown flicker
+========================================================== */
+
+.has-dropdown::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:100%;
+
+    width:100%;
+
+    height:18px;
+
+    background:transparent;
+
+}
+
+
+/* ==========================================================
+   DROPDOWN PANEL
+========================================================== */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:calc(100% + 14px);
+
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    min-width:270px;
+
+    padding:12px 0;
+
+    margin:0;
+
+    list-style:none;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(var(--blur-md));
+
+    -webkit-backdrop-filter:blur(var(--blur-md));
+
+    border:1px solid rgba(15,118,110,.08);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+
+    z-index:var(--z-dropdown);
+
+}
+
+
+/* ==========================================================
+   SHOW
+========================================================== */
+
+.has-dropdown:hover>.dropdown-menu,
+.has-dropdown:focus-within>.dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+
+/* ==========================================================
+   DROPDOWN ITEMS
+========================================================== */
+
+.dropdown-menu li{
+
+    margin:0;
+
+    padding:0;
+
+}
+
+
+/* ==========================================================
+   DROPDOWN LINK
+========================================================== */
+
+.dropdown-menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:14px 22px;
+
+    color:var(--text-secondary);
+
+    font-size:var(--fs-base);
+
+    font-weight:var(--fw-medium);
+
+    white-space:nowrap;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        padding var(--transition);
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.dropdown-menu li a:hover{
+
+    background:rgba(20,184,166,.08);
+
+    color:var(--primary);
+
+    padding-left:28px;
+
+}
+
+
+/* ==========================================================
+   ACTIVE
+========================================================== */
+
+.dropdown-menu li a.active{
+
+    color:var(--primary);
+
+    background:rgba(20,184,166,.10);
+
+}
+
+
+/* ==========================================================
+   DIVIDER SUPPORT
+========================================================== */
+
+.dropdown-menu hr{
+
+    margin:8px 0;
+
+    background:var(--border-color);
+
+    height:1px;
+
+}
+
+
+/* ==========================================================
+   FIRST / LAST
+========================================================== */
+
+.dropdown-menu li:first-child a{
+
+    border-top-left-radius:var(--radius-md);
+
+    border-top-right-radius:var(--radius-md);
+
+}
+
+.dropdown-menu li:last-child a{
+
+    border-bottom-left-radius:var(--radius-md);
+
+    border-bottom-right-radius:var(--radius-md);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.dropdown-menu li a:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:-2px;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.dropdown-menu,
+.dropdown-menu li a{
+
+    will-change:
+        transform,
+        opacity;
+
+}
+
+
+/* ==========================================================
+   FUTURE READY
+========================================================== */
+
+/*
+Mega Menu
+Multi Column Menu
+Icon Menu
+Notification Menu
+
+সব ভবিষ্যতে এখানে যুক্ত করা যাবে।
+বর্তমান Architecture পরিবর্তন করতে হবে না।
+*/
+
+
+/* ==========================================================
+   END OF PART 03
+========================================================== */
+
+
+
+/* ==========================================================
+   DEEN WEBSITE
+   NAVIGATION.CSS
+   VERSION : 5.0
+   PART 04
+   PREMIUM MOBILE NAVIGATION
+========================================================== */
+
+
+/* ==========================================================
+   MOBILE DRAWER
+========================================================== */
+
 .mobile-menu{
 
     position:fixed;
 
     top:0;
 
-    right:-320px;
+    right:-100%;
 
-    width:40vw;
-   
-    min-width:280px;
-    max-width:320px;
+    width:min(320px,82vw);
 
-    height:100vh;
+    height:100dvh;
 
-    background:#ffffff;
+    background:var(--bg-surface);
 
-    overflow-y:auto;
+    display:flex;
 
-    padding:90px 25px 30px;
+    flex-direction:column;
 
-    box-shadow:-12px 0 35px rgba(0,0,0,.15);
+    overflow:hidden;
 
-    transition:right .35s ease;
+    box-shadow:var(--shadow-xl);
 
-    z-index:1200;
+    transition:right var(--transition);
+
+    z-index:calc(var(--z-dropdown) + 20);
 
 }
+
+
+/* ==========================================================
+   OPEN STATE
+========================================================== */
 
 .mobile-menu.active{
 
@@ -360,9 +845,206 @@
 
 }
 
-/* ==========================
+
+/* ==========================================================
+   MOBILE CONTENT
+========================================================== */
+
+.mobile-nav-list{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:90px 24px 40px;
+
+    margin:0;
+
+    list-style:none;
+
+    scrollbar-width:thin;
+
+}
+
+
+/* ==========================================================
+   MENU ITEM
+========================================================== */
+
+.mobile-nav-list>li{
+
+    border-bottom:1px solid var(--border-light);
+
+}
+
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+.mobile-nav-list a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    min-height:56px;
+
+    color:var(--text-primary);
+
+    font-size:var(--fs-base);
+
+    font-weight:var(--fw-medium);
+
+    transition:
+
+        color var(--transition),
+
+        padding var(--transition),
+
+        background var(--transition);
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.mobile-nav-list a:hover{
+
+    color:var(--primary);
+
+    padding-left:10px;
+
+}
+
+
+/* ==========================================================
+   SUBMENU BUTTON
+========================================================== */
+
+.submenu-toggle{
+
+    width:100%;
+
+    min-height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    border:none;
+
+    background:none;
+
+    color:var(--text-primary);
+
+    font-size:var(--fs-base);
+
+    font-weight:var(--fw-semibold);
+
+    cursor:pointer;
+
+    transition:color var(--transition);
+
+}
+
+
+.submenu-toggle:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   SUBMENU ICON
+========================================================== */
+
+.submenu-toggle i{
+
+    transition:transform var(--transition);
+
+}
+
+
+.submenu-toggle.active i{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* ==========================================================
+   SUBMENU
+========================================================== */
+
+.submenu{
+
+    display:none;
+
+    padding:0 0 12px 18px;
+
+}
+
+
+.submenu.active{
+
+    display:block;
+
+}
+
+
+.submenu li{
+
+    margin:0;
+
+}
+
+
+.submenu li a{
+
+    min-height:46px;
+
+    color:var(--text-secondary);
+
+    font-size:var(--fs-sm);
+
+}
+
+
+/* ==========================================================
+   APPLY BUTTON
+========================================================== */
+
+.mobile-apply{
+
+    padding-top:20px;
+
+    border:none;
+
+}
+
+
+.mobile-apply .btn{
+
+    width:100%;
+
+}
+
+
+/* ==========================================================
    OVERLAY
-========================== */
+========================================================== */
 
 .menu-overlay{
 
@@ -370,17 +1052,26 @@
 
     inset:0;
 
-    background:rgba(0,0,0,.45);
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(4px);
+
+    -webkit-backdrop-filter:blur(4px);
 
     opacity:0;
 
     visibility:hidden;
 
-    transition:.3s;
+    transition:
 
-    z-index:1100;
+        opacity var(--transition),
+
+        visibility var(--transition);
+
+    z-index:calc(var(--z-dropdown) + 10);
 
 }
+
 
 .menu-overlay.active{
 
@@ -390,272 +1081,370 @@
 
 }
 
-/* ==========================
-   MOBILE LIST
-========================== */
 
-.mobile-nav-list{
+/* ==========================================================
+   BODY LOCK
+========================================================== */
 
-    list-style:none;
+body.menu-open{
 
-    margin:0;
+    overflow:hidden;
 
-    padding:0;
-
-}
-
-.mobile-nav-list>li{
-
-    border-bottom:1px solid rgba(15,118,110,.08);
+    touch-action:none;
 
 }
 
-.mobile-nav-list a{
 
-    display:flex;
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
 
-    justify-content:space-between;
+.mobile-nav-list a:focus-visible,
 
-    align-items:center;
+.submenu-toggle:focus-visible{
 
-    padding:16px 0;
+    outline:2px solid var(--secondary);
 
-    text-decoration:none;
-
-    color:#1F2937;
-
-    font-weight:600;
+    outline-offset:4px;
 
 }
 
-/* ==========================
-   SUBMENU
-========================== */
+
+/* ==========================================================
+   SAFE AREA
+========================================================== */
+
+.mobile-menu{
+
+    padding-bottom:env(safe-area-inset-bottom);
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.mobile-menu,
+
+.menu-overlay,
 
 .submenu{
 
-    display:none;
+    will-change:
 
-    padding-left:18px;
+        transform,
 
-    list-style:none;
-
-}
-
-.submenu.active{
-
-    display:block;
+        opacity;
 
 }
 
-.submenu li a{
 
-    padding:10px 0;
-
-    color:#6B7280;
-
-    font-size:.95rem;
-
-}
-
-/* ==========================
-   SUBMENU BUTTON
-========================== */
-
-.submenu-toggle{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:none;
-
-    border:none;
-
-    padding:16px 0;
-
-    font-size:1rem;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-}
-
-.submenu-toggle i{
-
-    transition:.3s;
-
-}
-
-.submenu-toggle.active i{
-
-    transform:rotate(180deg);
-
-}
-
-body.menu-open{
-
-    overflow:hidden;
-
-}
 /* ==========================================================
-   DEEN PREMIUM NAVIGATION V4
-   PART 3 — RESPONSIVE
+   END OF PART 04
 ========================================================== */
 
-/* ==========================
-   TABLET & MOBILE
-========================== */
+/* ==========================================================
+   DEEN WEBSITE
+   NAVIGATION.CSS
+   VERSION : 5.0
+   PART 05
+   PREMIUM POLISH & ENTERPRISE ENHANCEMENTS
+========================================================== */
 
-@media (max-width:992px){
 
-    .nav-menu,
-    .nav-btn{
+/* ==========================================================
+   STICKY NAVIGATION ENHANCEMENT
+========================================================== */
 
-        display:none;
+.site-header{
 
-    }
+    isolation:isolate;
 
+    will-change:transform;
+
+}
+
+.site-header.scrolled{
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(15,118,110,.08);
+
+    box-shadow:
+        0 10px 35px rgba(15,23,42,.08),
+        0 2px 8px rgba(15,118,110,.05);
+
+}
+
+
+/* ==========================================================
+   NAVIGATION MICRO INTERACTION
+========================================================== */
+
+.nav-logo,
+.nav-menu>li>a,
+.nav-btn,
+.menu-toggle{
+
+    transition:
+        transform var(--transition),
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.nav-logo:hover{
+
+    transform:translateY(-1px);
+
+}
+
+.nav-menu>li>a:hover{
+
+    transform:translateY(-1px);
+
+}
+
+
+/* ==========================================================
+   DROPDOWN DEPTH
+========================================================== */
+
+.dropdown-menu{
+
+    transform-origin:top center;
+
+}
+
+
+/* ==========================================================
+   MENU ACTIVE GLOW
+========================================================== */
+
+.nav-menu>li.active>a,
+.nav-menu>li>a.active{
+
+    text-shadow:
+        0 0 18px rgba(20,184,166,.12);
+
+}
+
+
+/* ==========================================================
+   MOBILE DRAWER SHADOW
+========================================================== */
+
+.mobile-menu{
+
+    border-left:1px solid rgba(15,118,110,.08);
+
+}
+
+
+/* ==========================================================
+   CUSTOM SCROLLBAR
+========================================================== */
+
+.mobile-nav-list::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.mobile-nav-list::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.mobile-nav-list::-webkit-scrollbar-thumb{
+
+    background:rgba(15,118,110,.35);
+
+    border-radius:999px;
+
+}
+
+.mobile-nav-list::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .nav-logo,
+    .nav-menu a,
+    .dropdown-menu,
+    .mobile-menu,
+    .menu-overlay,
+    .submenu,
     .menu-toggle{
 
-        display:flex;
+        animation:none !important;
 
-        align-items:center;
+        transition:none !important;
 
-        justify-content:center;
-
-    }
-
-    .main-navigation .container{
-
-        min-height:74px;
-
-        padding:0 18px;
-
-    }
-
-    .nav-logo{
-
-        flex:1;
-
-        min-width:0;
-
-    }
-
-    .nav-logo img{
-
-        width:48px;
-
-        height:48px;
-
-    }
-
-    .nav-logo h2{
-
-        font-size:1.25rem;
-
-    }
-
-    .nav-logo span{
-
-        font-size:.72rem;
+        scroll-behavior:auto;
 
     }
 
 }
 
-/* ==========================
-   MOBILE
-========================== */
 
-@media (max-width:768px){
+/* ==========================================================
+   HIGH CONTRAST SUPPORT
+========================================================== */
 
-    .mobile-menu{
+@media (prefers-contrast:more){
 
-       width:40vw;
-       min-width:280px;
-       max-width:320px;
-       
+    .nav-menu>li>a{
+
+        font-weight:700;
 
     }
 
-    .top-bar{
+    .dropdown-menu{
 
-        display:none;
-
-    }
-
-}
-
-/* ==========================
-   SMALL MOBILE
-========================== */
-
-@media (max-width:480px){
-
-    .main-navigation .container{
-
-        padding:0 14px;
-
-    }
-
-    .mobile-menu{
-
-        
-
-        width:75vw;
-       
-        min-width:260px;
-        max-width:300px;
-       
-       
-
-        padding:80px 20px 30px;
-
-    }
-
-    .nav-logo h2{
-
-        font-size:1.1rem;
-
-    }
-
-    .nav-logo span{
-
-        display:none;
-
-    }
-
-    .menu-toggle{
-
-        width:44px;
-
-        height:44px;
+        border-width:2px;
 
     }
 
 }
 
-/* ==========================
-   PREVENT HORIZONTAL SCROLL
-========================== */
 
-html,
-body{
+/* ==========================================================
+   DARK MODE READY
+========================================================== */
 
-    width:100%;
+html.dark .main-navigation{
 
-    overflow-x:hidden;
+    background:var(--bg-dark);
+
+    border-color:rgba(255,255,255,.08);
+
+}
+
+html.dark .nav-menu>li>a{
+
+    color:var(--text-white);
 
 }
 
-body.menu-open{
+html.dark .dropdown-menu{
 
-    overflow:hidden;
+    background:rgba(15,23,42,.96);
+
+    border-color:rgba(255,255,255,.08);
 
 }
+
+html.dark .dropdown-menu li a{
+
+    color:#CBD5E1;
+
+}
+
+html.dark .dropdown-menu li a:hover{
+
+    background:rgba(20,184,166,.15);
+
+    color:#ffffff;
+
+}
+
+html.dark .mobile-menu{
+
+    background:var(--bg-dark);
+
+}
+
+html.dark .mobile-nav-list a{
+
+    color:#F8FAFC;
+
+}
+
+html.dark .submenu li a{
+
+    color:#CBD5E1;
+
+}
+
+
+/* ==========================================================
+   PRINT MODE
+========================================================== */
+
+@media print{
+
+    .site-header,
+    .top-bar,
+    .menu-toggle,
+    .mobile-menu,
+    .menu-overlay{
+
+        display:none !important;
+
+    }
+
+}
+
+
+/* ==========================================================
+   GPU OPTIMIZATION
+========================================================== */
+
+.nav-logo,
+.nav-menu>li>a,
+.dropdown-menu,
+.mobile-menu{
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
+}
+
+
+/* ==========================================================
+   FUTURE READY
+========================================================== */
+
+/*
+Reserved for:
+
+01. Mega Menu
+02. Search Popup
+03. Notification Panel
+04. User Profile Dropdown
+05. Language Selector
+06. Sticky Progress Indicator
+07. Breadcrumb Navigation
+08. AI Search
+09. Command Palette
+10. Navigation Analytics
+
+No architectural changes will be required.
+*/
+
+
+/* ==========================================================
+   END OF NAVIGATION.CSS
+   VERSION 5.0
+========================================================== */
+
+
+
