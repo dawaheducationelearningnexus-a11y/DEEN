@@ -137,3 +137,112 @@ if (musicButton && themeMusic){
     });
 
 }
+
+/* ==========================================================
+   DEEN PROGRAM FILTER & SEARCH
+   MODULE 6 — STEP 3
+========================================================== */
+
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+const programCards =
+document.querySelectorAll(".program-card-v2");
+
+const searchInput =
+document.querySelector(".program-search input");
+
+/* ==========================
+   FILTER BUTTON
+========================== */
+
+filterButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        /* Active Button */
+
+        filterButtons.forEach(btn=>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const filter =
+        button.dataset.filter;
+
+        programCards.forEach(card=>{
+
+            if(
+
+                filter==="all" ||
+
+                card.dataset.category===filter
+
+            ){
+
+                card.style.display="flex";
+
+            }else{
+
+                card.style.display="none";
+
+            }
+
+        });
+
+    });
+
+});
+/* ==========================
+   LIVE SEARCH
+========================== */
+
+if(searchInput){
+
+searchInput.addEventListener("keyup",()=>{
+
+    const value =
+    searchInput.value.toLowerCase();
+
+    programCards.forEach(card=>{
+
+        const text =
+        card.textContent.toLowerCase();
+
+        if(text.includes(value)){
+
+            card.style.display="flex";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+});
+
+}
+/* ==========================
+   RESET FILTER AFTER SEARCH
+========================== */
+
+if(searchInput){
+
+searchInput.addEventListener("search",()=>{
+
+    if(searchInput.value===""){
+
+        programCards.forEach(card=>{
+
+            card.style.display="flex";
+
+        });
+
+    }
+
+});
+
+}
