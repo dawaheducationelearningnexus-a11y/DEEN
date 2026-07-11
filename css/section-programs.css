@@ -1618,3 +1618,175 @@
 }
 
 }
+
+/* ==========================================================
+   DEEN PREMIUM PROGRAMS
+   MODULE 6 — STEP 2
+   TOOLBAR
+========================================================== */
+
+.program-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin:50px 0;
+
+    flex-wrap:wrap;
+
+}
+
+/* ==========================
+   FILTER
+========================== */
+
+.program-filter{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+/* ==========================
+   FILTER BUTTON
+========================== */
+
+.filter-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:13px 24px;
+
+    border-radius:999px;
+
+    background:#F3F7F7;
+
+    color:#374151;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:
+        all .35s ease;
+
+}
+
+.filter-btn:hover{
+
+    background:#0F766E;
+
+    color:#ffffff;
+
+    transform:translateY(-3px);
+
+}
+
+.filter-btn.active{
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#ffffff;
+
+    box-shadow:
+        0 15px 35px rgba(15,118,110,.20);
+
+}
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.program-search{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:280px;
+
+    padding:14px 18px;
+
+    border-radius:999px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(15,118,110,.10);
+
+    box-shadow:
+        0 12px 30px rgba(15,118,110,.06);
+
+}
+
+.program-search i{
+
+    color:#0F766E;
+
+}
+
+.program-search input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    font-size:15px;
+
+    color:#374151;
+
+}
+
+.program-search input::placeholder{
+
+    color:#9CA3AF;
+
+}
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+.program-toolbar{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.program-filter{
+
+    justify-content:center;
+
+}
+
+.program-search{
+
+    width:100%;
+
+    min-width:100%;
+
+}
+
+}
