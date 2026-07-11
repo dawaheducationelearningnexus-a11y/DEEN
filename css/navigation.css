@@ -333,9 +333,10 @@
 
     right:-320px;
 
-    width:320px;
-
-    max-width:85%;
+    width:40vw;
+   
+    min-width:280px;
+    max-width:320px;
 
     height:100vh;
 
@@ -576,9 +577,10 @@ body.menu-open{
 
     .mobile-menu{
 
-        width:85%;
-
-        max-width:320px;
+       width:40vw;
+       min-width:280px;
+       max-width:320px;
+       
 
     }
 
@@ -604,9 +606,14 @@ body.menu-open{
 
     .mobile-menu{
 
-        width:100%;
+        
 
-        max-width:100%;
+        width:75vw;
+       
+        min-width:260px;
+        max-width:300px;
+       
+       
 
         padding:80px 20px 30px;
 
