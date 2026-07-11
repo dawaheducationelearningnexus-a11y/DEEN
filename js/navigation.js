@@ -223,58 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
    Mobile Menu Engine
 ========================================================== */
 
-"use strict";
-
-(function(){
-
-const body=document.body;
-
-const menuToggle=document.querySelector(".menu-toggle");
-
-const mobileMenu=document.querySelector(".mobile-menu");
-
-const overlay=document.querySelector(".menu-overlay");
-
-if(!menuToggle||!mobileMenu||!overlay)return;
-
-
-/* ==========================================================
-   MENU STATE
-========================================================== */
-
-let menuOpen=false;
-
-let scrollPosition=0;
-
-
-/* ==========================================================
-   SAVE SCROLL
-========================================================== */
-
-function lockBody(){
-
-    scrollPosition=window.pageYOffset;
-
-    body.style.top=`-${scrollPosition}px`;
-
-    body.classList.add("menu-open");
-
-}
-
-
-/* ==========================================================
-   RESTORE SCROLL
-========================================================== */
-
-function unlockBody(){
-
-    body.classList.remove("menu-open");
-
-    body.style.removeProperty("top");
-
-    window.scrollTo(0,scrollPosition);
-
-}
 
 
 /* ==========================================================
@@ -291,8 +239,8 @@ function openMenu(){
 
     overlay.classList.add("active");
 
-    lockBody();
-
+        lockScroll();
+   
     menuToggle.setAttribute("aria-expanded","true");
 
     mobileMenu.setAttribute("aria-hidden","false");
@@ -314,7 +262,7 @@ function closeMenu(){
 
     overlay.classList.remove("active");
 
-    unlockBody();
+      unlockScroll();
 
     menuToggle.setAttribute("aria-expanded","false");
 
@@ -387,23 +335,7 @@ document.addEventListener(
    RESIZE
 ========================================================== */
 
-window.addEventListener(
 
-    "resize",
-
-    ()=>{
-
-        if(window.innerWidth>992){
-
-            closeMenu();
-
-        }
-
-    },
-
-    {passive:true}
-
-);
 
 
 /* ==========================================================
@@ -579,7 +511,6 @@ submenuButtons.forEach((button,index)=>{
 function resetSubmenus(){
 
     closeAllSubmenus();
-     resetSubmenus();
    
 }
 
