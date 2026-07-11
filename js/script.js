@@ -74,9 +74,8 @@ new DeenApp();
 /* ==========================================================
    DEEN PREMIUM MUSIC PLAYER
 ========================================================== */
-
-const musicButton = document.querySelector(".music-toggle");
-const themeMusic = document.getElementById("themeMusic");
+const musicButton = document.getElementById("musicToggle");
+const themeMusic = document.getElementById("backgroundMusic");
 
 if (musicButton && themeMusic){
 
