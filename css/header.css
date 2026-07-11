@@ -1,12 +1,13 @@
 /* ==========================================================
    DEEN WEBSITE
    HEADER.CSS
-   VERSION 2.0
-========================================================== */
+   Version : 3.0
+   Purpose : Site Header Only
+   ========================================================== */
 
 
 /* ==========================================================
-   HEADER ROOT
+   SITE HEADER
 ========================================================== */
 
 .site-header{
@@ -19,52 +20,50 @@
 
     width:100%;
 
-    z-index:1000;
+    z-index:var(--z-sticky);
 
     background:rgba(255,255,255,.96);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(var(--blur-md));
 
-    -webkit-backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(var(--blur-md));
 
     border-bottom:1px solid rgba(15,118,110,.08);
 
     transition:
-        background .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        background var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
 
 }
 
 
 /* ==========================================================
-   HEADER SHADOW
+   HEADER STATE
 ========================================================== */
 
 .site-header.scrolled{
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.08);
+    box-shadow:var(--shadow-md);
 
 }
 
 
 /* ==========================================================
-   PREMIUM TOP BAR
+   TOP BAR
 ========================================================== */
 
 .top-bar{
 
-    background:
-        linear-gradient(
-            90deg,
-            #0F766E,
-            #115E59
-        );
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--primary-dark)
+    );
 
-    color:#fff;
+    color:var(--text-white);
 
-    font-size:.90rem;
+    font-size:var(--fs-sm);
 
 }
 
@@ -79,10 +78,14 @@
 
     min-height:42px;
 
-    gap:20px;
+    gap:var(--space-20);
 
 }
 
+
+/* ==========================================================
+   TOP BAR GROUP
+========================================================== */
 
 .top-bar-left,
 .top-bar-right{
@@ -91,10 +94,14 @@
 
     align-items:center;
 
-    gap:18px;
+    gap:var(--space-20);
 
 }
 
+
+/* ==========================================================
+   TOP ITEM
+========================================================== */
 
 .top-item{
 
@@ -102,27 +109,23 @@
 
     align-items:center;
 
-    gap:8px;
+    gap:var(--space-8);
 
-    color:#fff;
+    color:var(--text-white);
 
-    text-decoration:none;
-
-    transition:.30s ease;
+    transition:color var(--transition);
 
 }
-
 
 .top-item:hover{
 
-    color:#D4AF37;
+    color:var(--secondary);
 
 }
 
-
 .top-item i{
 
-    font-size:.85rem;
+    font-size:var(--fs-sm);
 
 }
 
@@ -133,24 +136,29 @@
 
 .lang-toggle{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-4);
+
     border:none;
 
-    background:transparent;
+    background:none;
 
-    color:#fff;
+    color:var(--text-white);
 
     cursor:pointer;
 
-    font-size:.90rem;
+    font-size:var(--fs-sm);
 
-    transition:.30s;
+    transition:color var(--transition);
 
 }
 
-
 .lang-toggle:hover{
 
-    color:#D4AF37;
+    color:var(--secondary);
 
 }
 
@@ -165,32 +173,36 @@
 
     height:36px;
 
-    border:none;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
     display:flex;
 
     align-items:center;
 
     justify-content:center;
 
+    border:none;
+
+    border-radius:var(--radius-round);
+
     background:rgba(255,255,255,.14);
 
-    color:#fff;
+    color:var(--text-white);
 
-    transition:.35s ease;
+    cursor:pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
 
 }
 
-
 .theme-toggle:hover{
 
-    background:#D4AF37;
+    background:var(--secondary);
 
-    color:#111827;
+    color:var(--text-primary);
+
+    transform:rotate(15deg);
 
 }
 
@@ -201,16 +213,41 @@
 
 .top-bar-right a{
 
-    color:#fff;
+    display:flex;
 
-    transition:.30s;
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--text-white);
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+
+}
+
+.top-bar-right a:hover{
+
+    color:var(--secondary);
+
+    transform:translateY(-2px);
 
 }
 
 
-.top-bar-right a:hover{
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
 
-    color:#D4AF37;
+.lang-toggle:focus-visible,
+.theme-toggle:focus-visible,
+.top-item:focus-visible,
+.top-bar-right a:focus-visible{
+
+    outline:2px solid var(--secondary);
+
+    outline-offset:3px;
 
 }
 
