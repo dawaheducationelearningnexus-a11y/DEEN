@@ -1163,6 +1163,13 @@ body.menu-open{
 
     will-change:transform;
 
+   backface-visibility:hidden;
+
+transition:
+    transform .45s cubic-bezier(.22,.61,.36,1),
+    background .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 }
 
 .site-header.scrolled{
@@ -1180,7 +1187,15 @@ body.menu-open{
         0 2px 8px rgba(15,118,110,.05);
 
 }
+/* ==========================================================
+   SMART HEADER HIDE
+========================================================== */
 
+.site-header.hide{
+
+    transform:translateY(-110%);
+
+}
 
 /* ==========================================================
    NAVIGATION MICRO INTERACTION
