@@ -71,12 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 const megaTriggers =
-
-    document.querySelectorAll(
-
-        ".has-mega"
-
-    );
+document.querySelectorAll(".has-dropdown");
 
     const submenuButtons =
         document.querySelectorAll(".submenu-toggle");
@@ -364,13 +359,12 @@ trigger.addEventListener(
 
 function openMenu(){
 
-    if(menuOpen)return;
-
-    menuOpen=true;
+   if(state.menuOpen)return;
+   
     state.menuOpen = true;
     mobileMenu.classList.add("active");
 
-    overlay.classList.add("active");
+    menuOverlay.classList.add("active");
 
         lockScroll();
    
@@ -387,13 +381,13 @@ function openMenu(){
 
 function closeMenu(){
 
-    if(!menuOpen)return;
+    if(!state.menuOpen)return;
 
-    menuOpen=false;
     state.menuOpen = false;
     mobileMenu.classList.remove("active");
 
-    overlay.classList.remove("active");
+   menuOverlay.classList.remove("active");
+   
 
       unlockScroll();
 
@@ -412,7 +406,7 @@ function closeMenu(){
 
 function toggleMenu(){
 
-    menuOpen
+   state.menuOpen
         ?closeMenu()
         :openMenu();
 
@@ -435,8 +429,7 @@ menuToggle.addEventListener(
 /* ==========================================================
    OVERLAY
 ========================================================== */
-
-overlay.addEventListener(
+menuOverlay.addEventListener(
 
     "click",
 
