@@ -379,6 +379,10 @@ function closeAllSubmenus(except=null){
 
             submenu.classList.remove("active");
 
+           submenu.setAttribute(
+    "aria-hidden",
+    "true"
+);
             submenu.style.maxHeight=null;
 
         }
@@ -418,6 +422,10 @@ function toggleSubmenu(button){
 
         submenu.classList.remove("active");
 
+       submenu.setAttribute(
+    "aria-hidden",
+    "true"
+);
         submenu.style.maxHeight=null;
 
         return;
@@ -436,6 +444,10 @@ function toggleSubmenu(button){
 
     submenu.classList.add("active");
 
+   submenu.setAttribute(
+    "aria-hidden",
+    "false"
+);
     submenu.style.maxHeight=
 
         submenu.scrollHeight+"px";
