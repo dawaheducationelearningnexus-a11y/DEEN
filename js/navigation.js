@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         stickyOffset: 30,
 
+        hideOffset:120,
+
+        showTolerance:15,
+       
+        enableAutoHide:true,
+       
         animationSpeed: 300,
 
         enableKeyboard: true,
@@ -65,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         lastScroll:0,
 
+        headerHidden:false,
+       
         isMobile:
             window.innerWidth <= CONFIG.mobileBreakpoint
 
@@ -556,7 +564,83 @@ function updateHeader(){
 
 }
 
+/* ==========================================================
+   SMART HEADER VISIBILITY
+========================================================== */
 
+function updateHeaderVisibility(){
+
+    if(
+
+        !CONFIG.enableAutoHide ||
+
+        !header ||
+
+        state.menuOpen
+
+    ){
+
+        return;
+
+    }
+
+    const currentScroll = window.scrollY;
+
+    if(currentScroll <= CONFIG.hideOffset){
+
+        removeClass(header,"hide");
+
+        state.headerHidden = false;
+
+        state.lastScroll = currentScroll;
+
+        return;
+
+    }
+
+    const scrollDifference =
+
+        currentScroll - state.lastScroll;
+
+    if(
+
+        scrollDifference >
+
+        CONFIG.showTolerance
+
+    ){
+
+        if(!state.headerHidden){
+
+            addClass(header,"hide");
+
+            state.headerHidden = true;
+
+        }
+
+    }
+
+    else if(
+
+        scrollDifference <
+
+        -CONFIG.showTolerance
+
+    ){
+
+        if(state.headerHidden){
+
+            removeClass(header,"hide");
+
+            state.headerHidden = false;
+
+        }
+
+    }
+
+    state.lastScroll = currentScroll;
+
+}
 /* ==========================================================
    RAF SCROLL ENGINE
 ========================================================== */
@@ -571,6 +655,8 @@ function handleScroll(){
 
         updateHeader();
 
+        updateHeaderVisibility();
+       
         ticking=false;
 
     });
