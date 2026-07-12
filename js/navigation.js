@@ -32,7 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeOnResize: true,
 
-        mobileBreakpoint: 992
+        mobileBreakpoint: 992,
+       
+        megaMenuDelay:150,
+
+        megaMenuAnimation:300,
+
+        enableMegaMenu:true
+       
 
     };
 
@@ -55,6 +62,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const desktopMenu =
         document.querySelector(".nav-menu");
 
+   const megaMenus =
+
+    document.querySelectorAll(
+
+        ".mega-menu"
+
+    );
+
+const megaTriggers =
+
+    document.querySelectorAll(
+
+        ".has-mega"
+
+    );
+
     const submenuButtons =
         document.querySelectorAll(".submenu-toggle");
 
@@ -72,7 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
         lastScroll:0,
 
         headerHidden:false,
-       
+
+        megaMenuOpen:false,
         isMobile:
             window.innerWidth <= CONFIG.mobileBreakpoint
 
@@ -223,6 +247,107 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     init();
+
+   initializeMegaMenu();
+/* ==========================================================
+   MEGA MENU TIMER
+========================================================== */
+
+let megaMenuTimer = null;
+
+/* ==========================================================
+   OPEN MEGA MENU
+========================================================== */
+
+function openMegaMenu(trigger){
+
+    if(!CONFIG.enableMegaMenu) return;
+
+    clearTimeout(megaMenuTimer);
+
+    closeMegaMenus();
+
+    trigger.classList.add("mega-active");
+
+    state.megaMenuOpen = true;
+
+}
+/* ==========================================================
+   CLOSE ALL MEGA MENUS
+========================================================== */
+
+function closeMegaMenus(){
+
+    megaTriggers.forEach(item=>{
+
+        item.classList.remove(
+
+            "mega-active"
+
+        );
+
+    });
+
+    state.megaMenuOpen = false;
+
+}
+
+/* ==========================================================
+   DELAY CLOSE
+========================================================== */
+
+function delayCloseMegaMenu(){
+
+    clearTimeout(megaMenuTimer);
+
+    megaMenuTimer = setTimeout(()=>{
+
+        closeMegaMenus();
+
+    },CONFIG.megaMenuDelay);
+
+}
+
+/* ==========================================================
+   INITIALIZE MEGA MENU
+========================================================== */
+
+function initializeMegaMenu(){
+
+    if(!CONFIG.enableMegaMenu) return;
+
+
+   megaTriggers.forEach(trigger=>{
+      trigger.addEventListener(
+
+    "mouseenter",
+
+    ()=>{
+
+        clearTimeout(megaMenuTimer);
+
+        openMegaMenu(trigger);
+
+    }
+
+);
+trigger.addEventListener(
+
+    "mouseleave",
+
+    ()=>{
+
+        delayCloseMegaMenu();
+
+    }
+
+);
+});
+   
+}
+
+
+
 
 
 /* ==========================================================
@@ -586,22 +711,45 @@ function updateHeaderVisibility(){
 
     const currentScroll = window.scrollY;
 
-    if(currentScroll <= CONFIG.hideOffset){
+   if(currentScroll < 0){
 
-        removeClass(header,"hide");
+    return;
 
-        state.headerHidden = false;
+}
+/* ======================================================
+   PAGE TOP RESET
+====================================================== */
 
-        state.lastScroll = currentScroll;
+if(currentScroll <= CONFIG.hideOffset){
 
-        return;
+    removeClass(header,"hide");
 
-    }
+    state.headerHidden = false;
+
+    state.lastScroll = currentScroll;
+
+    return;
+
+}
+
+    
 
     const scrollDifference =
 
         currentScroll - state.lastScroll;
 
+    if(
+
+    Math.abs(scrollDifference)
+
+    < CONFIG.showTolerance
+
+){
+
+    return;
+
+}
+   
     if(
 
         scrollDifference >
@@ -638,6 +786,13 @@ function updateHeaderVisibility(){
 
     }
 
+   if(currentScroll === 0){
+
+    removeClass(header,"hide");
+
+    state.headerHidden = false;
+
+}
     state.lastScroll = currentScroll;
 
 }
