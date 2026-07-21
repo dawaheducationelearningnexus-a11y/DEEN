@@ -1,1 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<!-- ==========================================================
+     DEEN ADMIN DASHBOARD
+     Version : 1.0
+     International Premium Edition
+========================================================== -->
+
+<!-- ==========================================================
+     BASIC META
+========================================================== -->
+
+<meta charset="UTF-8">
+
+<meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="theme-color"
+    content="#0F766E">
+
+<meta
+    name="color-scheme"
+    content="light dark">
+
+<!-- ==========================================================
+     SEO
+========================================================== -->
+
+<title>
+
+DEEN Admin Dashboard | Dawah Education & E-learning Nexus
+
+</title>
+
+<meta
+    name="description"
+    content="DEEN International Admin Dashboard">
+
+<meta
+    name="robots"
+    content="noindex,nofollow">
+
+<meta
+    name="author"
+    content="DEEN">
+
+<!-- ==========================================================
+     FAVICON
+========================================================== -->
+
+<link
+    rel="icon"
+    href="images/logo/favicon.png">
+
+<link
+    rel="apple-touch-icon"
+    href="images/logo/favicon.png">
+
+<!-- ==========================================================
+     GOOGLE FONTS
+========================================================== -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- ==========================================================
+     FONT AWESOME
+========================================================== -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- ==========================================================
+     CSS FILES
+========================================================== -->
+
+<link rel="stylesheet" href="css/variables.css">
+
+<link rel="stylesheet" href="css/reset.css">
+
+<link rel="stylesheet" href="css/base.css">
+
+<link rel="stylesheet" href="css/buttons.css">
+
+<link rel="stylesheet" href="css/admin-dashboard.css">
+
+<link rel="stylesheet" href="css/admin-sidebar.css">
+
+<link rel="stylesheet" href="css/admin-navbar.css">
+
+<link rel="stylesheet" href="css/admin-cards.css">
+
+<link rel="stylesheet" href="css/admin-tables.css">
+
+<link rel="stylesheet" href="css/admin-forms.css">
+
+<link rel="stylesheet" href="css/admin-responsive.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================================
+     PAGE LOADER
+========================================================== -->
+
+<div id="admin-loader">
+
+    <div class="loader-circle"></div>
+
+    <img
+        src="images/logo/logo.png"
+        alt="DEEN Logo">
+
+    <p>
+
+        Loading Dashboard...
+
+    </p>
+
+</div>
+
+<!-- ==========================================================
+     DEEN ADMIN DASHBOARD
+     MAIN LAYOUT
+========================================================== -->
+
+<div class="admin-dashboard">
+
+    <!-- ==========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="admin-sidebar">
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <img
+                src="images/logo/logo.png"
+                alt="DEEN Logo">
+
+            <div>
+
+                <h2>DEEN</h2>
+
+                <span>Admin Panel</span>
+
+            </div>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <ul>
+
+                <li class="active">
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-gauge-high"></i>
+
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-user-graduate"></i>
+
+                        Students
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                        Teachers
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        Courses
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        Departments
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        Events
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-newspaper"></i>
+
+                        Blog
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-bullhorn"></i>
+
+                        Notice
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                        Donations
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        Analytics
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        Settings
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ==========================================
+         MAIN AREA
+    ========================================== -->
+
+    <div class="admin-main">
+
+        <!-- ==========================================
+             TOPBAR
+        ========================================== -->
+
+        <header class="admin-topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="sidebar-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+
+                <button class="icon-btn">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </button>
+
+                <button class="icon-btn">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <div class="admin-profile">
+
+                    <img
+                        src="images/admin/admin.jpg"
+                        alt="Admin">
+
+                    <div>
+
+                        <h4>
+
+                            Abu Bakar Siddiq
+
+                        </h4>
+
+                        <span>
+
+                            Super Admin
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ==========================================
+             PAGE CONTENT
+        ========================================== -->
+
+        <main class="admin-content">
+
+         
+<!-- ==========================================
+     DASHBOARD OVERVIEW
+========================================== -->
+
+<section class="dashboard-overview">
+
+    <div class="stats-grid">
+
+        <!-- Students -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Total Students</span>
+
+                <h2>2,450</h2>
+
+                <small>+12% This Month</small>
+
+            </div>
+
+        </div>
+
+        <!-- Teachers -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Total Teachers</span>
+
+                <h2>68</h2>
+
+                <small>+4 New Teachers</small>
+
+            </div>
+
+        </div>
+
+        <!-- Courses -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Total Courses</span>
+
+                <h2>25</h2>
+
+                <small>All Active</small>
+
+            </div>
+
+        </div>
+
+        <!-- Departments -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Departments</span>
+
+                <h2>6</h2>
+
+                <small>Running Successfully</small>
+
+            </div>
+
+        </div>
+
+        <!-- Revenue -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-sack-dollar"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Monthly Revenue</span>
+
+                <h2>$8,450</h2>
+
+                <small>+18% Growth</small>
+
+            </div>
+
+        </div>
+
+        <!-- Visitors -->
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+
+                <i class="fa-solid fa-earth-asia"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <span>Website Visitors</span>
+
+                <h2>42K</h2>
+
+                <small>Last 30 Days</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+      
+          <!-- এখানে পরবর্তী ধাপে
+                 Statistics Cards,
+                 Charts,
+                 Tables,
+                 Recent Activity,
+                 Analytics
+                 যুক্ত করা হবে -->
+
+        </main>
+
+    </div>
+
+</div>
+  
+<!-- ==========================================================
+     ADMIN APP
+========================================================== -->
+
+<div id="admin-app">
+
+    <!-- Sidebar -->
+
+    <!-- Top Navbar -->
+
+    <!-- Dashboard -->
+
+</div>
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>
