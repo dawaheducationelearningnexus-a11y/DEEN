@@ -1,1 +1,182 @@
+/* ==========================================================
+   DEEN ADMIN DASHBOARD
+   MODULE 3
+   DASHBOARD OVERVIEW
+========================================================== */
 
+.dashboard-overview{
+
+    margin-top:32px;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:24px;
+
+}
+
+.stat-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(15,118,110,.08);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    overflow:hidden;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:linear-gradient(
+        180deg,
+        #0F766E,
+        #14B8A6
+    );
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(20,184,166,.25);
+
+    box-shadow:0 25px 60px rgba(15,118,110,.15);
+
+}
+
+.stat-icon{
+
+    width:72px;
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #0F766E,
+        #14B8A6
+    );
+
+    color:#fff;
+
+    font-size:28px;
+
+    flex-shrink:0;
+
+}
+
+.stat-content{
+
+    flex:1;
+
+}
+
+.stat-content span{
+
+    display:block;
+
+    font-size:.9rem;
+
+    color:#6B7280;
+
+    margin-bottom:6px;
+
+}
+
+.stat-content h2{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:6px;
+
+}
+
+.stat-content small{
+
+    color:#16A34A;
+
+    font-weight:600;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stat-card{
+
+        padding:22px;
+
+    }
+
+    .stat-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+    .stat-content h2{
+
+        font-size:1.7rem;
+
+    }
+
+}
