@@ -1012,7 +1012,243 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     </div>
 
+<!-- ==========================================================
+     WELCOME PANEL
+========================================================== -->
 
+<section class="dashboard-overview">
+
+    <!-- Welcome Card -->
+
+    <div class="welcome-card">
+
+        <div class="welcome-left">
+
+            <img
+                src="images/admin/admin.jpg"
+                alt="Admin">
+
+            <div>
+
+                <span class="welcome-badge">
+
+                    Super Administrator
+
+                </span>
+
+                <h2>
+
+                    Assalamu Alaikum,
+                    Abu Bakar Siddiq
+
+                </h2>
+
+                <p>
+
+                    Welcome back to the DEEN Administration Panel.
+                    May Allah bless your efforts in serving knowledge
+                    and the Ummah.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="welcome-right">
+
+            <div class="time-card">
+
+                <h3 id="live-date">
+
+                    21 July 2026
+
+                </h3>
+
+                <h1 id="live-time">
+
+                    08:30 PM
+
+                </h1>
+
+                <span>
+
+                    Bangladesh Standard Time
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Quick Actions -->
+
+    <div class="quick-actions">
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            <span>Add Student</span>
+
+        </a>
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-chalkboard-user"></i>
+
+            <span>Add Teacher</span>
+
+        </a>
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <span>Create Course</span>
+
+        </a>
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            <span>Publish Notice</span>
+
+        </a>
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            <span>Send Message</span>
+
+        </a>
+
+        <a href="#" class="quick-card">
+
+            <i class="fa-solid fa-database"></i>
+
+            <span>Backup System</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+     ANALYTICS SECTION
+========================================================== -->
+
+<section class="analytics-section">
+
+    <!-- Student Growth -->
+
+    <div class="analytics-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Student Growth
+
+            </h3>
+
+            <button class="btn btn-outline btn-sm">
+
+                Monthly
+
+            </button>
+
+        </div>
+
+        <canvas id="studentChart"></canvas>
+
+    </div>
+
+    <!-- Revenue -->
+
+    <div class="analytics-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Revenue Analytics
+
+            </h3>
+
+            <button class="btn btn-outline btn-sm">
+
+                Yearly
+
+            </button>
+
+        </div>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+    <!-- Course Enrollment -->
+
+    <div class="analytics-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Course Enrollment
+
+            </h3>
+
+            <button class="btn btn-outline btn-sm">
+
+                Live
+
+            </button>
+
+        </div>
+
+        <canvas id="courseChart"></canvas>
+
+    </div>
+
+    <!-- Monthly Performance -->
+
+    <div class="analytics-card">
+
+        <div class="card-header">
+
+            <h3>
+
+                Monthly Performance
+
+            </h3>
+
+            <button class="btn btn-outline btn-sm">
+
+                Report
+
+            </button>
+
+        </div>
+
+        <canvas id="performanceChart"></canvas>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+     
   </main>
 
     </div>
@@ -1039,6 +1275,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <script src="js/admin-dashboard.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/admin-chart.js"></script>
 </body>
 
 </html>
